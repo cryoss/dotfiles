@@ -105,6 +105,7 @@ myStartupHook = do
     spawnOnce "bash .screenlayout/default.sh"
     spawnOnce "lxsession &"
     spawnOnce "picom &"
+    spawnOnce "bash ~/Pictures/styli.sh/styli.sh -s nature -p &"
     spawnOnce "nm-applet &"
     spawnOnce "volumeicon &"
     spawnOnce "conky -c $HOME/.config/conky/xmonad.conkyrc"
@@ -363,7 +364,8 @@ myKeys =
     -- KB_GROUP Other Dmenu Prompts
     -- In Xmonad and many tiling window managers, M-p is the default keybinding to
     -- launch dmenu_run, so I've decided to use M-p plus KEY for these dmenu scripts.
-        , ("M-p a", spawn "dm-sounds")    -- choose an ambient background
+       --  , ("M-p a", spawn "dm-sounds")    -- choose an ambient background
+        , ("M-p a", spawn "pavucontrol")     -- set a background
         , ("M-p b", spawn "dm-setbg")     -- set a background
         , ("M-p c", spawn "dm-colpick")   -- pick color from our scheme
         , ("M-p e", spawn "dm-confedit")  -- edit config files
@@ -505,8 +507,8 @@ myKeys =
 main :: IO ()
 main = do
     -- Launching three instances of xmobar on their monitors.
-    xmproc0 <- spawnPipe "xmobar -x 0 $HOME/.config/xmobar/xmobarrc0"
-    xmproc1 <- spawnPipe "xmobar -x 1 $HOME/.config/xmobar/xmobarrc1"
+    xmproc0 <- spawnPipe "xmobar -x 0 $HOME/.config/xmobar/xmobarrc1"
+    xmproc1 <- spawnPipe "xmobar -x 1 $HOME/.config/xmobar/xmobarrc0"
    -- xmproc2 <- spawnPipe "xmobar -x 2 $HOME/.config/xmobar/xmobarrc2"
     -- the xmonad, ya know...what the WM is named after!
     xmonad $ ewmh def
