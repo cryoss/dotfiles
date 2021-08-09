@@ -9,7 +9,7 @@ Config { font    = "xft:Ubuntu:weight=bold:pixelsize=11:antialias=true:hinting=t
                            ]
        , bgColor = "#282c34"
        , fgColor = "#ff6c6b"
-       , position = Static { xpos = 3440 , ypos = 0, width = 1440, height = 24 }
+       , position = Static { xpos = 0 , ypos = 0, width = 3440, height = 24 }
        , lowerOnStart = True
        , hideOnStart = False
        , allDesktops = True
@@ -19,7 +19,7 @@ Config { font    = "xft:Ubuntu:weight=bold:pixelsize=11:antialias=true:hinting=t
                     -- Time and date
                       Run Date "<fn=2>\xf017</fn>  %b %d %Y - (%H:%M) " "date" 50
                       -- Network up and down
-                    , Run Network "enp6s0" ["-t", "<fn=2>\xf0ab</fn>  <rx>kb  <fn=2>\xf0aa</fn>  <tx>kb"] 20
+                    , Run Network "br0" ["-t", "<fn=2>\xf0ab</fn>  <rx>kb  <fn=2>\xf0aa</fn>  <tx>kb"] 20
                       -- Cpu usage in percent
                     , Run Cpu ["-t", "<fn=2>\xf108</fn>  cpu: (<total>%)","-H","50","--high","red"] 20
                       -- Ram used number and percent
