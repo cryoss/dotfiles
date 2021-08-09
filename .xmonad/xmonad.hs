@@ -105,7 +105,7 @@ myStartupHook = do
     spawnOnce "bash .screenlayout/default.sh"
     spawnOnce "lxsession &"
     spawnOnce "picom &"
-    spawnOnce "bash ~/Pictures/styli.sh/styli.sh -s nature -p &"
+    spawnOnce "bash ~/Pictures/styli.sh/styli.sh -s nature &"
     spawnOnce "nm-applet &"
     spawnOnce "volumeicon &"
     spawnOnce "conky -c $HOME/.config/conky/xmonad.conkyrc"
