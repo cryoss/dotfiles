@@ -105,19 +105,19 @@ myStartupHook = do
     spawnOnce "bash .screenlayout/default.sh"
     spawnOnce "lxsession &"
     spawnOnce "picom &"
-    spawnOnce "bash ~/Pictures/styli.sh/styli.sh -s nature &"
+    spawnOnce "sh ~/Pictures/styli.sh/styli.sh -s nature &"
     spawnOnce "nm-applet &"
     spawnOnce "volumeicon &"
     spawnOnce "conky -c $HOME/.config/conky/xmonad.conkyrc"
-    spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 --tint 0x282c34  --height 22 &"
-    spawnOnce "/usr/bin/emacs --daemon &" -- emacs daemon for the emacsclient
+    spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 --tint 0x282c34  --height 40 &"
+    -- spawnOnce "/usr/bin/emacs --daemon &" -- emacs daemon for the emacsclient
     -- spawnOnce "kak -d -s mysession &"  -- kakoune daemon for better performance
     -- spawnOnce "urxvtd -q -o -f &"      -- urxvt daemon for better performance
 
     -- spawnOnce "xargs xwallpaper --stretch < ~/.xwallpaper"  -- set last saved with xwallpaper
     -- spawnOnce "find ~/wallpapers/ -type f | shuf -n 1 | xargs xwallpaper --stretch"  -- set random xwallpaper
     -- spawnOnce "~/.fehbg &"  -- set last saved feh wallpaper
-    spawnOnce "feh --randomize --bg-fill ~/wallpapers/*"  -- feh set random wallpaper
+    -- spawnOnce "feh --randomize --bg-fill ~/wallpapers/*"  -- feh set random wallpaper
     -- spawnOnce "nitrogen --restore &"   -- if you prefer nitrogen to feh
     setWMName "LG3D"
 
@@ -507,8 +507,8 @@ myKeys =
 main :: IO ()
 main = do
     -- Launching three instances of xmobar on their monitors.
-    xmproc0 <- spawnPipe "xmobar -x 0 $HOME/.config/xmobar/xmobarrc1"
-    xmproc1 <- spawnPipe "xmobar -x 1 $HOME/.config/xmobar/xmobarrc0"
+    xmproc0 <- spawnPipe "xmobar -x 0 $HOME/.config/xmobar/xmobarrc0"
+    xmproc1 <- spawnPipe "xmobar -x 1 $HOME/.config/xmobar/xmobarrc1"
    -- xmproc2 <- spawnPipe "xmobar -x 2 $HOME/.config/xmobar/xmobarrc2"
     -- the xmonad, ya know...what the WM is named after!
     xmonad $ ewmh def
@@ -529,17 +529,18 @@ main = do
         , focusedBorderColor = myFocusColor
         , logHook = dynamicLogWithPP $ namedScratchpadFilterOutWorkspacePP $ xmobarPP
               -- the following variables beginning with 'pp' are settings for xmobar.
-              { ppOutput = \x -> hPutStrLn xmproc0 x                          -- xmobar on monitor 1
-                              >> hPutStrLn xmproc1 x                          -- xmobar on monitor 2
+           { ppOutput =   
+                       \x -> hPutStrLn xmproc0 x                          -- xmobar on monitor 1
+                          >> hPutStrLn xmproc1 x                          -- xmobar on monitor 2
              --                 >> hPutStrLn xmproc2 x                          -- xmobar on monitor 3
-              , ppCurrent = xmobarColor "#c792ea" "" . wrap "<box type=Bottom width=2 color=#c792ea>" "</box>"         -- Current workspace
-              , ppVisible = xmobarColor "#c792ea" "" . clickable              -- Visible but not current workspace
-              , ppHidden = xmobarColor "#82AAFF" "" . wrap "<box type=Top width=2 color=#82AAFF>" "</box>" . clickable -- Hidden workspaces
-              , ppHiddenNoWindows = xmobarColor "#82AAFF" ""  . clickable     -- Hidden workspaces (no windows)
-              , ppTitle = xmobarColor "#b3afc2" "" . shorten 60               -- Title of active window
-              , ppSep =  "<fc=#666666> <fn=1>|</fn> </fc>"                    -- Separator character
-              , ppUrgent = xmobarColor "#C45500" "" . wrap "!" "!"            -- Urgent workspace
-              , ppExtras  = [windowCount]                                     -- # of windows current workspace
-              , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]                    -- order of things in xmobar
-              }
+             , ppCurrent = xmobarColor "#c792ea" "" . wrap "<box type=Bottom width=2 color=#c792ea>" "</box>"         -- Current workspace
+             , ppVisible = xmobarColor "#c792ea" "" . clickable              -- Visible but not current workspace
+             , ppHidden = xmobarColor "#82AAFF" "" . wrap "<box type=Top width=2 color=#82AAFF>" "</box>" . clickable -- Hidden workspaces
+             , ppHiddenNoWindows = xmobarColor "#82AAFF" ""  . clickable     -- Hidden workspaces (no windows)
+             , ppTitle = xmobarColor "#b3afc2" "" . shorten 60               -- Title of active window
+             , ppSep =  "<fc=#666666> <fn=1>|</fn> </fc>"                    -- Separator character
+             , ppUrgent = xmobarColor "#C45500" "" . wrap "!" "!"            -- Urgent workspace
+             , ppExtras  = [windowCount]                                     -- # of windows current workspace
+             , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]                    -- order of things in xmobar
+             }
         } `additionalKeysP` myKeys
