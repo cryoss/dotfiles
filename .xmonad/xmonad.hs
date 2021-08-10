@@ -356,6 +356,7 @@ myKeys =
         [ ("M-C-r", spawn "xmonad --recompile")  -- Recompiles xmonad
         , ("M-S-r", spawn "xmonad --restart")    -- Restarts xmonad
         , ("M-C-<F12>", io exitSuccess)              -- Quits xmonad
+        , ("M-C-q", spawn " ") 
         , ("M-S-s", spawn "~/.xmonad/xmonad_keys.sh")
 
     -- KB_GROUP Run Prompt
