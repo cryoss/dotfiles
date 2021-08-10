@@ -71,7 +71,7 @@ keys = [
 #             desc='Move focus to prev monitor'
 #             ),
          ### Treetab controls
-          Key([mod, "shift"], "h",
+         Key([mod, "shift"], "h",
              lazy.layout.move_left(),
              desc='Move up a section in treetab'
              ),
@@ -187,7 +187,7 @@ keys = [
                  lazy.spawn("./dmscripts/dm-kill"),
                  desc='Kill processes via dmenu'
                  ),
-             Key([], "l",
+             Key([], "q",
                  lazy.spawn("./dmscripts/scripts/dm-logout"),
                  desc='A logout menu'
                  ),
