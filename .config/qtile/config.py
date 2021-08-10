@@ -16,7 +16,7 @@ myTerm = "alacritty"                             # My terminal of choice
 keys = [
          ### The essentials
          Key([mod], "Return",
-             lazy.spawn(myTerm+" -e fish"),
+             lazy.spawn(myTerm),
              desc='Launches My Terminal'
              ),
          Key([mod, "shift"], "Return",
@@ -26,9 +26,8 @@ keys = [
              ),
          Key([mod], "b",
              lazy.spawn("firefox"),
-             # lazy.spawn("rofi -show drun -config ~/.config/rofi/themes/dt-dmenu.rasi -display-drun \"Run: \" -drun-display-format \"{name}\""),
-             desc='Run Firefox'
-             ),
+             desc='firefox'
+             ),    
          Key([mod], "Tab",
              lazy.next_layout(),
              desc='Toggle through layouts'
@@ -46,8 +45,8 @@ keys = [
              desc='Shutdown Qtile'
              ),
          Key(["control", "shift"], "e",
-             lazy.spawn("vim"),
-             desc='Vim'
+             lazy.spawn("emacsclient -c -a emacs"),
+             desc='Doom Emacs'
              ),
          ### Switch focus to specific monitor (out of three)
          Key([mod], "w",
@@ -189,7 +188,7 @@ keys = [
                  desc='Kill processes via dmenu'
                  ),
              Key([], "l",
-                 lazy.spawn("./dmscripts/dm-logout"),
+                 lazy.spawn("./dmscripts/scripts/dm-logout"),
                  desc='A logout menu'
                  ),
              Key([], "m",
@@ -208,15 +207,14 @@ keys = [
                  lazy.spawn("./dmscripts/dm-websearch"),
                  desc='Search various search engines via dmenu'
                  ),
+              Key([], "a",
+                 lazy.spawn("pavucontrol"),
+                 desc='audioMixer'
+                 ),
              Key([], "p",
                  lazy.spawn("passmenu"),
                  desc='Retrieve passwords with dmenu'
-                 ),
-             Key([], "a",
-                 lazy.spawn("pavucontrol"),
-                 desc='audioSettings'
                  )
-
          ])
 ]
 
