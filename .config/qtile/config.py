@@ -16,7 +16,7 @@ myTerm = "alacritty"                             # My terminal of choice
 keys = [
          ### The essentials
          Key([mod], "Return",
-             lazy.spawn(myTerm),
+             lazy.spawn(myTerm+" -e fish"),
              desc='Launches My Terminal'
              ),
          Key([mod, "shift"], "Return",
@@ -49,27 +49,27 @@ keys = [
              desc='Doom Emacs'
              ),
 ##         ### Switch focus to specific monitor (out of three)
-##         Key([mod], "w",
-#             lazy.to_screen(0),
-#             desc='Keyboard focus to monitor 1'
-#             ),
-#         Key([mod], "e",
-#             lazy.to_screen(1),
-#             desc='Keyboard focus to monitor 2'
-#             ),
+         Key([mod], "w",
+             lazy.to_screen(0),
+             desc='Keyboard focus to monitor 1'
+             ),
+         Key([mod], "e",
+             lazy.to_screen(1),
+             desc='Keyboard focus to monitor 2'
+             ),
 #         Key([mod], "r",
 #             lazy.to_screen(2),
 #             desc='Keyboard focus to monitor 3'
 #             ),
-#         ### Switch focus of monitors
-#         Key([mod], "period",
-#             lazy.next_screen(),
-#             desc='Move focus to next monitor'
-#             ),
-#         Key([mod], "comma",
-#             lazy.prev_screen(),
-#             desc='Move focus to prev monitor'
-#             ),
+         ### Switch focus of monitors
+         Key([mod], "period",
+             lazy.next_screen(),
+             desc='Move focus to next monitor'
+             ),
+         Key([mod], "comma",
+             lazy.prev_screen(),
+             desc='Move focus to prev monitor'
+             ),
          ### Treetab controls
          Key([mod, "shift"], "h",
              lazy.layout.move_left(),
@@ -254,26 +254,26 @@ layouts = [
     layout.Max(**layout_theme),
     layout.Stack(num_stacks=2),
     layout.RatioTile(**layout_theme),
-    layout.TreeTab(
-         font = "Ubuntu",
-         fontsize = 10,
-         sections = ["FIRST", "SECOND", "THIRD", "FOURTH"],
-         section_fontsize = 10,
-         border_width = 2,
-         bg_color = "1c1f24",
-         active_bg = "c678dd",
-         active_fg = "000000",
-         inactive_bg = "a9a1e1",
-         inactive_fg = "1c1f24",
-         padding_left = 0,
-         padding_x = 0,
-         padding_y = 5,
-         section_top = 10,
-         section_bottom = 20,
-         level_shift = 8,
-         vspace = 3,
-         panel_width = 200
-         ),
+    # layout.TreeTab(
+    #     font = "Ubuntu",
+     #    fontsize = 10,
+      #   sections = ["FIRST", "SECOND", "THIRD", "FOURTH"],
+       #  section_fontsize = 10,
+       #  border_width = 2,
+       #  bg_color = "1c1f24",
+       #  active_bg = "c678dd",
+       #  active_fg = "000000",
+       #  inactive_bg = "a9a1e1",
+       #  inactive_fg = "1c1f24",
+       #  padding_left = 0,
+       #  padding_x = 0,
+       #  padding_y = 5,
+       #  section_top = 10,
+       #  section_bottom = 20,
+       #  level_shift = 8,
+       #  vspace = 3,
+       #  panel_width = 200
+        # ),
     layout.Floating(**layout_theme)
 ]
 
@@ -522,8 +522,8 @@ def init_widgets_screen1():
 
 def init_screens():
     return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=20)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), opacity=1.0, size=20)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=20))]
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), opacity=1.0, size=20))]
+#            Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=20))]
 
 if __name__ in ["config", "__main__"]:
     screens = init_screens()
