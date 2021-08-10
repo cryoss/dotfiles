@@ -48,28 +48,28 @@ keys = [
              lazy.spawn("emacsclient -c -a emacs"),
              desc='Doom Emacs'
              ),
-         ### Switch focus to specific monitor (out of three)
-         Key([mod], "w",
-             lazy.to_screen(0),
-             desc='Keyboard focus to monitor 1'
-             ),
-         Key([mod], "e",
-             lazy.to_screen(1),
-             desc='Keyboard focus to monitor 2'
-             ),
-         Key([mod], "r",
-             lazy.to_screen(2),
-             desc='Keyboard focus to monitor 3'
-             ),
-         ### Switch focus of monitors
-         Key([mod], "period",
-             lazy.next_screen(),
-             desc='Move focus to next monitor'
-             ),
-         Key([mod], "comma",
-             lazy.prev_screen(),
-             desc='Move focus to prev monitor'
-             ),
+##         ### Switch focus to specific monitor (out of three)
+##         Key([mod], "w",
+#             lazy.to_screen(0),
+#             desc='Keyboard focus to monitor 1'
+#             ),
+#         Key([mod], "e",
+#             lazy.to_screen(1),
+#             desc='Keyboard focus to monitor 2'
+#             ),
+#         Key([mod], "r",
+#             lazy.to_screen(2),
+#             desc='Keyboard focus to monitor 3'
+#             ),
+#         ### Switch focus of monitors
+#         Key([mod], "period",
+#             lazy.next_screen(),
+#             desc='Move focus to next monitor'
+#             ),
+#         Key([mod], "comma",
+#             lazy.prev_screen(),
+#             desc='Move focus to prev monitor'
+#             ),
          ### Treetab controls
           Key([mod, "shift"], "h",
              lazy.layout.move_left(),
