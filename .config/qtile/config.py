@@ -44,8 +44,8 @@ keys = [
              lazy.shutdown(),
              desc='Shutdown Qtile'
              ),
-         Key(["control", "shift"], "e",
-             lazy.spawn("emacsclient -c -a emacs"),
+         Key([mod, "shift"], "e",
+             lazy.spawn(myTerm+" -e emacs -nw"),
              desc='Doom Emacs'
              ),
 ##         ### Switch focus to specific monitor (out of three)
@@ -218,15 +218,15 @@ keys = [
          ])
 ]
 
-group_names = [("WWW", {'layout': 'monadtall'}),
-               ("DEV", {'layout': 'monadtall'}),
-               ("SYS", {'layout': 'monadtall'}),
-               ("DOC", {'layout': 'monadtall'}),
-               ("VBOX", {'layout': 'monadtall'}),
-               ("CHAT", {'layout': 'monadtall'}),
-               ("MUS", {'layout': 'monadtall'}),
-               ("VID", {'layout': 'monadtall'}),
-               ("GFX", {'layout': 'floating'})]
+group_names = [("1", {'layout': 'monadtall'}),
+               ("2", {'layout': 'monadtall'}),
+               ("3", {'layout': 'monadtall'}),
+               ("4", {'layout': 'monadtall'}),
+               ("5: Win10", {'layout': 'max'}),
+               ("6", {'layout': 'monadtall'}),
+               ("7", {'layout': 'monadtall'}),
+               ("8", {'layout': 'monadtall'}),
+               ("9", {'layout': 'floating'})]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 
@@ -291,7 +291,7 @@ prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 ##### DEFAULT WIDGET SETTINGS #####
 widget_defaults = dict(
     font="Ubuntu Mono",
-    fontsize = 12,
+    fontsize = 16,
     padding = 2,
     background=colors[2]
 )
@@ -372,7 +372,7 @@ def init_widgets_list():
                        fontsize = 37
                        ),
              widget.Net(
-                       interface = "enp6s0",
+                       interface = "enp39s0",
                        format = '{down} ↓↑ {up}',
                        foreground = colors[2],
                        background = colors[4],
@@ -438,25 +438,6 @@ def init_widgets_list():
                        foreground = colors[2],
                        background = colors[5],
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e htop')},
-                       padding = 5
-                       ),
-              widget.TextBox(
-                       text='',
-                       background = colors[5],
-                       foreground = colors[4],
-                       padding = 0,
-                       fontsize = 37
-                       ),
-              widget.TextBox(
-                       text = " ₿",
-                       padding = 0,
-                       foreground = colors[2],
-                       background = colors[4],
-                       fontsize = 12
-                       ),
-              widget.BitcoinTicker(
-                       foreground = colors[2],
-                       background = colors[4],
                        padding = 5
                        ),
               widget.TextBox(
