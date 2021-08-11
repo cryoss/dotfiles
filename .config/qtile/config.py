@@ -322,7 +322,7 @@ def init_widgets_list():
                        ),
               widget.GroupBox(
                        font = "Ubuntu Bold",
-                       fontsize = 9,
+                       fontsize = 15,
                        margin_y = 3,
                        margin_x = 0,
                        padding_y = 5,
@@ -375,40 +375,6 @@ def init_widgets_list():
                        padding = 0,
                        fontsize = 37
                        ),
-             widget.Net(
-                       interface = "enp39s0",
-                       format = '{down} ↓↑ {up}',
-                       foreground = colors[2],
-                       background = colors[4],
-                       padding = 5
-                       ),
-              widget.TextBox(
-                       text = '',
-                       background = colors[4],
-                       foreground = colors[5],
-                       padding = 0,
-                       fontsize = 37
-                       ),
-              widget.TextBox(
-                       text = " 🌡 TEMP NOT SHOWN ",
-                       padding = 2,
-                       foreground = colors[2],
-                       background = colors[5],
-                       fontsize = 11
-                       ),
-              # widget.ThermalSensor(
-              #          foreground = colors[2],
-              #          background = colors[5],
-              #          threshold = 90,
-              #          padding = 5
-              #          ),
-              widget.TextBox(
-                       text='',
-                       background = colors[5],
-                       foreground = colors[4],
-                       padding = 0,
-                       fontsize = 37
-                       ),
               widget.TextBox(
                        text = " ⟳",
                        padding = 2,
@@ -423,26 +389,6 @@ def init_widgets_list():
                        foreground = colors[2],
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
                        background = colors[4]
-                       ),
-              widget.TextBox(
-                       text = '',
-                       background = colors[4],
-                       foreground = colors[5],
-                       padding = 0,
-                       fontsize = 37
-                       ),
-              widget.TextBox(
-                       text = " 🖬",
-                       foreground = colors[2],
-                       background = colors[5],
-                       padding = 0,
-                       fontsize = 14
-                       ),
-              widget.Memory(
-                       foreground = colors[2],
-                       background = colors[5],
-                       mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e htop')},
-                       padding = 5
                        ),
               widget.TextBox(
                        text = '',
