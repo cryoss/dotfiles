@@ -369,40 +369,6 @@ def init_widgets_list():
                        background = colors[0]
                        ),
               widget.TextBox(
-                       text = '',
-                       background = colors[0],
-                       foreground = colors[4],
-                       padding = 0,
-                       fontsize = 37
-                       ),
-             widget.Net(
-                       interface = "enp39s0",
-                       format = '{down} ↓↑ {up}',
-                       foreground = colors[2],
-                       background = colors[4],
-                       padding = 5
-                       ),
-              widget.TextBox(
-                       text = '',
-                       background = colors[4],
-                       foreground = colors[5],
-                       padding = 0,
-                       fontsize = 37
-                       ),
-              widget.TextBox(
-                       text = " 🌡 TEMP NOT SHOWN ",
-                       padding = 2,
-                       foreground = colors[2],
-                       background = colors[5],
-                       fontsize = 11
-                       ),
-              # widget.ThermalSensor(
-              #          foreground = colors[2],
-              #          background = colors[5],
-              #          threshold = 90,
-              #          padding = 5
-              #          ),
-              widget.TextBox(
                        text='',
                        background = colors[5],
                        foreground = colors[4],
@@ -423,26 +389,6 @@ def init_widgets_list():
                        foreground = colors[2],
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
                        background = colors[4]
-                       ),
-              widget.TextBox(
-                       text = '',
-                       background = colors[4],
-                       foreground = colors[5],
-                       padding = 0,
-                       fontsize = 37
-                       ),
-              widget.TextBox(
-                       text = " 🖬",
-                       foreground = colors[2],
-                       background = colors[5],
-                       padding = 0,
-                       fontsize = 14
-                       ),
-              widget.Memory(
-                       foreground = colors[2],
-                       background = colors[5],
-                       mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e htop')},
-                       padding = 5
                        ),
               widget.TextBox(
                        text = '',
@@ -493,15 +439,26 @@ def init_widgets_list():
                        background = colors[5],
                        format = "%A, %B %d - %H:%M "
                        ),
-              ]
+              widget.TextBox(
+                       text = '',
+                       background = colors[5],
+                       foreground = colors[4],
+                       padding = 0,
+                       fontsize = 37
+                       ),
+              widget.Battery(
+                       foreground = colors[2],
+                       background = colors[4],
+                       ),
+        ]
     return widgets_list
 
-def init_widgets_screen2():
+def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
     del widgets_screen1[7:8]               # Slicing removes unwanted widgets (systray) on Monitors 1,3
     return widgets_screen1
 
-def init_widgets_screen1():
+def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
     return widgets_screen2                 # Monitor 2 will display all widgets in widgets_list
 
