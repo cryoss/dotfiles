@@ -10,3 +10,6 @@
     
 ##  oh-my-fish
     curl -L https://get.oh-my.fish | fish 
+##  pip
+    pip install psutil
+    pip install iwlib
