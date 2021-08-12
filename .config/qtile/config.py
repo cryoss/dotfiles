@@ -24,10 +24,18 @@ keys = [
              # lazy.spawn("rofi -show drun -config ~/.config/rofi/themes/dt-dmenu.rasi -display-drun \"Run: \" -drun-display-format \"{name}\""),
              desc='Run Launcher'
              ),
+         Key([mod, "shift"], "l",
+             lazy.spawn("looking-glass-client"),
+             desc='looking-glass-client'
+             ),
+         Key([mod, "shift"], "c",
+             lazy.spawn("qalculate-gtk"),
+             desc='qalculate'
+             ),
          Key([mod], "b",
              lazy.spawn("firefox"),
              desc='firefox'
-             ),    
+             ),
          Key([mod], "Tab",
              lazy.next_layout(),
              desc='Toggle through layouts'
@@ -44,7 +52,7 @@ keys = [
              lazy.restart(),
              desc='Restart Qtile'
              ),
-         Key([mod, "shift"], "q",
+         Key([mod, "shift"], "F12",
              lazy.shutdown(),
              desc='Shutdown Qtile'
              ),
@@ -75,14 +83,14 @@ keys = [
              desc='Move focus to prev monitor'
              ),
          ### Treetab controls
-         Key([mod, "shift"], "h",
-             lazy.layout.move_left(),
-             desc='Move up a section in treetab'
-             ),
-         Key([mod, "shift"], "l",
-             lazy.layout.move_right(),
-             desc='Move down a section in treetab'
-             ),
+#         Key([mod, "shift"], "h",
+#             lazy.layout.move_left(),
+#             desc='Move up a section in treetab'
+#             ),
+#         Key([mod, "shift"], "ö",
+#             lazy.layout.move_right(),
+#             desc='Move down a section in treetab'
+#             ),
          ### Window controls
          Key([mod], "j",
              lazy.layout.down(),
@@ -134,7 +142,7 @@ keys = [
              lazy.layout.flip(),
              desc='Switch which side main pane occupies (XmonadTall)'
              ),
-          Key([mod], "space",
+         Key([mod], "space",
              lazy.layout.next(),
              desc='Switch window focus to other pane(s) of stack'
              ),
@@ -303,24 +311,24 @@ extension_defaults = widget_defaults.copy()
 
 def init_widgets_list():
     widgets_list = [
-              widget.Sep(
+              widget.Sep( #1
                        linewidth = 0,
                        padding = 6,
                        foreground = colors[2],
                        background = colors[0]
                        ),
-              widget.Image(
+              widget.Image( #2
                        filename = "~/.config/qtile/icons/python-white.png",
                        scale = "False",
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)}
                        ),
-             widget.Sep(
+             widget.Sep( #3
                        linewidth = 0,
                        padding = 6,
                        foreground = colors[2],
                        background = colors[0]
                        ),
-              widget.GroupBox(
+              widget.GroupBox( #4
                        font = "Ubuntu Bold",
                        fontsize = 15,
                        margin_y = 3,
@@ -340,49 +348,49 @@ def init_widgets_list():
                        foreground = colors[2],
                        background = colors[0]
                        ),
-              widget.Prompt(
+              widget.Prompt( #5
                        prompt = prompt,
                        font = "Ubuntu Mono",
                        padding = 10,
                        foreground = colors[3],
                        background = colors[1]
                        ),
-              widget.Sep(
+              widget.Sep( #6
                        linewidth = 0,
                        padding = 40,
                        foreground = colors[2],
                        background = colors[0]
                        ),
-              widget.WindowName(
+              widget.WindowName( #7
                        foreground = colors[6],
                        background = colors[0],
                        padding = 0
                        ),
-              widget.Systray(
+              widget.Systray( #8
                        background = colors[0],
                        padding = 5
                        ),
-              widget.Sep(
+              widget.Sep( #9
                        linewidth = 0,
                        padding = 6,
                        foreground = colors[0],
                        background = colors[0]
                        ),
-              widget.TextBox(
+              widget.TextBox( #10
                        text = '',
                        background = colors[0],
                        foreground = colors[4],
                        padding = 0,
                        fontsize = 37
                        ),
-              widget.TextBox(
+              widget.TextBox( #11
                        text = " ⟳",
                        padding = 2,
                        foreground = colors[2],
                        background = colors[4],
                        fontsize = 14
                        ),
-              widget.CheckUpdates(
+              widget.CheckUpdates( #12
                        update_interval = 1800,
                        distro = "Arch_checkupdates",
                        display_format = "{updates} Updates",
@@ -390,51 +398,159 @@ def init_widgets_list():
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
                        background = colors[4]
                        ),
-              widget.TextBox(
+              widget.TextBox( #13
                        text = '',
                        background = colors[4],
                        foreground = colors[5],
                        padding = 0,
                        fontsize = 37
                        ),
-              widget.TextBox(
-                      text = " Vol:",
+              widget.TextBox( #14
+                       text = " Vol:",
                        foreground = colors[2],
                        background = colors[5],
                        padding = 0
                        ),
-              widget.Volume(
+              widget.Volume( #15
                        foreground = colors[2],
                        background = colors[5],
+                       mouse_callbacks = {'Button1' : lambda: qtile.cmd_spawn("pavucontrol")},
+                       #volume_app = "pavucontrol",
                        padding = 5
                        ),
-              widget.TextBox(
+              widget.TextBox( #16
                        text = '',
                        background = colors[5],
                        foreground = colors[4],
                        padding = 0,
                        fontsize = 37
                        ),
-              widget.CurrentLayoutIcon(
-                       custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
-                       foreground = colors[0],
-                       background = colors[4],
-                       padding = 0,
-                       scale = 0.7
-                       ),
-              widget.CurrentLayout(
+              widget.CPU( #17
+                       padding = 2,
                        foreground = colors[2],
                        background = colors[4],
-                       padding = 5
+                       mouse_callbacks = {'Button1' : lambda: qtile.cmd_spawn(myTerm+ ' -e htop')},
+                       fontsize = 14
                        ),
-              widget.TextBox(
+              widget.TextBox( #18
                        text = '',
                        background = colors[4],
                        foreground = colors[5],
                        padding = 0,
                        fontsize = 37
                        ),
-              widget.Clock(
+              widget.Memory( #19
+                       background = colors[5],
+                       foreground = colors[2],
+                       padding = 0,
+                       measure_mem = 'G',
+                       fontsize = 17
+                       ),
+              widget.TextBox( #20
+                       text = '',
+                       background = colors[5],
+                       foreground = colors[4],
+                       padding = 0,
+                       fontsize = 37
+                       ),
+              widget.Net( #21
+                       padding = 2,
+                       foreground = colors[2],
+                       background = colors[4],
+                       mouse_callbacks = {'Button1' : lambda: qtile.cmd_spawn(myTerm+ ' -e htop')},
+                       fontsize = 14
+                       ),
+              widget.Clipboard( #22
+                       background = colors[5],
+                       foreground = colors[4],
+                       max_chars = 30,
+                       font = 'sans',
+                       fmt = '{}',
+                       selection = 'CLIPBOARD',
+                       timeout = 0,
+                       padding = 0,
+                       fontsize = 37
+                       ),
+              widget.TextBox( #23
+                       text = '',
+                       background = colors[4],
+                       foreground = colors[5],
+                       padding = 0,
+                       fontsize = 37
+                       ),
+              widget.Wlan( #24
+                       background = colors[5],
+                       foreground = colors[2],
+                       padding = 0,
+                       fontsize = 17
+                       ),
+              widget.TextBox( #25
+                       text = '',
+                       background = colors[5],
+                       foreground = colors[4],
+                       padding = 0,
+                       fontsize = 37
+                       ),
+              widget.Battery( #26
+                       padding = 2,
+                       foreground = colors[2],
+                       background = colors[4],
+                       fontsize = 14
+                       ),
+              widget.TextBox( #27
+                       text = '',
+                       background = colors[4],
+                       foreground = colors[5],
+                       padding = 0,
+                       fontsize = 37
+                       ),
+              widget.Backlight( #28
+                       background = colors[5],
+                       foreground = colors[2],
+                       padding = 0,
+                       fontsize = 17
+                       ),
+              widget.TextBox( #29
+                       text = '',
+                       background = colors[4],
+                       foreground = colors[5],
+                       padding = 0,
+                       fontsize = 37
+                       ),
+              widget.TextBox( #30
+                       text = '     ',
+                       background = colors[5],
+                       foreground = colors[5],
+                       padding = 0,
+                       fontsize = 10
+                       ),
+              widget.TextBox( #31
+                       text = '',
+                       background = colors[5],
+                       foreground = colors[4],
+                       padding = 0,
+                       fontsize = 37
+                       ),
+              widget.CurrentLayoutIcon( #32
+                       custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
+                       foreground = colors[0],
+                       background = colors[4],
+                       padding = 0,
+                       scale = 0.7
+                       ),
+              widget.CurrentLayout( #33
+                       foreground = colors[2],
+                       background = colors[4],
+                       padding = 5
+                       ),
+              widget.TextBox( #34
+                       text = '',
+                       background = colors[4],
+                       foreground = colors[5],
+                       padding = 0,
+                       fontsize = 37
+                       ),
+              widget.Clock( #35
                        foreground = colors[2],
                        background = colors[5],
                        format = "%A, %B %d - %H:%M "
@@ -442,18 +558,22 @@ def init_widgets_list():
               ]
     return widgets_list
 
-def init_widgets_screen2():
-    widgets_screen1 = init_widgets_list()
-    del widgets_screen1[7:8]               # Slicing removes unwanted widgets (systray) on Monitors 1,3
-    return widgets_screen1
-
 def init_widgets_screen1():
+    widgets_screen1 = init_widgets_list()
+    del widgets_screen1[22:28] # Uncomment for Laptop
+    #del widgets_screen1[30:31] #Uncomment for Desktop
+    return widgets_screen1                 # Monitor 2 will display all widgets in widgets_list
+
+
+def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    return widgets_screen2                 # Monitor 2 will display all widgets in widgets_list
+    del widgets_screen2[22:28]
+    del widgets_screen2[7:8]
+    return widgets_screen2
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=20)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), opacity=1.0, size=20))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=30)),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), opacity=1.0, size=30))]
 #            Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=20))]
 
 if __name__ in ["config", "__main__"]:
@@ -509,7 +629,8 @@ floating_layout = layout.Floating(float_rules=[
     # default_float_rules include: utility, notification, toolbar, splash, dialog,
     # file_progress, confirm, download and error.
     *layout.Floating.default_float_rules,
-    Match(title='Confirmation'),      # tastyworks exit box
+    Match(title='Confirmation'),
+    Match(wm_class='pavucontrol'),# tastyworks exit box
     Match(title='Qalculate!'),        # qalculate-gtk
     Match(wm_class='kdenlive'),       # kdenlive
     Match(wm_class='pinentry-gtk-2'), # GPG key password entry
