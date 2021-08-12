@@ -24,10 +24,18 @@ keys = [
              # lazy.spawn("rofi -show drun -config ~/.config/rofi/themes/dt-dmenu.rasi -display-drun \"Run: \" -drun-display-format \"{name}\""),
              desc='Run Launcher'
              ),
+         Key([mod, "shift"], "l",
+             lazy.spawn("looking-glass-client"),
+             desc='looking-glass-client'
+             ),
+         Key([mod, "shift"], "c",
+             lazy.spawn("qalculate-gtk"),
+             desc='qalculate'
+             ),
          Key([mod], "b",
              lazy.spawn("firefox"),
              desc='firefox'
-             ),    
+             ),
          Key([mod], "Tab",
              lazy.next_layout(),
              desc='Toggle through layouts'
@@ -44,7 +52,7 @@ keys = [
              lazy.restart(),
              desc='Restart Qtile'
              ),
-         Key([mod, "shift"], "q",
+         Key([mod, "shift"], "F12",
              lazy.shutdown(),
              desc='Shutdown Qtile'
              ),
@@ -75,14 +83,14 @@ keys = [
              desc='Move focus to prev monitor'
              ),
          ### Treetab controls
-         Key([mod, "shift"], "h",
-             lazy.layout.move_left(),
-             desc='Move up a section in treetab'
-             ),
-         Key([mod, "shift"], "l",
-             lazy.layout.move_right(),
-             desc='Move down a section in treetab'
-             ),
+#         Key([mod, "shift"], "h",
+#             lazy.layout.move_left(),
+#             desc='Move up a section in treetab'
+#             ),
+#         Key([mod, "shift"], "ö",
+#             lazy.layout.move_right(),
+#             desc='Move down a section in treetab'
+#             ),
          ### Window controls
          Key([mod], "j",
              lazy.layout.down(),
@@ -134,7 +142,7 @@ keys = [
              lazy.layout.flip(),
              desc='Switch which side main pane occupies (XmonadTall)'
              ),
-          Key([mod], "space",
+         Key([mod], "space",
              lazy.layout.next(),
              desc='Switch window focus to other pane(s) of stack'
              ),
@@ -398,7 +406,7 @@ def init_widgets_list():
                        fontsize = 37
                        ),
               widget.TextBox(
-                      text = " Vol:",
+                       text = " Vol:",
                        foreground = colors[2],
                        background = colors[5],
                        padding = 0
