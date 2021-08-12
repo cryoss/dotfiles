@@ -303,7 +303,7 @@ prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 ##### DEFAULT WIDGET SETTINGS #####
 widget_defaults = dict(
     font="Ubuntu Mono",
-    fontsize = 16,
+    fontsize = 18,
     padding = 2,
     background=colors[2]
 )
@@ -555,7 +555,18 @@ def init_widgets_list():
                        background = colors[5],
                        format = "%A, %B %d - %H:%M "
                        ),
-              ]
+              widget.TextBox(
+                       text ='',
+                       background = colors[5],
+                       foreground = colors[4],
+                       padding = 0,
+                       fontsize = 37
+                       ),
+              widget.Battery(
+                       foreground = colors[2],
+                       background = colors[4],
+                       ),
+        ]
     return widgets_list
 
 def init_widgets_screen1():
