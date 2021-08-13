@@ -40,10 +40,6 @@ keys = [
              lazy.next_layout(),
              desc='Toggle through layouts'
              ),
-         Key([mod, "control"], "l",
-             lazy.window.kill(),
-             desc='Kill active window'
-             ),
          Key([mod, "shift"], "w",
              lazy.window.kill(),
              desc='Kill active window'
