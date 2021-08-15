@@ -171,7 +171,7 @@
        yaml              ; JSON, but readable
        ;;zig               ; C, but simpler
 
-       :email
+       email
        (mu4e +org +gmail)
        ;;notmuch
        ;;(wanderlust +gmail)
@@ -182,7 +182,7 @@
        ;;everywhere        ; *leave* Emacs!? You must be joking
        ;;irc               ; how neckbeards socialize
        ;;(rss +org)        ; emacs as an RSS reader
-       ;;twitter           ; twitter client https://twitter.com/vnought
+       twitter           ; twitter client https://twitter.com/vnought
 
        :config
        ;;literate
