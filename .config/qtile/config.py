@@ -53,7 +53,7 @@ keys = [
              desc='Shutdown Qtile'
              ),
          Key([mod, "shift"], "e",
-             lazy.spawn(myTerm+" -e emacs -nw"),
+             lazy.spawn("emacsclient -c -a emacs"),
              desc='Doom Emacs'
              ),
 ##         ### Switch focus to specific monitor (out of three)
@@ -184,15 +184,15 @@ keys = [
          # Dmenu scripts launched using the key chord SUPER+p followed by 'key'
          KeyChord([mod], "p", [
              Key([], "e",
-                 lazy.spawn("./dmscripts/dm-confedit"),
+                 lazy.spawn("./dmscripts/scripts/dm-confedit"),
                  desc='Choose a config file to edit'
                  ),
              Key([], "i",
-                 lazy.spawn("./dmscripts/dm-maim"),
+                 lazy.spawn("./dmscripts/scripts/dm-maim"),
                  desc='Take screenshots via dmenu'
                  ),
              Key([], "k",
-                 lazy.spawn("./dmscripts/dm-kill"),
+                 lazy.spawn("./dmscripts/scripts/dm-kill"),
                  desc='Kill processes via dmenu'
                  ),
              Key([], "q",
@@ -200,19 +200,19 @@ keys = [
                  desc='A logout menu'
                  ),
              Key([], "m",
-                 lazy.spawn("./dmscripts/dm-man"),
+                 lazy.spawn("./dmscripts/scripts/dm-man"),
                  desc='Search manpages in dmenu'
                  ),
              Key([], "o",
-                 lazy.spawn("./dmscripts/dm-bookman"),
+                 lazy.spawn("./dmscripts/scripts/dm-bookman"),
                  desc='Search your qutebrowser bookmarks and quickmarks'
                  ),
              Key([], "r",
-                 lazy.spawn("./dmscripts/dm-reddit"),
+                 lazy.spawn("./dmscripts/scripts/dm-reddit"),
                  desc='Search reddit via dmenu'
                  ),
              Key([], "s",
-                 lazy.spawn("./dmscripts/dm-websearch"),
+                 lazy.spawn("./dmscripts/scripts/dm-websearch"),
                  desc='Search various search engines via dmenu'
                  ),
               Key([], "a",
