@@ -16,8 +16,8 @@ DMBROWSER="firefox"
 #DMTERM="konsole -e"
 DMTERM="alacritty -e"
 
-#DMEDITOR="emacsclient -c -a emacs"
-DMEDITOR="${DMTERM} vim"
+DMEDITOR="emacsclient -c -a emacs"
+#DMEDITOR="${DMTERM} vim"
 
 # dm-logout
 logout_locker='slock'
