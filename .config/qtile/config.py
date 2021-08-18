@@ -24,7 +24,7 @@ keys = [
              # lazy.spawn("rofi -show drun -config ~/.config/rofi/themes/dt-dmenu.rasi -display-drun \"Run: \" -drun-display-format \"{name}\""),
              desc='Run Launcher'
              ),
-         Key([mod], "l",
+         Key([mod, "shift"], "l",
              lazy.spawn("looking-glass-client"),
              desc='looking-glass-client'
              ),
@@ -41,7 +41,7 @@ keys = [
              desc='firefox'
              ),
          Key([mod], "d",
-             lazy.spawn("dolphin"),
+             lazy.spawn("nemo"),
              desc='dolphin'
              ),
          Key([mod], "Tab",
