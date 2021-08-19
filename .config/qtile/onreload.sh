@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-feh --randomize --bg-fill ~/Pictures/dWallpaper/ &
+feh --randomize --bg-fill ~/Pictures/Wallpaper/dWallpaper/ &

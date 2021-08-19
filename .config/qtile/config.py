@@ -12,7 +12,7 @@ from typing import List  # noqa: F401
 
 mod = "mod4"                                     # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"                             # My terminal of choice
-
+#START_KEYS
 keys = [
          ### The essentials
          Key([mod], "Return",
@@ -41,7 +41,7 @@ keys = [
              desc='firefox'
              ),
          Key([mod], "d",
-             lazy.spawn("nemo"),
+             lazy.spawn("dolphin"),
              desc='dolphin'
              ),
          Key([mod], "Tab",
@@ -140,6 +140,14 @@ keys = [
              lazy.window.toggle_fullscreen(),
              desc='toggle fullscreen'
              ),
+         Key([mod], "Page_Up",
+             lazy.spawn("amixer -D pulse sset Master 5%+"),
+             desc='Vol +'
+             ),
+         Key([mod], "Page_Down",
+             lazy.spawn("amixer -D pulse sset Master 5%-"),
+             desc='Vol -'
+             ),
          ### Stack controls
          Key([mod, "shift"], "Tab",
              lazy.layout.rotate(),
@@ -233,7 +241,7 @@ keys = [
                  )
          ])
 ]
-
+#END_KEYS
 group_names = [("1", {'layout': 'monadtall'}),
                ("2", {'layout': 'monadtall'}),
                ("3", {'layout': 'monadtall'}),
