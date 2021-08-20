@@ -654,7 +654,9 @@ floating_layout = layout.Floating(float_rules=[
     Match(title='Qalculate!'),        # qalculate-gtk
     Match(wm_class='kdenlive'),       # kdenlive
     Match(wm_class='pinentry-gtk-2'),# GPG key password entry
+    Match(wm_class='nm-connection-editor'),
     Match(wm_class='yad'),
+    Match(wm_class='clight-gui'),
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"

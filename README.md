@@ -15,3 +15,5 @@
     pip install iwlib
 ##  picom jonaburg
     paru -S picom-jonaburg-git
+##  for laptop 
+    paru -S clight-gui-git
