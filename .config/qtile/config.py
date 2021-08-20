@@ -25,8 +25,8 @@ keys = [
              desc='Launches My Terminal'
              ),
          Key([mod, "shift"], "Return",
-             lazy.spawn("dmenu_run -p 'Run: '"),
-             # lazy.spawn("rofi -show drun -config ~/.config/rofi/themes/dt-dmenu.rasi -display-drun \"Run: \" -drun-display-format \"{name}\""),
+             #lazy.spawn("dmenu_run -p 'Run: '"),
+             lazy.spawn("rofi -show drun -config ~/.config/rofi/themes/arc-red-dark.rasi -display-drun \"Run: \" -drun-display-format \"{name}\""),
              desc='Run Launcher'
              ),
          Key([mod, "shift"], "l",
@@ -55,7 +55,7 @@ keys = [
              ),
          Key([mod, "shift"], "w",
              lazy.window.kill(),
-             desc='Kill active window'
+             desc='Kill active wondow'
              ),
          Key([mod, "shift"], "r",
              lazy.restart(),
@@ -579,8 +579,9 @@ def init_widgets_list():
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
-    del widgets_screen1[22:28] # Uncomment for Laptop
-    #del widgets_screen1[27:30] #Uncomment for Desktop
+    del widgets_screen1[22:28] # Uncomment for Desktop
+    #del widgets_screen1[27:30] #Uncomment for Laptop
+    #del widget_screen[22:24] #Uncomment for Laptop
     return widgets_screen1                 # Monitor 2 will display all widgets in widgets_list
 
 

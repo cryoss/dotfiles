@@ -1,5 +1,5 @@
 ##  from arch repos 
-    pacman -Syu xmonad xmonad-contrib trayer picom alacritty ranger dmenu texlive-most fish nvim qalculate-gtk mypy emacs fd git okular ripgrep
+    pacman -Syu xmonad xmonad-contrib trayer dolphin alacritty ranger dmenu texlive-most fish nvim qalculate-gtk mypy emacs fd git okular ripgrep
 ##  from aur    
     yay -S paru
     paru -S shell-color-scripts 
@@ -13,3 +13,5 @@
 ##  pip
     pip install psutil
     pip install iwlib
+##  picom jonaburg
+    paru -S picom-jonaburg-git
