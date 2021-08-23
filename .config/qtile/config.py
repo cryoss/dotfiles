@@ -30,7 +30,7 @@ keys = [
              desc='Run Launcher'
              ),
          Key([mod, "shift"], "l",
-             lazy.spawn("looking-glass-client"),
+             lazy.spawn("looking-glass-client -C /home/cryoss/VM/lg.rc"),
              desc='looking-glass-client'
              ),
          Key([mod, "shift"], "m",

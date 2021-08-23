@@ -71,4 +71,4 @@
 (package! resize-window)
 (package! tldr)
 (package! wc-mode)
-
+(package! all-the-icons-dired)
