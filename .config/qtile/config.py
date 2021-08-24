@@ -69,7 +69,14 @@ keys = [
              lazy.spawn("emacsclient -c -a emacs"),
              desc='Doom Emacs'
              ),
-##         ### Switch focus to specific monitor (out of three)
+         Key([mod, "control"], "Delete",
+             lazy.spawn(myTerm+" -e bpytop"),
+             desc='bpytop sys tool'
+             ),
+##
+##
+##
+##### Switch focus to specific monitor (out of three)
          Key([mod], "w",
              lazy.to_screen(0),
              desc='Keyboard focus to monitor 1'
