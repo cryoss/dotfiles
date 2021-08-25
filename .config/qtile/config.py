@@ -272,6 +272,7 @@ group_names = [("1", {'layout': 'monadtall'}),
                ("8", {'layout': 'monadtall'}),
                ("9", {'layout': 'max'})]
 
+
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 
 for i, (name, kwargs) in enumerate(group_names, 1):
@@ -601,7 +602,7 @@ def init_widgets_screen2():
 def init_screens():
     return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=0.9, size=30, margin=2)),
             Screen(top=bar.Bar(widgets=init_widgets_screen2(), opacity=0.9, size=30, margin=2))]
-#            Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=20))]
+            #Screen()]
 
 if __name__ in ["config", "__main__"]:
     screens = init_screens()
