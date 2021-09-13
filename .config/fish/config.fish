@@ -220,7 +220,7 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias yay='paru'
 # vim and emacs
-alias vim='nvim'
+#alias vim='nvim'
 alias em='/usr/bin/emacs -nw'
 alias emacs="emacs -nw"
 alias doomsync="~/.emacs.d/bin/doom sync"
