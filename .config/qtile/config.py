@@ -34,8 +34,8 @@ keys = [
              desc='looking-glass-client'
              ),
          Key([mod, "shift"], "m",
-             lazy.spawn("thunderbird"),
-             desc='thunderbird'
+             lazy.spawn("mailspring"),
+             desc='mailspring'
              ),
          Key([mod, "shift"], "c",
              lazy.spawn("qalculate-gtk"),
