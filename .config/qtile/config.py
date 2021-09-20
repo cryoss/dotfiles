@@ -330,7 +330,7 @@ colors = [["#282c34", "#282c34"], # panel background
           ["#2f4735", "#2f4735"], # color for the 'even widgets'
           ["#e1acff", "#e1acff"], # window name
           ["#d5d8dc", "#d5d8dc"], # backbround for inactive screens
-          ["#f4d03f", "#f4d03f"],
+          ["#8574b5", "#8574b5"],
           ["#17202a", "#17202a"]]
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 

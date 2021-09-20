@@ -11,3 +11,4 @@ feh --randomize --bg-fill ~/Pictures/dWallpaper/ &
 /usr/bin/emacs --daemon &
 volumeicon &
 nm-applet &
+xfce4-power-manager &
