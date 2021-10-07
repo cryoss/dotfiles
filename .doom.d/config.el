@@ -53,6 +53,7 @@
 ;; they are implemented.
 (use-package! calfw)
 (use-package! calfw-org)
+(use-package! elpy)
 (map! :leader
       (:prefix ("b". "buffer")
        :desc "List bookmarks" "L" #'list-bookmarks

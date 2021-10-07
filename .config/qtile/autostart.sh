@@ -12,3 +12,4 @@ feh --randomize --bg-fill ~/Pictures/dWallpaper/ &
 volumeicon &
 nm-applet &
 xfce4-power-manager &
+mailspring &

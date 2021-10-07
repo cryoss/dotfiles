@@ -73,6 +73,10 @@ keys = [
              lazy.spawn(myTerm+" -e bpytop"),
              desc='bpytop sys tool'
              ),
+         Key([mod, "control"], "s",
+             lazy.spawn("flameshot gui"),
+             desc='flameshot'
+             ),
 ##
 ##
 ##
