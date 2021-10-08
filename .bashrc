@@ -12,7 +12,8 @@ export HISTCONTROL=ignoredups:erasedups           # no duplicate entries
 export ALTERNATE_EDITOR=""                        # setting for emacsclient
 export EDITOR="emacsclient -t -a ''"              # $EDITOR use Emacs in terminal
 export VISUAL="emacsclient -c -a emacs"           # $VISUAL use Emacs in GUI mode
-
+export JAVA_HOME="/usr/lib/jvm/default/bin/java"
+export PATH=$JAVA_HOME/bin:$PATH
 ### SET MANPAGER
 ### Uncomment only one of these!
 
@@ -126,7 +127,7 @@ up () {
 }
 
 # vim and emacs
-alias vim="nvim"
+#alias vim="nvim"
 alias em="/usr/bin/emacs -nw"
 alias emacs="emacsclient -c -a 'emacs'"
 alias doomsync="~/.emacs.d/bin/doom sync"
