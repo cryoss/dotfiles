@@ -177,3 +177,11 @@
                               ("png" . "sxiv")
                               ("mkv" . "mpv")
                               ("mp4" . "mpv")))
+(use-package jupyter
+  :ensure t
+  :defer t
+  :init
+  (setq org-babel-default-header-args:jupyter-python '((:async . "yes")
+                                                       (:session . "py")
+                                                       (:kernel . "python3"))))
+(setq ein:output-area-inlined-images t)

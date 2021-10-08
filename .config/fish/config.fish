@@ -17,7 +17,7 @@ set fish_greeting                                 # Supresses fish's intro messa
 set TERM "xterm-256color"                         # Sets the terminal type
 set EDITOR "emacs -t -a ''"                 # $EDITOR use Emacs in terminal
 set VISUAL "emacs -c -a emacs"              # $VISUAL use Emacs in GUI mode
-
+set JAVA_HOME "/usr/lib/jvm/default/bin/java"
 ### SET MANPAGER
 ### Uncomment only one of these!
 
