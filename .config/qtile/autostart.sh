@@ -1,6 +1,6 @@
 #!/usr/bin/env bash 
 
-sh .screenlayout/default.sh &
+sh .screenlayout/default1.sh &
 sh .screenlayout/default.sh &
 festival --tts $HOME/.config/qtile/welcome_msg &
 lxsession &
@@ -13,3 +13,4 @@ volumeicon &
 nm-applet &
 xfce4-power-manager &
 mailspring &
+bash ~/jupter.sh &

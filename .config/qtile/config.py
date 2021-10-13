@@ -46,8 +46,8 @@ keys = [
              desc='firefox'
              ),
          Key([mod], "d",
-             lazy.spawn("dolphin"),
-             desc='dolphin'
+             lazy.spawn("thunar"),
+             desc='files'
              ),
          Key([mod], "Tab",
              lazy.next_layout(),
@@ -236,7 +236,7 @@ keys = [
                  desc='Kill processes via dmenu'
                  ),
              Key([], "q",
-                 lazy.spawn("./dmscripts/scripts/dm-logout"),
+                 lazy.spawn("./.dmscripts/scripts/dm-logout"),
                  desc='A logout menu'
                  ),
              Key([], "m",

@@ -231,6 +231,10 @@ alias doompurge="~/.emacs.d/bin/doom purge"
 # bat
 # alias cat='bat'
 
+#virtual environment activate
+alias venvtensor = 'cd ~/dev/tensor && activate bin/activate.bash'
+alias venvdev = 'cd ~/dev/venv && activate bin/activate.bash'
+
 # broot
 alias br='broot -dhp'
 alias bs='broot --sizes'

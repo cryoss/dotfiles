@@ -2,4 +2,4 @@
 
 cd ~/dev/venv
 source bin/activate
-jupyter notebook
+jupyter notebook --no-browser --NotebookApp.token='' --NotebookApp.password=''
