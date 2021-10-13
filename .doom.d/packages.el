@@ -50,8 +50,6 @@
 ;(unpin! t)
 (package! flycheck-aspell)
 (package! async)
-(package! calfw)
-(package! calfw-org)
 (package! dashboard)
 (package! dired-open)
 (package! dmenu)

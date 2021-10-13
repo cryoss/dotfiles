@@ -5,8 +5,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "cryoss"
+      user-mail-address "cryoss9@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -51,86 +51,21 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-(use-package! calfw)
-(use-package! calfw-org)
-(use-package! elpy)
 (map! :leader
       (:prefix ("b". "buffer")
        :desc "List bookmarks" "L" #'list-bookmarks
        :desc "Save current bookmarks to bookmark file" "w" #'bookmark-save))
 (xterm-mouse-mode 1)
 
-(setq doom-font (font-spec :family "Source Code Pro" :size 17)
-      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 17)
-      doom-big-font (font-spec :family "Source Code Pro" :size 24))
+(setq doom-font (font-spec :family "Source Code Pro" :size 20)
+      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 20)
+      doom-big-font (font-spec :family "Source Code Pro" :size 25))
 (after! doom-themes
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t))
 (custom-set-faces!
   '(font-lock-comment-face :slant italic)
   '(font-lock-keyword-face :slant italic))
-
-
-;; https://stackoverflow.com/questions/9547912/emacs-calendar-show-more-than-3-months
-(defun dt/year-calendar (&optional year)
-  (interactive)
-  (require 'calendar)
-  (let* (
-      (current-year (number-to-string (nth 5 (decode-time (current-time)))))
-      (month 0)
-      (year (if year year (string-to-number (format-time-string "%Y" (current-time))))))
-    (switch-to-buffer (get-buffer-create calendar-buffer))
-    (when (not (eq major-mode 'calendar-mode))
-      (calendar-mode))
-    (setq displayed-month month)
-    (setq displayed-year year)
-    (setq buffer-read-only nil)
-    (erase-buffer)
-    ;; horizontal rows
-    (dotimes (j 4)
-      ;; vertical columns
-      (dotimes (i 3)
-        (calendar-generate-month
-          (setq month (+ month 1))
-          year
-          ;; indentation / spacing between months
-          (+ 5 (* 25 i))))
-      (goto-char (point-max))
-      (insert (make-string (- 10 (count-lines (point-min) (point-max))) ?\n))
-      (widen)
-      (goto-char (point-max))
-      (narrow-to-region (point-max) (point-max)))
-    (widen)
-    (goto-char (point-min))
-    (setq buffer-read-only t)))
-
-(defun dt/scroll-year-calendar-forward (&optional arg event)
-  "Scroll the yearly calendar by year in a forward direction."
-  (interactive (list (prefix-numeric-value current-prefix-arg)
-                     last-nonmenu-event))
-  (unless arg (setq arg 0))
-  (save-selected-window
-    (if (setq event (event-start event)) (select-window (posn-window event)))
-    (unless (zerop arg)
-      (let* (
-              (year (+ displayed-year arg)))
-        (dt/year-calendar year)))
-    (goto-char (point-min))
-    (run-hooks 'calendar-move-hook)))
-
-(defun dt/scroll-year-calendar-backward (&optional arg event)
-  "Scroll the yearly calendar by year in a backward direction."
-  (interactive (list (prefix-numeric-value current-prefix-arg)
-                     last-nonmenu-event))
-  (dt/scroll-year-calendar-forward (- (or arg 1)) event))
-
-(map! :leader
-      :desc "Scroll year calendar backward" "<left>" #'dt/scroll-year-calendar-backward
-      :desc "Scroll year calendar forward" "<right>" #'dt/scroll-year-calendar-forward)
-
-(defalias 'year-calendar 'dt/year-calendar)
-
-
 
 (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 (map! :leader
