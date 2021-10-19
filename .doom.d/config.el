@@ -119,4 +119,6 @@
   (setq org-babel-default-header-args:jupyter-python '((:async . "yes")
                                                        (:session . "py")
                                                        (:kernel . "python3"))))
-(setq ein:output-area-inlined-images t)
+;;(setq ein:output-area-inlined-images t)
+(setq undo-limit 80000000
+      auto-save-default t)

@@ -55,7 +55,7 @@ keys = [
              ),
          Key([mod, "shift"], "w",
              lazy.window.kill(),
-             desc='Kill active wondow'
+             desc='Kill active window'
              ),
          Key([mod, "shift"], "r",
              lazy.restart(),
@@ -223,20 +223,12 @@ keys = [
          ]),
          # Dmenu scripts launched using the key chord SUPER+p followed by 'key'
          KeyChord([mod], "p", [
-             Key([], "e",
-                 lazy.spawn("./dmscripts/scripts/dm-confedit"),
-                 desc='Choose a config file to edit'
-                 ),
-             Key([], "i",
-                 lazy.spawn("./dmscripts/scripts/dm-maim"),
-                 desc='Take screenshots via dmenu'
-                 ),
              Key([], "k",
                  lazy.spawn("./dmscripts/scripts/dm-kill"),
                  desc='Kill processes via dmenu'
                  ),
              Key([], "q",
-                 lazy.spawn("./.dmscripts/scripts/dm-logout"),
+                 lazy.spawn("bash powermenu"),
                  desc='A logout menu'
                  ),
              Key([], "m",

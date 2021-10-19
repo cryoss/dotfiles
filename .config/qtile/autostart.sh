@@ -13,4 +13,4 @@ volumeicon &
 nm-applet &
 xfce4-power-manager &
 mailspring &
-bash ~/jupter.sh &
+bash ~/jupter.sh -d &

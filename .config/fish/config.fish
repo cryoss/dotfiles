@@ -11,7 +11,7 @@
 # your path gets massive and fish becomes very slow.
 set -e fish_user_paths
 set -U fish_user_paths $HOME/.local/bin $HOME/Applications $fish_user_paths
-
+set -U fish_user_paths ~/.config/rofi/bin $fish_user_paths
 ### EXPORT ###
 set fish_greeting                                 # Supresses fish's intro message
 set TERM "xterm-256color"                         # Sets the terminal type
@@ -232,8 +232,8 @@ alias doompurge="~/.emacs.d/bin/doom purge"
 # alias cat='bat'
 
 #virtual environment activate
-alias venvtensor = 'cd ~/dev/tensor && activate bin/activate.bash'
-alias venvdev = 'cd ~/dev/venv && activate bin/activate.bash'
+alias venvtensor='cd ~/dev/tensor && source bin/activate.fish'
+alias venvdev='cd ~/dev/venv && source bin/activate.fish'
 
 # broot
 alias br='broot -dhp'
