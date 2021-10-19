@@ -108,6 +108,8 @@ case $chosen in
 				i3-msg exit
 			elif [[ "$DESKTOP_SESSION" == "qtile" ]]; then
 				killall qtile
+			elif [[ "$DESKTOP_SESSION" == "spectrwm" ]]; then
+				killall spectrwm
 			fi
 		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
 			exit 0
