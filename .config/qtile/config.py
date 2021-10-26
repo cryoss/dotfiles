@@ -81,12 +81,12 @@ keys = [
 ##
 ##
 ##### Switch focus to specific monitor (out of three)
-         Key([mod], "w",
-             lazy.to_screen(0),
+         Key([mod], "Up",
+             lazy.next_screen(),
              desc='Keyboard focus to monitor 1'
              ),
-         Key([mod], "e",
-             lazy.to_screen(1),
+         Key([mod], "Down",
+             lazy.prev_screen(),
              desc='Keyboard focus to monitor 2'
              ),
 #         Key([mod], "r",
@@ -94,14 +94,14 @@ keys = [
 #             desc='Keyboard focus to monitor 3'
 #             ),
          ### Switch focus of monitors
-         Key([mod], "period",
-             lazy.next_screen(),
-             desc='Move focus to next monitor'
-             ),
-         Key([mod], "comma",
-             lazy.prev_screen(),
-             desc='Move focus to prev monitor'
-             ),
+         #Key([mod], "period",
+         #    lazy.next_screen(),
+         #    desc='Move focus to next monitor'
+         #    ),
+         #Key([mod], "comma",
+         #   lazy.prev_screen(),
+         #    desc='Move focus to prev monitor'
+         #    ),
          ### Treetab controls
 #         Key([mod, "shift"], "h",
 #             lazy.layout.move_left(),
@@ -282,15 +282,15 @@ layout_theme = {"border_width": 2,
                 }
 
 layouts = [
-    #layout.MonadWide(**layout_theme),
+    layout.MonadWide(**layout_theme),
     #layout.Bsp(**layout_theme),
     #layout.Stack(stacks=2, **layout_theme),
     #layout.Columns(**layout_theme),
     #layout.RatioTile(**layout_theme),
     #layout.Tile(shift_windows=True, **layout_theme),
     #layout.VerticalTile(**layout_theme),
-    #layout.Matrix(**layout_theme),
-    #layout.Zoomy(**layout_theme),
+    layout.Matrix(**layout_theme),
+    layout.Zoomy(**layout_theme),
     layout.MonadTall(**layout_theme),
     layout.Max(**layout_theme),
     layout.Stack(num_stacks=2),
