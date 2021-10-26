@@ -8,10 +8,10 @@
     git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
     ~/.emacs.d/bin/doom install 
 ## Init Git 
-git config --global user.name "cryoss"
-git config --global user.email n.billing@billtec.de
-git config --global core.editor "vim"
-git config credential.${remote}.username cryoss 
+git config --global user.name "cryoss" \
+git config --global user.email n.billing@billtec.de \
+git config --global core.editor "vim" \
+git config credential.${remote}.username cryoss \ 
 git config credential.helper store
 
 ##  oh-my-fish
