@@ -13,6 +13,7 @@ from typing import List  # noqa: F401
 mod = "mod4"                                     # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"                             # My terminal of choice
 calendar = "thunderbird"
+browser = "firefox"
 #START_KEYS
 keys = [
          ### The essentials
@@ -41,10 +42,6 @@ keys = [
          Key([mod, "shift"], "c",
              lazy.spawn("qalculate-gtk"),
              desc='qalculate'
-             ),
-         Key([mod], "b",
-             lazy.spawn("firefox"),
-             desc='firefox'
              ),
          Key([mod], "d",
              lazy.spawn("thunar"),
@@ -187,6 +184,20 @@ keys = [
              lazy.layout.toggle_split(),
              desc='Toggle between split and unsplit sides of stack'
              ),
+         KeyChord(["control"], "b",[
+             Key([], "b",
+                 lazy.spawn(browser+" --new-window"),
+                 desc="Launch browser emby"
+                 ),
+             Key([], "e",
+                 lazy.spawn(browser+" --new-window http://emby:8096"),
+                 desc="Launch browser emby"
+                 ),
+             Key([], "y",
+                 lazy.spawn(browser+" --new-window https://youtube.com"),
+                 desc="Launch browser emby"
+                 )
+         ]),
          # Emacs programs launched using the key chord CTRL+e followed by 'key'
          KeyChord(["control"],"e", [
              Key([], "e",
@@ -641,6 +652,8 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='pinentry-gtk-2'),# GPG key password entry
     Match(wm_class='nm-connection-editor'),
     Match(wm_class='yad'),
+    Match(wm_class='blueberry.py'),
+    Match(wm_class='zoom'),
     Match(wm_class='clight-gui'),
 ])
 auto_fullscreen = True

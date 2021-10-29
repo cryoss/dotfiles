@@ -9,6 +9,8 @@ picom &
 #sh /home/cryoss/Pictures/styli.sh/styli.sh -s nature &
 feh --randomize --bg-fill ~/Pictures/dWallpaper/ &
 /usr/bin/emacs --daemon &
+flameshot &
+thunderbird &
 volumeicon &
 nm-applet &
 xfce4-power-manager &
