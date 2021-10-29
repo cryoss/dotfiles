@@ -70,3 +70,4 @@
 (package! tldr)
 (package! wc-mode)
 (package! all-the-icons-dired)
+(package! org-caldav)

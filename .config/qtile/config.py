@@ -34,8 +34,8 @@ keys = [
              desc='looking-glass-client'
              ),
          Key([mod, "shift"], "m",
-             lazy.spawn("mailspring"),
-             desc='mailspring'
+             lazy.spawn("thunderbird"),
+             desc='thunderbird'
              ),
          Key([mod, "shift"], "c",
              lazy.spawn("qalculate-gtk"),
@@ -262,7 +262,7 @@ group_names = [("1", {'layout': 'monadtall'}),
                ("2", {'layout': 'monadtall'}),
                ("3", {'layout': 'monadtall'}),
                ("4", {'layout': 'monadtall'}),
-               ("5: Win10", {'layout': 'max'}),
+               ("5", {'layout': 'max'}),
                ("6", {'layout': 'monadtall'}),
                ("7", {'layout': 'monadtall'}),
                ("8", {'layout': 'monadtall'}),
@@ -318,16 +318,16 @@ layouts = [
     layout.Floating(**layout_theme)
 ]
 
-colors = [["#282c34", "#282c34"], # panel background
-          ["#3d3f4b", "#434758"], # background for current screen tab
-          ["#3498db", "#3498db"], # font color for group names
-          ["#ff5555", "#ff5555"], # border line color for current tab
-          ["#2e4053", "#2e4053"], # border line color for 'other tabs' and color for 'odd widgets'
-          ["#2f4735", "#2f4735"], # color for the 'even widgets'
-          ["#e1acff", "#e1acff"], # window name
-          ["#d5d8dc", "#d5d8dc"], # backbround for inactive screens
-          ["#8574b5", "#8574b5"],
-          ["#17202a", "#17202a"]]
+colors = [["#282c34", "#282c34"], #0 panel background
+          ["#3d3f4b", "#434758"], #1 background for current screen tab
+          ["#3498db", "#3498db"], #2 backround active screen
+          ["#ff5555", "#ff5555"], #3 border line color for current tab
+          ["#2e4053", "#2e4053"], #4 border line color for 'other tabs' and color for 'odd widgets'
+          ["#2f4735", "#2f4735"], #5 color for the 'even widgets'
+          ["#e1acff", "#e1acff"], #6 window name
+          ["#d5d8dc", "#d5d8dc"], #7 backround for inactive screens
+          ["#8574b5", "#8574b5"], #8 widget text colour
+          ["#17202a", "#17202a"]] #9
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 ##### DEFAULT WIDGET SETTINGS #####
@@ -360,15 +360,15 @@ def init_widgets_list():
                        ),
               widget.GroupBox( #4
                        font = "Ubuntu Bold",
-                       fontsize = 15,
+                       fontsize = 17,
                        margin_y = 3,
                        margin_x = 0,
-                       padding_y = 5,
-                       padding_x = 3,
+                       padding_y = 2,
+                       padding_x = 5,
                        borderwidth = 3,
                        active = colors[2],
                        inactive = colors[7],
-                       rounded = False,
+                       rounded = True,
                        highlight_color = colors[1],
                        highlight_method = "line",
                        this_current_screen_border = colors[6],
@@ -596,8 +596,8 @@ def init_widgets_screen2():
     return widgets_screen2
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=0.9, size=30, margin=2)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), opacity=0.9, size=30, margin=2))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=0.9, size=35, margin=2)),
+            Screen()]
             #Screen()]
 
 if __name__ in ["config", "__main__"]:
