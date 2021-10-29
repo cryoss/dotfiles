@@ -25,7 +25,7 @@ color="${styles[$(( $RANDOM % 8 ))]}"
 #sed -i -e "s/@import .*/@import \"$color\"/g" $dir/styles/colors.rasi
 
 # comment these lines to disable random style
-#themes=($(ls -p --hide="powermenu.sh" --hide="styles" --hide="confirm.rasi" --hide="message.rasi" $dir))
+#themes=($(ls -p --hide="po"powermenu.sh" --hide="styles" --hide="confirm.rasi" --hide="message.rasi" $dir))
 #theme="${themes[$(( $RANDOM % 24 ))]}"
 
 uptime=$(uptime -p | sed -e 's/up //g')
