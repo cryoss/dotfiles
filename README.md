@@ -17,3 +17,4 @@
     paru -S picom-jonaburg-git
 ##  for laptop 
     paru -S clight-gui-git
+https://arweb.app/?zid=z%2FJ7Jm1c&rs=0&menu=0&toolbar=0&utm_source=website&utm_medium=email&utm_campaign=free+access
