@@ -14,6 +14,7 @@ mod = "mod4"                                     # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"                             # My terminal of choice
 calendar = "thunderbird"
 browser = "firefox"
+files = "dolphin"
 #START_KEYS
 keys = [
          ### The essentials
@@ -44,7 +45,7 @@ keys = [
              desc='qalculate'
              ),
          Key([mod], "d",
-             lazy.spawn("thunar"),
+             lazy.spawn(files),
              desc='files'
              ),
          Key([mod], "Tab",
@@ -207,22 +208,6 @@ keys = [
              Key([], "b",
                  lazy.spawn("emacsclient -c -a 'emacs' --eval '(ibuffer)'"),
                  desc='Launch ibuffer inside Emacs'
-                 ),
-             Key([], "d",
-                 lazy.spawn("emacsclient -c -a 'emacs' --eval '(dired nil)'"),
-                 desc='Launch dired inside Emacs'
-                 ),
-             Key([], "i",
-                 lazy.spawn("emacsclient -c -a 'emacs' --eval '(erc)'"),
-                 desc='Launch erc inside Emacs'
-                 ),
-             Key([], "m",
-                 lazy.spawn("emacsclient -c -a 'emacs' --eval '(mu4e)'"),
-                 desc='Launch mu4e inside Emacs'
-                 ),
-             Key([], "n",
-                 lazy.spawn("emacsclient -c -a 'emacs' --eval '(elfeed)'"),
-                 desc='Launch elfeed inside Emacs'
                  ),
              Key([], "s",
                  lazy.spawn("emacsclient -c -a 'emacs' --eval '(eshell)'"),
