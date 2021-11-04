@@ -78,6 +78,7 @@
 (package! org-roam-bibtex)
 (package! ivy-bibtex)
 (package! org-ref)
+(package! ivy)
 (package! org-roam-bibtex)
 (package! org-super-agenda)
 (package! org-gtd)
