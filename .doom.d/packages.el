@@ -84,3 +84,4 @@
 (package! org-gtd)
 (package! org-noter)
 (package! org-pdftools)
+(package! zotxt)
