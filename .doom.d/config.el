@@ -112,13 +112,13 @@
                               ("png" . "sxiv")
                               ("mkv" . "mpv")
                               ("mp4" . "mpv")))
-(use-package jupyter
-  :ensure t
-  :defer t
-  :init
-  (setq org-babel-default-header-args:jupyter-python '((:async . "yes")
-                                                       (:session . "py")
-                                                       (:kernel . "python3"))))
+;; (use-package jupyter
+;;   :ensure t
+;;   :defer t
+;;   :init
+;;   (setq org-babel-default-header-args:jupyter-python '((:async . "yes")
+;;                                                        (:session . "py")
+;;                                                        (:kernel . "python3"))))
 ;;(setq ein:output-area-inlined-images t)
 (setq undo-limit 80000000
       auto-save-default t)
@@ -149,114 +149,49 @@
                                               nil
                                               iso-8859-1))
 
+(setq selection-coding-system 'utf-8)
+(require 'bibtex)
+(setq bibtex-completion-bibliography '("/home/cryoss/org/Bachelorarbeit/bib.bib")
+	bibtex-completion-library-path '("/home/cryoss/org/Bachelorarbeit/documents")
+	bibtex-completion-notes-path "/home/cryoss/org/Bachelorarbeit/Notes/"
+	bibtex-completion-notes-template-multiple-files "* ${author-or-editor}, ${title}, ${journal}, (${year}) :${=type=}: \n\nSee [[cite:&${=key=}]]\n"
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (use-package org-ref)                                                                                                                                            ;;
-;; (setq bibtex-completion-bibliography '("~/org/bib/bib.bib")                                                                                                      ;;
-;; 	bibtex-completion-library-path '("~/org/bib/bibtex-pdfs/")                                                                                                  ;;
-;; 	bibtex-completion-notes-path "~/org/bib/notes/"                                                                                                             ;;
-;; 	bibtex-completion-notes-template-multiple-files "* ${author-or-editor}, ${title}, ${journal}, (${year}) :${=type=}: \n\nSee [[cite:&${=key=}]]\n"           ;;
-;;                                                                                                                                                                  ;;
-;; 	bibtex-completion-additional-search-fields '(keywords)                                                                                                      ;;
-;; 	bibtex-completion-display-formats                                                                                                                           ;;
-;; 	'((article       . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${journal:40}")                                                         ;;
-;; 	  (inbook        . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} Chapter ${chapter:32}")                                                 ;;
-;; 	  (incollection  . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${booktitle:40}")                                                       ;;
-;; 	  (inproceedings . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${booktitle:40}")                                                       ;;
-;; 	  (t             . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*}"))                                                                      ;;
-;; 	bibtex-completion-pdf-open-function                                                                                                                         ;;
-;; 	(lambda (fpath)                                                                                                                                             ;;
-;; 	  (call-process "open" nil 0 nil fpath)))                                                                                                                   ;;
-;;                                                                                                                                                                  ;;
-;; (require 'bibtex)                                                                                                                                                ;;
-;;                                                                                                                                                                  ;;
-;; (setq bibtex-autokey-year-length 4                                                                                                                               ;;
-;; 	bibtex-autokey-name-year-separator "-"                                                                                                                      ;;
-;; 	bibtex-autokey-year-title-separator "-"                                                                                                                     ;;
-;; 	bibtex-autokey-titleword-separator "-"                                                                                                                      ;;
-;; 	bibtex-autokey-titlewords 2                                                                                                                                 ;;
-;; 	bibtex-autokey-titlewords-stretch 1                                                                                                                         ;;
-;; 	bibtex-autokey-titleword-length 5                                                                                                                           ;;
-;; 	org-ref-bibtex-hydra-key-binding (kbd "H-b"))                                                                                                               ;;
-;;                                                                                                                                                                  ;;
-;; (define-key bibtex-mode-map (kbd "H-b") 'org-ref-bibtex-hydra/body)                                                                                              ;;
-;;                                                                                                                                                                  ;;
-;; (require 'org-ref-ivy)                                                                                                                                           ;;
-;;                                                                                                                                                                  ;;
-;; (setq org-ref-insert-link-function 'org-ref-insert-link-hydra/body                                                                                               ;;
-;;       org-ref-insert-cite-function 'org-ref-cite-insert-ivy                                                                                                      ;;
-;;       org-ref-insert-label-function 'org-ref-insert-label-link                                                                                                   ;;
-;;       org-ref-insert-ref-function 'org-ref-insert-ref-link                                                                                                       ;;
-;;       org-ref-cite-onclick-function (lambda (_) (org-ref-citation-hydra/body)))                                                                                  ;;
-;;                                                                                                                                                                  ;;
-;;                                                                                                                                                                  ;;
-;;                                                                                                                                                                  ;;
-;; (setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))                                                                                   ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	bibtex-completion-additional-search-fields '(keywords)
+	bibtex-completion-display-formats
+	'((article       . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${journal:40}")
+	  (inbook        . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} Chapter ${chapter:32}")
+	  (incollection  . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${booktitle:40}")
+	  (inproceedings . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${booktitle:40}")
+	  (t             . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*}"))
+	bibtex-completion-pdf-open-function
+	(lambda (fpath)
+	  (call-process "open" nil 0 nil fpath)))
 
 
 
 
 
+(setq bibtex-autokey-year-length 4
+	bibtex-autokey-name-year-separator "-"
+	bibtex-autokey-year-title-separator "-"
+	bibtex-autokey-titleword-separator "-"
+	bibtex-autokey-titlewords 2
+	bibtex-autokey-titlewords-stretch 1
+	bibtex-autokey-titleword-length 5
+	org-ref-bibtex-hydra-key-binding (kbd "H-b"))
+
+(define-key bibtex-mode-map (kbd "H-b") 'org-ref-bibtex-hydra/body)
+
+(require 'org-ref-helm)
+(setq org-ref-insert-link-function 'org-ref-insert-link-hydra/body
+      org-ref-insert-cite-function 'org-ref-cite-insert-helm
+      org-ref-insert-label-function 'org-ref-insert-label-link
+      org-ref-insert-ref-function 'org-ref-insert-ref-link
+      org-ref-cite-onclick-function (lambda (_) (org-ref-citation-hydra/body)))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-(use-package! org-ref                                                                                                                                                                                                                     ;;
-    ;:after org-roam                                                                                                                                                                                                                      ;;
-    :config                                                                                                                                                                                                                               ;;
-    (setq                                                                                                                                                                                                                                 ;;
-         org-ref-completion-library 'org-ref-ivy-cite                                                                                                                                                                                     ;;
-         org-ref-get-pdf-filename-function 'org-ref-get-pdf-filename-helm-bibtex                                                                                                                                                          ;;
-         bibtex-completion-bibliography (list "/home/cryoss/org/bib/bib.bib/", "/home/cryoss/org/bib/zot.bib")                                                                                                                                                             ;;
-         bibtex-completion-notes "~/org/bib/bibnotes.org"                                                                                                                                                                                 ;;
-         org-ref-note-title-format "* %y - %t\n :PROPERTIES:\n  :Custom_ID: %k\n  :NOTER_DOCUMENT: %F\n :ROAM_KEY: cite:%k\n  :AUTHOR: %9a\n  :JOURNAL: %j\n  :YEAR: %y\n  :VOLUME: %v\n  :PAGES: %p\n  :DOI: %D\n  :URL: %U\n :END:\n\n" ;;
-         org-ref-notes-directory "~/org/references/notes/"                                                                                                                                                                                ;;
-         org-ref-notes-function 'orb-edit-notes                                                                                                                                                                                           ;;
-    ))                                                                                                                                                                                                                                    ;;
-                                                                                                                                                                                                                                          ;;
-(after! org-ref                                                                                                                                                                                                                           ;;
-(setq                                                                                                                                                                                                                                     ;;
- bibtex-completion-notes-path "~/org/references/notes/"                                                                                                                                                                                   ;;
- bibtex-completion-bibliography (list "/home/cryoss/org/bib/bib.bib/", "/home/cryoss/org/bib/zot.bib")                                                                                                                                                             ;;
- bibtex-completion-pdf-field "file"                                                                                                                                                                                                       ;;
- bibtex-completion-notes-template-multiple-files                                                                                                                                                                                          ;;
- (concat                                                                                                                                                                                                                                  ;;
-  "#+TITLE: ${title}\n"                                                                                                                                                                                                                   ;;
-  "#+ROAM_KEY: cite:${=key=}\n"                                                                                                                                                                                                           ;;
-  "* TODO Notes\n"                                                                                                                                                                                                                        ;;
-  ":PROPERTIES:\n"                                                                                                                                                                                                                        ;;
-  ":Custom_ID: ${=key=}\n"                                                                                                                                                                                                                ;;
-  ":NOTER_DOCUMENT: %(orb-process-file-field \"${=key=}\")\n"                                                                                                                                                                             ;;
-  ":AUTHOR: ${author-abbrev}\n"                                                                                                                                                                                                           ;;
-  ":JOURNAL: ${journaltitle}\n"                                                                                                                                                                                                           ;;
-  ":DATE: ${date}\n"                                                                                                                                                                                                                      ;;
-  ":YEAR: ${year}\n"                                                                                                                                                                                                                      ;;
-  ":DOI: ${doi}\n"                                                                                                                                                                                                                        ;;
-  ":URL: ${url}\n"                                                                                                                                                                                                                        ;;
-  ":END:\n\n"                                                                                                                                                                                                                             ;;
-  )                                                                                                                                                                                                                                       ;;
- )                                                                                                                                                                                                                                        ;;
-)                                                                                                                                                                                                                                         ;;
 
 (setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (setq org-latex-pdf-process                                           ;; ;;
-;;       '("pdflatex -interaction nonstopmode -output-directory %o %f"   ;; ;;
-;;         "biber %b"                                                    ;; ;;
-;;         "pdflatex -interaction nonstopmode -output-directory %o %f"   ;; ;;
-;;         "pdflatex -interaction nonstopmode -output-directory %o %f")) ;; ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+

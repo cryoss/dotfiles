@@ -252,7 +252,7 @@ layout_theme = {"border_width": 2,
 
 layouts = [
     layout.MonadWide(**layout_theme),
-    #layout.Bsp(**layout_theme),
+    layout.Bsp(**layout_theme),
     #layout.Stack(stacks=2, **layout_theme),
     #layout.Columns(**layout_theme),
     #layout.RatioTile(**layout_theme),

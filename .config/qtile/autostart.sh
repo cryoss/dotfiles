@@ -1,5 +1,6 @@
 #!/usr/bin/env bash 
 
+mount ~/disk1
 sh .screenlayout/default1.sh &
 sh .screenlayout/default.sh &
 festival --tts $HOME/.config/qtile/welcome_msg &
@@ -14,3 +15,4 @@ thunderbird &
 volumeicon &
 nm-applet &
 xfce4-power-manager &
+kdeconnect-indicator &
