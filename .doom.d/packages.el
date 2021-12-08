@@ -85,3 +85,5 @@
 (package! org-noter)
 (package! org-pdftools)
 (package! zotxt)
+(package! ivy-bibtex)
+(package! arduino-mode)
