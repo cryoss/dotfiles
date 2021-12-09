@@ -16,7 +16,7 @@ export JAVA_HOME="/usr/lib/jvm/default/bin/java"
 export PATH=$JAVA_HOME/bin:$PATH
 ### SET MANPAGER
 ### Uncomment only one of these!
-
+export PATH=$PATH:~/.config/rofi/bin
 ### "bat" as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 

@@ -3,7 +3,6 @@
 # ~/.xinitrc
 #
 # Executed by startx (run your window manager from here)
-
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
@@ -57,6 +56,7 @@ get_session(){
         mate) dbus_args+=(mate-session) ;;
         xfce) dbus_args+=(xfce4-session) ;;
         openbox) dbus_args+=(openbox-session) ;;
+        spectrwm) dbus_args+=(spectrwm-session)
         *) dbus_args+=($DEFAULT_SESSION) ;;
     esac
 

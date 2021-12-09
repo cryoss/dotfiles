@@ -9,9 +9,38 @@ from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook
 from libqtile.lazy import lazy
 from typing import List  # noqa: F401
+global qtile
+def window_to_prev_group():
+    if qtile.currentwindow is not None:
+        i = qtile.groups.index(qtile.currentGroup)
+        qtile.currentWindow.togroup(qtile.groups[i - 1].name)
+def window_to_next_group():
+    if qtile.currentWindow is not None:
+        i = qtile.groups.index(qtile.currentGroup)
+        qtile.currentWindow.togroup(qtile.groups[i + 1].name)
+
+def window_to_previous_screen():
+    i = qtile.screens.index(qtile.current_screen)
+    if i != 0:
+        group = qtile.screens[i - 1].group.name
+        qtile.current_window.togroup(group)
+
+def window_to_next_screen():
+    i = qtile.screens.index(qtile.current_screen)
+    if i + 1 != len(qtile.screens):
+        group = qtile.screens[i + 1].group.name
+        qtile.current_window.togroup(group)
+
+def switch_screens():
+    i = qtile.screens.index(qtile.current_screen)
+    group = qtile.screens[i - 1].group
+    qtile.current_screen.set_group(group)
 
 mod = "mod4"                                     # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"                             # My terminal of choice
+calendar = "thunderbird"
+browser = "firefox"
+files = "dolphin"
 #START_KEYS
 keys = [
          ### The essentials
@@ -26,7 +55,7 @@ keys = [
              ),
          Key([mod, "shift"], "Return",
              #lazy.spawn("dmenu_run -p 'Run: '"),
-             lazy.spawn("rofi -show drun -config ~/.config/rofi/themes/arc-red-dark.rasi -display-drun \"Run: \" -drun-display-format \"{name}\""),
+             lazy.spawn("bash launcher_text"),
              desc='Run Launcher'
              ),
          Key([mod, "shift"], "l",
@@ -34,19 +63,15 @@ keys = [
              desc='looking-glass-client'
              ),
          Key([mod, "shift"], "m",
-             lazy.spawn("mailspring"),
-             desc='mailspring'
+             lazy.spawn("thunderbird"),
+             desc='thunderbird'
              ),
          Key([mod, "shift"], "c",
              lazy.spawn("qalculate-gtk"),
              desc='qalculate'
              ),
-         Key([mod], "b",
-             lazy.spawn("firefox"),
-             desc='firefox'
-             ),
          Key([mod], "d",
-             lazy.spawn("thunar"),
+             lazy.spawn(files),
              desc='files'
              ),
          Key([mod], "Tab",
@@ -55,7 +80,7 @@ keys = [
              ),
          Key([mod, "shift"], "w",
              lazy.window.kill(),
-             desc='Kill active wondow'
+             desc='Kill active window'
              ),
          Key([mod, "shift"], "r",
              lazy.restart(),
@@ -81,12 +106,12 @@ keys = [
 ##
 ##
 ##### Switch focus to specific monitor (out of three)
-         Key([mod], "w",
-             lazy.to_screen(0),
+         Key([mod], "Up",
+             lazy.next_screen(),
              desc='Keyboard focus to monitor 1'
              ),
-         Key([mod], "e",
-             lazy.to_screen(1),
+         Key([mod], "Down",
+             lazy.prev_screen(),
              desc='Keyboard focus to monitor 2'
              ),
 #         Key([mod], "r",
@@ -94,14 +119,14 @@ keys = [
 #             desc='Keyboard focus to monitor 3'
 #             ),
          ### Switch focus of monitors
-         Key([mod], "period",
-             lazy.next_screen(),
-             desc='Move focus to next monitor'
-             ),
-         Key([mod], "comma",
-             lazy.prev_screen(),
-             desc='Move focus to prev monitor'
-             ),
+         #Key([mod], "period",
+         #    lazy.next_screen(),
+         #    desc='Move focus to next monitor'
+         #    ),
+         #Key([mod], "comma",
+         #   lazy.prev_screen(),
+         #    desc='Move focus to prev monitor'
+         #    ),
          ### Treetab controls
 #         Key([mod, "shift"], "h",
 #             lazy.layout.move_left(),
@@ -120,6 +145,14 @@ keys = [
              lazy.screen.prev_group(),
              desc='Right Group'
              ),
+         # Key([mod, "Shift"], "Right",
+         #     lazy.window.togroup(qtile.current_group + 1),
+         #     desc='Left Group'
+         #     ),
+         # Key([mod, "Shift"], "Left",
+         #     window_to_prev_group(),
+         #     desc='Right Group'
+         #     ),
          Key([mod], "j",
              lazy.layout.down(),
              desc='Move focus down in current stack pane'
@@ -186,82 +219,44 @@ keys = [
              lazy.layout.toggle_split(),
              desc='Toggle between split and unsplit sides of stack'
              ),
+         KeyChord(["control"], "b",[
+             Key([], "b",
+                 lazy.spawn(browser+" --new-window"),
+                 desc="Launch browser emby"
+                 ),
+             Key([], "e",
+                 lazy.spawn(browser+" --new-window http://emby:8096"),
+                 desc="Launch browser emby"
+                 ),
+             Key([], "y",
+                 lazy.spawn(browser+" --new-window https://youtube.com"),
+                 desc="Launch browser emby"
+                 )
+         ]),
          # Emacs programs launched using the key chord CTRL+e followed by 'key'
          KeyChord(["control"],"e", [
              Key([], "e",
                  lazy.spawn("emacsclient -c -a 'emacs'"),
                  desc='Launch Emacs'
-                 ),
-             Key([], "b",
-                 lazy.spawn("emacsclient -c -a 'emacs' --eval '(ibuffer)'"),
-                 desc='Launch ibuffer inside Emacs'
-                 ),
-             Key([], "d",
-                 lazy.spawn("emacsclient -c -a 'emacs' --eval '(dired nil)'"),
-                 desc='Launch dired inside Emacs'
-                 ),
-             Key([], "i",
-                 lazy.spawn("emacsclient -c -a 'emacs' --eval '(erc)'"),
-                 desc='Launch erc inside Emacs'
-                 ),
-             Key([], "m",
-                 lazy.spawn("emacsclient -c -a 'emacs' --eval '(mu4e)'"),
-                 desc='Launch mu4e inside Emacs'
-                 ),
-             Key([], "n",
-                 lazy.spawn("emacsclient -c -a 'emacs' --eval '(elfeed)'"),
-                 desc='Launch elfeed inside Emacs'
-                 ),
-             Key([], "s",
-                 lazy.spawn("emacsclient -c -a 'emacs' --eval '(eshell)'"),
-                 desc='Launch the eshell inside Emacs'
-                 ),
-             Key([], "v",
-                 lazy.spawn("emacsclient -c -a 'emacs' --eval '(+vterm/here nil)'"),
-                 desc='Launch vterm inside Emacs'
                  )
          ]),
          # Dmenu scripts launched using the key chord SUPER+p followed by 'key'
          KeyChord([mod], "p", [
-             Key([], "e",
-                 lazy.spawn("./dmscripts/scripts/dm-confedit"),
-                 desc='Choose a config file to edit'
-                 ),
-             Key([], "i",
-                 lazy.spawn("./dmscripts/scripts/dm-maim"),
-                 desc='Take screenshots via dmenu'
-                 ),
              Key([], "k",
                  lazy.spawn("./dmscripts/scripts/dm-kill"),
                  desc='Kill processes via dmenu'
                  ),
              Key([], "q",
-                 lazy.spawn("./.dmscripts/scripts/dm-logout"),
+                 lazy.spawn("bash powermenu"),
                  desc='A logout menu'
-                 ),
-             Key([], "m",
-                 lazy.spawn("./dmscripts/scripts/dm-man"),
-                 desc='Search manpages in dmenu'
                  ),
              Key([], "o",
                  lazy.spawn("./dmscripts/scripts/dm-bookman"),
                  desc='Search your qutebrowser bookmarks and quickmarks'
                  ),
-             Key([], "r",
-                 lazy.spawn("./dmscripts/scripts/dm-reddit"),
-                 desc='Search reddit via dmenu'
-                 ),
-             Key([], "s",
-                 lazy.spawn("./dmscripts/scripts/dm-websearch"),
-                 desc='Search various search engines via dmenu'
-                 ),
               Key([], "a",
                  lazy.spawn("pavucontrol"),
                  desc='audioMixer'
-                 ),
-             Key([], "p",
-                 lazy.spawn("passmenu"),
-                 desc='Retrieve passwords with dmenu'
                  )
          ])
 ]
@@ -270,7 +265,7 @@ group_names = [("1", {'layout': 'monadtall'}),
                ("2", {'layout': 'monadtall'}),
                ("3", {'layout': 'monadtall'}),
                ("4", {'layout': 'monadtall'}),
-               ("5: Win10", {'layout': 'max'}),
+               ("5", {'layout': 'max'}),
                ("6", {'layout': 'monadtall'}),
                ("7", {'layout': 'monadtall'}),
                ("8", {'layout': 'monadtall'}),
@@ -282,23 +277,22 @@ groups = [Group(name, **kwargs) for name, kwargs in group_names]
 for i, (name, kwargs) in enumerate(group_names, 1):
     keys.append(Key([mod], str(i), lazy.group[name].toscreen()))        # Switch to another group
     keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name))) # Send current window to another group
-
 layout_theme = {"border_width": 2,
-                "margin": 6,
+                "margin": 1,
                 "border_focus": "e1acff",
                 "border_normal": "1D2330"
                 }
 
 layouts = [
-    #layout.MonadWide(**layout_theme),
-    #layout.Bsp(**layout_theme),
+    layout.MonadWide(**layout_theme),
+    layout.Bsp(**layout_theme),
     #layout.Stack(stacks=2, **layout_theme),
     #layout.Columns(**layout_theme),
     #layout.RatioTile(**layout_theme),
     #layout.Tile(shift_windows=True, **layout_theme),
     #layout.VerticalTile(**layout_theme),
-    #layout.Matrix(**layout_theme),
-    #layout.Zoomy(**layout_theme),
+    layout.Matrix(**layout_theme),
+    layout.Zoomy(**layout_theme),
     layout.MonadTall(**layout_theme),
     layout.Max(**layout_theme),
     layout.Stack(num_stacks=2),
@@ -326,23 +320,24 @@ layouts = [
     layout.Floating(**layout_theme)
 ]
 
-colors = [["#282c34", "#282c34"], # panel background
-          ["#3d3f4b", "#434758"], # background for current screen tab
-          ["#3498db", "#3498db"], # font color for group names
-          ["#ff5555", "#ff5555"], # border line color for current tab
-          ["#2e4053", "#2e4053"], # border line color for 'other tabs' and color for 'odd widgets'
-          ["#2f4735", "#2f4735"], # color for the 'even widgets'
-          ["#e1acff", "#e1acff"], # window name
-          ["#d5d8dc", "#d5d8dc"], # backbround for inactive screens
-          ["#8574b5", "#8574b5"],
-          ["#17202a", "#17202a"]]
+colors = ["#282c34", #0 panel background
+          "#3d3f4b", #1 background for current screen tab
+          "#3498db", #2backround active screen
+          "#ff5555", #3 border line color for current tab
+          "#2e4053", #4 border line color for 'other tabs' and color for 'odd widgets'
+          "#2f4735", #5 color for the 'even widgets'
+          "#9ea9ba", #6 main text colour
+          "#454649", #7 backround for inactive screens
+          "#8574b5", #8 widget text colour
+          "#17202a", #9
+          "#6b86b0"] #10
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 ##### DEFAULT WIDGET SETTINGS #####
 widget_defaults = dict(
     font="Cascadia Mono",
     fontsize = 16,
-    padding = 2,
+    padding = 1,
     background=colors[8]
 )
 extension_defaults = widget_defaults.copy()
@@ -368,22 +363,22 @@ def init_widgets_list():
                        ),
               widget.GroupBox( #4
                        font = "Ubuntu Bold",
-                       fontsize = 15,
-                       margin_y = 3,
+                       fontsize = 17,
+                       margin_y = 0,
                        margin_x = 0,
-                       padding_y = 5,
-                       padding_x = 3,
-                       borderwidth = 3,
-                       active = colors[2],
+                       padding_y = 0 ,
+                       padding_x = 5,
+                       borderwidth = 1,
+                       active = colors[6],
                        inactive = colors[7],
-                       rounded = False,
+                       rounded = True,
                        highlight_color = colors[1],
-                       highlight_method = "line",
-                       this_current_screen_border = colors[6],
+                       highlight_method = "border",
+                       this_current_screen_border = colors[10],
                        this_screen_border = colors [4],
-                       other_current_screen_border = colors[6],
+                       other_current_screen_border = colors[10],
                        other_screen_border = colors[4],
-                       foreground = colors[8],
+                       foreground = colors[6],
                        background = colors[0]
                        ),
               widget.Prompt( #5
@@ -404,71 +399,73 @@ def init_widgets_list():
                        background = colors[0],
                        padding = 0
                        ),
-              widget.Systray( #8
-                       background = colors[0],
-                       padding = 5
-                       ),
-              widget.Sep( #9
+              widget.Sep( #8
                        linewidth = 0,
                        padding = 6,
                        foreground = colors[0],
                        background = colors[0]
                        ),
-              widget.TextBox( #10
+              widget.TextBox( #9
+                       text = '|',
+                       background = colors[0],
+                       foreground = colors[9],
+                       padding = 5,
+                       fontsize = 37
+                       ),
+               widget.Clock( #10
+                       foreground = colors[6],
+                       background = colors[0],
+                       padding = 5,
+                       mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(calendar)},
+                       format = "KW%W %A %d.%m.%Y - %H:%M:%S"
+                       ),
+               widget.TextBox( #11
                        text = '|',
                        background = colors[0],
                        foreground = colors[9],
                        padding = 0,
                        fontsize = 37
                        ),
-              widget.TextBox( #11
+              widget.Sep( #12
+                       linewidth = 0,
+                       padding = 600,
+                       foreground = colors[0],
+                       background = colors[0]
+                       ),
+               widget.TextBox( #13
                        text = " ⟳",
                        padding = 2,
-                       foreground = colors[8],
+                       foreground = colors[6],
                        background = colors[0],
                        fontsize = 14
                        ),
-              widget.CheckUpdates( #12
+              widget.CheckUpdates( #14
                        update_interval = 1800,
                        distro = "Arch_checkupdates",
                        display_format = "{updates} Updates",
-                       foreground = colors[8],
+                       foreground = colors[6],
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
                        background = colors[0]
                        ),
-              widget.TextBox( #13
+              widget.TextBox( #15
                        text = '|',
                        background = colors[0],
                        foreground = colors[9],
                        padding = 0,
                        fontsize = 37
                        ),
-              widget.TextBox( #14
+              widget.TextBox( #16
                        text = " Vol:",
-                       foreground = colors[8],
+                       foreground = colors[6],
                        background = colors[0],
                        padding = 0
                        ),
-              widget.Volume( #15
-                       foreground = colors[8],
+              widget.Volume( #17
+                       foreground = colors[6],
                        background = colors[0],
-                       mouse_callbacks = {'Button1' : lambda: qtile.cmd_spawn("pavucontrol")},
+                       mouse_callbacks = {'Button3' : lambda: qtile.cmd_spawn("pavucontrol")},
                        #volume_app = "pavucontrol",
                        padding = 5
-                       ),
-              widget.TextBox( #16
-                       text = '|',
-                       background = colors[0],
-                       foreground = colors[9],
-                       padding = 0,
-                       fontsize = 37
-                       ),
-              widget.CPU( #17
-                       padding = 2,
-                       foreground = colors[8],
-                       background = colors[0],
-                       mouse_callbacks = {'Button1' : lambda: qtile.cmd_spawn(myTerm+ ' -e htop')},
-                       fontsize = 14
                        ),
               widget.TextBox( #18
                        text = '|',
@@ -477,12 +474,12 @@ def init_widgets_list():
                        padding = 0,
                        fontsize = 37
                        ),
-              widget.Memory( #19
+              widget.CPU( #19
+                       padding = 2,
+                       foreground = colors[6],
                        background = colors[0],
-                       foreground = colors[8],
-                       padding = 0,
-                       measure_mem = 'G',
-                       fontsize = 17
+                       mouse_callbacks = {'Button1' : lambda: qtile.cmd_spawn(myTerm+ ' -e htop')},
+                       fontsize = 14
                        ),
               widget.TextBox( #20
                        text = '|',
@@ -491,69 +488,65 @@ def init_widgets_list():
                        padding = 0,
                        fontsize = 37
                        ),
-              widget.Net( #21
+              widget.Memory( #21
+                       background = colors[0],
+                       foreground = colors[6],
+                       padding = 0,
+                       measure_mem = 'G',
+                       fontsize = 17
+                       ),
+              widget.TextBox( #22
+                       text = '|',
+                       background = colors[0],
+                       foreground = colors[9],
+                       padding = 0,
+                       fontsize = 37
+                       ),
+              widget.Net( #23
                        padding = 2,
-                       foreground = colors[8],
+                       foreground = colors[6],
                        background = colors[0],
                        mouse_callbacks = {'Button1' : lambda: qtile.cmd_spawn(myTerm+ ' -e htop')},
                        fontsize = 14
                        ),
-              widget.Clipboard( #22
-                       background = colors[0],
-                       foreground = colors[8],
-                       max_chars = 30,
-                       font = 'sans',
-                       fmt = '{}',
-                       selection = 'CLIPBOARD',
-                       timeout = 0,
-                       padding = 0,
-                       fontsize = 37
-                       ),
-              widget.TextBox( #23
+              widget.TextBox( #24
                        text = '|',
                        background = colors[0],
                        foreground = colors[9],
                        padding = 0,
                        fontsize = 37
                        ),
-              widget.Wlan( #24
+              widget.Wlan( #25
                        background = colors[0],
-                       foreground = colors[8],
+                       foreground = colors[6],
                        padding = 0,
                        fontsize = 17
                        ),
-              widget.TextBox( #25
+              widget.TextBox( #26
                        text = '|',
                        background = colors[0],
                        foreground = colors[9],
                        padding = 0,
                        fontsize = 37
                        ),
-              widget.Battery( #26
+              widget.Battery( #27
                        padding = 2,
-                       foreground = colors[8],
+                       foreground = colors[6],
                        background = colors[0],
                        fontsize = 14
                        ),
-              widget.TextBox( #27
+              widget.TextBox( #28
                        text = '|',
                        background = colors[0],
                        foreground = colors[9],
                        padding = 0,
                        fontsize = 37
                        ),
-              widget.Backlight( #28
+              widget.Backlight( #29
                        background = colors[0],
                        foreground = colors[4],
                        padding = 0,
                        fontsize = 17
-                       ),
-              widget.TextBox( #29
-                       text = '|',
-                       background = colors[0],
-                       foreground = colors[9],
-                       padding = 0,
-                       fontsize = 37
                        ),
               widget.TextBox( #30
                        text = '|',
@@ -570,7 +563,7 @@ def init_widgets_list():
                        scale = 0.7
                        ),
               widget.CurrentLayout( #32
-                       foreground = colors[8],
+                       foreground = colors[6],
                        background = colors[0],
                        padding = 5
                        ),
@@ -581,17 +574,16 @@ def init_widgets_list():
                        padding = 0,
                        fontsize = 37
                        ),
-              widget.Clock( #34
-                       foreground = colors[8],
+              widget.Systray( #34
                        background = colors[0],
-                       format = "%A, %B %d - %H:%M "
+                       padding = 5
                        ),
               ]
     return widgets_list
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
-    del widgets_screen1[22:28] # Uncomment for Desktop
+    del widgets_screen1[23:29] # Uncomment for Desktop
     #del widgets_screen1[27:30] #Uncomment for Laptop
     #del widget_screen[22:24] #Uncomment for Laptop
     return widgets_screen1                 # Monitor 2 will display all widgets in widgets_list
@@ -599,13 +591,11 @@ def init_widgets_screen1():
 
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    del widgets_screen2[22:28]
-    del widgets_screen2[7:8]
     return widgets_screen2
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=0.9, size=30, margin=2)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), opacity=0.9, size=30, margin=2))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=0.9, size=35, margin=2)),
+            Screen()]
             #Screen()]
 
 if __name__ in ["config", "__main__"]:
@@ -614,32 +604,6 @@ if __name__ in ["config", "__main__"]:
     widgets_screen1 = init_widgets_screen1()
     widgets_screen2 = init_widgets_screen2()
 
-def window_to_prev_group(qtile):
-    if qtile.currentWindow is not None:
-        i = qtile.groups.index(qtile.currentGroup)
-        qtile.currentWindow.togroup(qtile.groups[i - 1].name)
-
-def window_to_next_group(qtile):
-    if qtile.currentWindow is not None:
-        i = qtile.groups.index(qtile.currentGroup)
-        qtile.currentWindow.togroup(qtile.groups[i + 1].name)
-
-def window_to_previous_screen(qtile):
-    i = qtile.screens.index(qtile.current_screen)
-    if i != 0:
-        group = qtile.screens[i - 1].group.name
-        qtile.current_window.togroup(group)
-
-def window_to_next_screen(qtile):
-    i = qtile.screens.index(qtile.current_screen)
-    if i + 1 != len(qtile.screens):
-        group = qtile.screens[i + 1].group.name
-        qtile.current_window.togroup(group)
-
-def switch_screens(qtile):
-    i = qtile.screens.index(qtile.current_screen)
-    group = qtile.screens[i - 1].group
-    qtile.current_screen.set_group(group)
 
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(),
@@ -655,7 +619,7 @@ main = None
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-
+reconfigure_screens = True
 floating_layout = layout.Floating(float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
     # default_float_rules include: utility, notification, toolbar, splash, dialog,
@@ -668,10 +632,12 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='pinentry-gtk-2'),# GPG key password entry
     Match(wm_class='nm-connection-editor'),
     Match(wm_class='yad'),
+    Match(wm_class='blueberry.py'),
+    Match(wm_class='zoom'),
     Match(wm_class='clight-gui'),
 ])
 auto_fullscreen = True
-focus_on_window_activation = "smart"
+focus_on_window_activation = "urgent"
 
 @hook.subscribe.startup_once
 def start_once():
