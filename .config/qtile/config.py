@@ -635,6 +635,8 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='blueberry.py'),
     Match(wm_class='zoom'),
     Match(wm_class='clight-gui'),
+    Match(wm_class='tk'),
+    Match(wm_class='Toplevel'),
 ])
 auto_fullscreen = True
 focus_on_window_activation = "urgent"

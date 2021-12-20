@@ -152,7 +152,7 @@
 
 (setq selection-coding-system 'utf-8)
 (require 'bibtex)
-(setq bibtex-completion-bibliography '("~/org/bib/bib.bib" "~/org/Bachelorarbeit/ba.bib" "~/org/IuG/IuG.bib")
+(setq bibtex-completion-bibliography '("~/org/Bachelorarbeit/ba.bib" "~/org/IuG/IuG.bib")
 	bibtex-completion-library-path '("~/org/bib/documents")
 	bibtex-completion-notes-path "~/org/bib/notes/"
 	bibtex-completion-notes-template-multiple-files "* ${author-or-editor}, ${title}, ${journal}, (${year}) :${=type=}: \n\nSee [[cite:&${=key=}]]\n"

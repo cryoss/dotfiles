@@ -222,7 +222,7 @@ alias yay='paru'
 # vim and emacs
 #alias vim='nvim'
 alias em='/usr/bin/emacs -nw'
-alias emacs="emacs -nw"
+#alias emacs="emacs -nw"
 alias doomsync="~/.emacs.d/bin/doom sync"
 alias doomdoctor="~/.emacs.d/bin/doom doctor"
 alias doomupgrade="~/.emacs.d/bin/doom upgrade"

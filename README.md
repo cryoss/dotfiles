@@ -23,3 +23,18 @@
     paru -S picom-jonaburg-git
 ##  for laptop 
     paru -S clight-gui-git
+    
+##  smb share
+    //10.10.20.10/disk1 /home/cryoss/disk1 cifs username=alle,password=billing,iocharset=utf8,user,rw 0 0
+    
+    
+##  howdy face unlock
+    pacman -Syu v4l-utils
+    paru -S howdy
+    v4l2-ctl --list-devices
+##  device to /lib/security/howdy/config.ini
+   
+   
+## in needed /etc/pam.d/... (sudo, system-local-login ...)
+   auth		sufficient  	pam_unix.so try_first_pass likeauth nullok
+   auth		sufficient  	pam_python.so /lib/security/howdy/pam.py
