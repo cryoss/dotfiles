@@ -5,36 +5,16 @@ import socket
 import subprocess
 from libqtile import qtile
 from libqtile.config import Click, Drag, Group, KeyChord, Key, Match, Screen
-from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook
-from libqtile.lazy import lazy
+from libqtile.command import lazy
 from typing import List  # noqa: F401
-global qtile
-def window_to_prev_group():
-    if qtile.currentwindow is not None:
-        i = qtile.groups.index(qtile.currentGroup)
-        qtile.currentWindow.togroup(qtile.groups[i - 1].name)
-def window_to_next_group():
-    if qtile.currentWindow is not None:
-        i = qtile.groups.index(qtile.currentGroup)
-        qtile.currentWindow.togroup(qtile.groups[i + 1].name)
+from libqtile.lazy import LazyCall
+# @lazy.function
+# def to_next_group(qtile):
+#     current_group = qtile.current_screen.group.current_window()
 
-def window_to_previous_screen():
-    i = qtile.screens.index(qtile.current_screen)
-    if i != 0:
-        group = qtile.screens[i - 1].group.name
-        qtile.current_window.togroup(group)
+    # lazy.window.togroup(str(int(current_group)+1), switch_group=True)
 
-def window_to_next_screen():
-    i = qtile.screens.index(qtile.current_screen)
-    if i + 1 != len(qtile.screens):
-        group = qtile.screens[i + 1].group.name
-        qtile.current_window.togroup(group)
-
-def switch_screens():
-    i = qtile.screens.index(qtile.current_screen)
-    group = qtile.screens[i - 1].group
-    qtile.current_screen.set_group(group)
 
 mod = "mod4"                                     # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"                             # My terminal of choice
@@ -43,7 +23,10 @@ browser = "firefox"
 files = "dolphin"
 #START_KEYS
 keys = [
-         ### The essentials
+         # Key([mod, "shift"], "Right",
+         #      to_next_group(),
+         #      desc='Move windows down in current stack'
+         #      ),
 
          Key([mod, "shift"], "s",
              lazy.spawn("bash /home/cryoss/.config/qtile/showkeys.sh"),
@@ -54,7 +37,7 @@ keys = [
              desc='Launches My Terminal'
              ),
          Key([mod, "shift"], "Return",
-             #lazy.spawn("dmenu_run -p 'Run: '"),
+             lazy.spawn("dmenu_run -p 'Run: '"),
              lazy.spawn("bash launcher_text"),
              desc='Run Launcher'
              ),
@@ -102,7 +85,7 @@ keys = [
              lazy.spawn("flameshot gui"),
              desc='flameshot'
              ),
-##
+     ##
 ##
 ##
 ##### Switch focus to specific monitor (out of three)
@@ -114,6 +97,7 @@ keys = [
              lazy.prev_screen(),
              desc='Keyboard focus to monitor 2'
              ),
+        #
 #         Key([mod], "r",
 #             lazy.to_screen(2),
 #             desc='Keyboard focus to monitor 3'
@@ -145,14 +129,6 @@ keys = [
              lazy.screen.prev_group(),
              desc='Right Group'
              ),
-         # Key([mod, "Shift"], "Right",
-         #     lazy.window.togroup(qtile.current_group + 1),
-         #     desc='Left Group'
-         #     ),
-         # Key([mod, "Shift"], "Left",
-         #     window_to_prev_group(),
-         #     desc='Right Group'
-         #     ),
          Key([mod], "j",
              lazy.layout.down(),
              desc='Move focus down in current stack pane'
@@ -261,23 +237,25 @@ keys = [
          ])
 ]
 #END_KEYS
-group_names = [("1", {'layout': 'monadtall'}),
-               ("2", {'layout': 'monadtall'}),
-               ("3", {'layout': 'monadtall'}),
-               ("4", {'layout': 'monadtall'}),
-               ("5", {'layout': 'max'}),
-               ("6", {'layout': 'monadtall'}),
-               ("7", {'layout': 'monadtall'}),
-               ("8", {'layout': 'monadtall'}),
-               ("9", {'layout': 'max'})]
+groups = [Group(i) for i in "123456789"]
+for i in groups:
+    keys.extend([
+        # mod1 + letter of group = switch to group
+        Key([mod], i.name, lazy.group[i.name].toscreen(),
+            desc="Switch to group {}".format(i.name)),
+        # Key([mod, "shift"], "left", lazy.window.togroup(i.name-1)))
+
+        # mod1 + shift + letter of group = switch to & move focused window to group
+        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
+            desc="Switch to & move focused window to group {}".format(i.name)),
+                        # Or, use below if you prefer not to switch to that group.
+        # # mod1 + shift + letter of group = move focused window to group
+        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
+        #     desc="move focused window to group {}".format(i.name)),
+    ])
 
 
-groups = [Group(name, **kwargs) for name, kwargs in group_names]
-
-for i, (name, kwargs) in enumerate(group_names, 1):
-    keys.append(Key([mod], str(i), lazy.group[name].toscreen()))        # Switch to another group
-    keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name))) # Send current window to another group
-layout_theme = {"border_width": 2,
+    layout_theme = {"border_width": 2,
                 "margin": 1,
                 "border_focus": "e1acff",
                 "border_normal": "1D2330"
@@ -317,7 +295,7 @@ layouts = [
        #  vspace = 3,
        #  panel_width = 200
         # ),
-    layout.Floating(**layout_theme)
+    # layout.Floating(**layout_theme)
 ]
 
 colors = ["#282c34", #0 panel background
@@ -641,14 +619,14 @@ floating_layout = layout.Floating(float_rules=[
 auto_fullscreen = True
 focus_on_window_activation = "urgent"
 
-@hook.subscribe.startup_once
-def start_once():
-    home = os.path.expanduser('~')
-    subprocess.call([home + '/.config/qtile/autostart.sh'])
 @hook.subscribe.startup
 def start_once():
     home = os.path.expanduser('~')
     subprocess.call([home + '/.config/qtile/onreload.sh'])
+@hook.subscribe.startup_once
+def start_once():
+    home = os.path.expanduser('~')
+    subprocess.call([home + '/.config/qtile/autostart.sh'])
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
