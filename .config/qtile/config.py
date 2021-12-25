@@ -603,6 +603,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='clight-gui'),
     Match(wm_class='tk'),
     Match(wm_class='Toplevel'),
+    Match(wm_class='feh'),
 ])
 auto_fullscreen = True
 focus_on_window_activation = "urgent"

@@ -1,0 +1,3 @@
+[submodule ".config/qtile/src/qtile"]
+	path = .config/qtile/src/qtile
+	url = https://github.com/qtile/qtile
