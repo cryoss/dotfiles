@@ -9,12 +9,15 @@ from libqtile import layout, bar, widget, hook
 from libqtile.command import lazy
 from typing import List  # noqa: F401
 from libqtile.lazy import LazyCall
-# @lazy.function
-# def to_next_group(qtile):
-#     current_group = qtile.current_screen.group.current_window()
+from libqtile.command.client import CommandClient
 
-    # lazy.window.togroup(str(int(current_group)+1), switch_group=True)
+def to_next_group(qtile):
+     next_group_name = qtile.current_group.get_next_group().name
+     qtile.current_window.togroup(next_group_name, switch_group=True)
 
+def to_prev_group(qtile):
+     prev_group_name = qtile.current_group.get_previous_group().name
+     qtile.current_window.togroup(prev_group_name, switch_group=True)
 
 mod = "mod4"                                     # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"                             # My terminal of choice
@@ -23,10 +26,6 @@ browser = "firefox"
 files = "dolphin"
 #START_KEYS
 keys = [
-         # Key([mod, "shift"], "Right",
-         #      to_next_group(),
-         #      desc='Move windows down in current stack'
-         #      ),
 
          Key([mod, "shift"], "s",
              lazy.spawn("bash /home/cryoss/.config/qtile/showkeys.sh"),
@@ -85,10 +84,11 @@ keys = [
              lazy.spawn("flameshot gui"),
              desc='flameshot'
              ),
-     ##
-##
-##
+####
 ##### Switch focus to specific monitor (out of three)
+#####
+#####
+#####
          Key([mod], "Up",
              lazy.next_screen(),
              desc='Keyboard focus to monitor 1'
@@ -97,30 +97,10 @@ keys = [
              lazy.prev_screen(),
              desc='Keyboard focus to monitor 2'
              ),
-        #
-#         Key([mod], "r",
-#             lazy.to_screen(2),
-#             desc='Keyboard focus to monitor 3'
-#             ),
-         ### Switch focus of monitors
-         #Key([mod], "period",
-         #    lazy.next_screen(),
-         #    desc='Move focus to next monitor'
-         #    ),
-         #Key([mod], "comma",
-         #   lazy.prev_screen(),
-         #    desc='Move focus to prev monitor'
-         #    ),
-         ### Treetab controls
-#         Key([mod, "shift"], "h",
-#             lazy.layout.move_left(),
-#             desc='Move up a section in treetab'
-#             ),
-#         Key([mod, "shift"], "ö",
-#             lazy.layout.move_right(),
-#             desc='Move down a section in treetab'
-#             ),
-         ### Window controls
+######## Window controls
+########
+########
+########
          Key([mod], "Right",
              lazy.screen.next_group(),
              desc='Left Group'
@@ -128,6 +108,14 @@ keys = [
          Key([mod], "Left",
              lazy.screen.prev_group(),
              desc='Right Group'
+             ),
+         Key([mod, "shift"], "Right",
+             lazy.function(to_next_group),
+             desc='Move window to next group'
+             ),
+         Key([mod, "shift"], "Left",
+             lazy.function(to_prev_group),
+             desc='Move window to prev group'
              ),
          Key([mod], "j",
              lazy.layout.down(),
