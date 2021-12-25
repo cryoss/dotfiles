@@ -9,7 +9,6 @@ from libqtile import layout, bar, widget, hook
 from libqtile.command import lazy
 from typing import List  # noqa: F401
 from libqtile.lazy import LazyCall
-from libqtile.command.client import CommandClient
 
 def to_next_group(qtile):
      next_group_name = qtile.current_group.get_next_group().name
@@ -26,7 +25,6 @@ browser = "firefox"
 files = "dolphin"
 #START_KEYS
 keys = [
-
          Key([mod, "shift"], "s",
              lazy.spawn("bash /home/cryoss/.config/qtile/showkeys.sh"),
              desc='Show keys'
@@ -224,7 +222,7 @@ keys = [
                  )
          ])
 ]
-#END_KEYS
+
 groups = [Group(i) for i in "123456789"]
 for i in groups:
     keys.extend([
@@ -243,6 +241,8 @@ for i in groups:
     ])
 
 
+#END_KEYS
+#
     layout_theme = {"border_width": 2,
                 "margin": 1,
                 "border_focus": "e1acff",
@@ -250,39 +250,39 @@ for i in groups:
                 }
 
 layouts = [
-    layout.MonadWide(**layout_theme),
-    layout.Bsp(**layout_theme),
+    # layout.MonadWide(**layout_theme),
+    # layout.Bsp(**layout_theme),
     #layout.Stack(stacks=2, **layout_theme),
-    #layout.Columns(**layout_theme),
+    layout.Columns(num_columns=4,**layout_theme),
+    layout.MonadTall(**layout_theme),
+    layout.Max(**layout_theme),
+    layout.Zoomy(**layout_theme),
+    layout.Matrix(**layout_theme),
+    layout.RatioTile(**layout_theme),
     #layout.RatioTile(**layout_theme),
     #layout.Tile(shift_windows=True, **layout_theme),
     #layout.VerticalTile(**layout_theme),
-    layout.Matrix(**layout_theme),
-    layout.Zoomy(**layout_theme),
-    layout.MonadTall(**layout_theme),
-    layout.Max(**layout_theme),
-    layout.Stack(num_stacks=2),
-    layout.RatioTile(**layout_theme),
+    # layout.Stack(num_stacks=3),
     # layout.TreeTab(
     #     font = "Ubuntu",
-     #    fontsize = 10,
-      #   sections = ["FIRST", "SECOND", "THIRD", "FOURTH"],
-       #  section_fontsize = 10,
-       #  border_width = 2,
-       #  bg_color = "1c1f24",
-       #  active_bg = "c678dd",
-       #  active_fg = "000000",
-       #  inactive_bg = "a9a1e1",
-       #  inactive_fg = "1c1f24",
-       #  padding_left = 0,
-       #  padding_x = 0,
-       #  padding_y = 5,
-       #  section_top = 10,
-       #  section_bottom = 20,
-       #  level_shift = 8,
-       #  vspace = 3,
-       #  panel_width = 200
-        # ),
+    #     fontsize = 10,
+    #     sections = ["FIRST", "SECOND", "THIRD", "FOURTH"],
+    #     section_fontsize = 10,
+    #     border_width = 2,
+    #     bg_color = "1c1f24",
+    #     active_bg = "c678dd",
+    #     active_fg = "000000",
+    #     inactive_bg = "a9a1e1",
+    #     inactive_fg = "1c1f24",
+    #     padding_left = 0,
+    #     padding_x = 0,
+    #     padding_y = 5,
+    #     section_top = 10,
+    #     section_bottom = 20,
+    #     level_shift = 8,
+    #     vspace = 3,
+    #     panel_width = 200
+    #     ),
     # layout.Floating(**layout_theme)
 ]
 
