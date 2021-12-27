@@ -10,6 +10,7 @@ from libqtile.command import lazy
 from typing import List  # noqa: F401
 from libqtile.lazy import LazyCall
 
+
 def to_next_group(qtile):
      next_group_name = qtile.current_group.get_next_group().name
      qtile.current_window.togroup(next_group_name, switch_group=True)
@@ -186,8 +187,8 @@ keys = [
                  desc="Launch browser emby"
                  ),
              Key([], "e",
-                 lazy.spawn(browser+" --new-window http://emby:8096"),
-                 desc="Launch browser emby"
+                 lazy.spawn(myTerm+" -e cmus"),
+                 desc="Launch cmus"
                  ),
              Key([], "y",
                  lazy.spawn(browser+" --new-window https://youtube.com"),
