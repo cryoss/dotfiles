@@ -34,7 +34,6 @@ keys = [
              desc='Launches My Terminal'
              ),
          Key([mod, "shift"], "Return",
-             lazy.spawn("dmenu_run -p 'Run: '"),
              lazy.spawn("bash launcher_text"),
              desc='Run Launcher'
              ),
@@ -551,7 +550,7 @@ def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
     del widgets_screen1[23:29] # Uncomment for Desktop
     #del widgets_screen1[27:30] #Uncomment for Laptop
-    #del widget_screen[22:24] #Uncomment for Laptop
+    ####################################del widget_screen[22:24] #Uncomment for Laptop
     return widgets_screen1                 # Monitor 2 will display all widgets in widgets_list
 
 
@@ -603,6 +602,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='clight-gui'),
     Match(wm_class='tk'),
     Match(wm_class='Toplevel'),
+    Match(wm_class='forcemeter.py'),
     Match(wm_class='feh'),
 ])
 auto_fullscreen = True
