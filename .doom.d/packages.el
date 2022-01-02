@@ -87,3 +87,6 @@
 (package! zotxt)
 (package! ivy-bibtex)
 (package! arduino-mode)
+
+(package! yasnippet)
+(package! yasnippet-snippets)

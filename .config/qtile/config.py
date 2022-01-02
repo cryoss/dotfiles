@@ -302,8 +302,8 @@ prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 ##### DEFAULT WIDGET SETTINGS #####
 widget_defaults = dict(
     font="Cascadia Mono",
-    fontsize = 16,
-    padding = 1,
+    fontsize = 18,
+    padding = 0,
     background=colors[8]
 )
 extension_defaults = widget_defaults.copy()
@@ -329,11 +329,11 @@ def init_widgets_list():
                        ),
               widget.GroupBox( #4
                        font = "Ubuntu Bold",
-                       fontsize = 17,
+                       fontsize = 19,
                        margin_y = 0,
                        margin_x = 0,
                        padding_y = 0 ,
-                       padding_x = 5,
+                       padding_x = 7,
                        borderwidth = 1,
                        active = colors[6],
                        inactive = colors[7],
@@ -609,14 +609,15 @@ floating_layout = layout.Floating(float_rules=[
 auto_fullscreen = True
 focus_on_window_activation = "urgent"
 
-@hook.subscribe.startup
-def start_once():
-    home = os.path.expanduser('~')
-    subprocess.call([home + '/.config/qtile/onreload.sh'])
 @hook.subscribe.startup_once
 def start_once():
     home = os.path.expanduser('~')
     subprocess.call([home + '/.config/qtile/autostart.sh'])
+
+@hook.subscribe.startup
+def start_once():
+    home = os.path.expanduser('~')
+    subprocess.call([home + '/.config/qtile/onreload.sh'])
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
