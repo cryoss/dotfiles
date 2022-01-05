@@ -90,3 +90,6 @@
 
 (package! yasnippet)
 (package! yasnippet-snippets)
+;; (package! zeal-at-point)
+(package! helm-dash)
+(package! eww)

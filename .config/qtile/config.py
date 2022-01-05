@@ -134,13 +134,15 @@ keys = [
              desc='Move windows up in current stack'
              ),
          Key([mod], "h",
-             lazy.layout.shrink(),
-             lazy.layout.decrease_nmaster(),
+             # lazy.layout.shrink()
+             lazy.layout.grow_left(),
+             # lazy.layout.decrease_nmaster(),
              desc='Shrink window (MonadTall), decrease number in master pane (Tile)'
              ),
          Key([mod], "l",
-             lazy.layout.grow(),
-             lazy.layout.increase_nmaster(),
+             # lazy.layout.grow(),
+             lazy.layout.grow_right(),
+             # lazy.layout.increase_nmaster(),
              desc='Expand window (MonadTall), increase number in master pane (Tile)'
              ),
          Key([mod], "n",
@@ -250,11 +252,11 @@ for i in groups:
                 }
 
 layouts = [
-    # layout.MonadWide(**layout_theme),
     # layout.Bsp(**layout_theme),
     #layout.Stack(stacks=2, **layout_theme),
     layout.Columns(num_columns=4,**layout_theme),
     layout.MonadTall(**layout_theme),
+    layout.MonadWide(**layout_theme),
     layout.Max(**layout_theme),
     layout.Zoomy(**layout_theme),
     layout.Matrix(**layout_theme),
