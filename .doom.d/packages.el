@@ -86,7 +86,7 @@
 (package! org-pdftools)
 (package! zotxt)
 (package! ivy-bibtex)
-(package! arduino-mode)
+;;(package! arduino-mode)
 
 (package! yasnippet)
 (package! yasnippet-snippets)
