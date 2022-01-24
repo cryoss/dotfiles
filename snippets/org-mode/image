@@ -1,0 +1,7 @@
+# key: image
+# name: image
+# --
+#+CAPTION: $1
+#+NAME:   fig:$2
+#+ATTR_HTML: width="100px"
+[[$3]]

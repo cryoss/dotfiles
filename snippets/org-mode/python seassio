@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name:python seassio
+# key: pysession
+# --
+#+BEGIN_SRC python :results raw :session $0
+$1
+#+END_SRC
