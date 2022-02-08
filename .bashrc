@@ -104,7 +104,7 @@ ex ()
 ### ALIASES ###
 
 # root privileges
-alias doas="doas --"
+# alias doas="doas --"
 
 # navigation
 up () {
@@ -135,6 +135,7 @@ alias doomdoctor="~/.emacs.d/bin/doom doctor"
 alias doomupgrade="~/.emacs.d/bin/doom upgrade"
 alias doompurge="~/.emacs.d/bin/doom purge"
 
+alias zotero="nohup ~/org/bib/zotero/zotero & "
 # bat
 # alias cat='bat'
 
@@ -170,9 +171,9 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # confirm before overwriting something
-alias cp="cp -i"
-alias mv='mv -i'
-alias rm='rm -i'
+# alias cp="cp "
+# alias mv='mv -i'
+# alias rm='rm -i'
 
 # adding flags
 alias df='df -h'                          # human-readable sizes
@@ -234,7 +235,7 @@ alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 
 # bare git repo alias for dotfiles
-alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+# alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 
 # termbin
 alias tb="nc termbin.com 9999"
@@ -256,7 +257,7 @@ alias kakd="/usr/bin/kak -d -s mysession &"
 ### RANDOM COLOR SCRIPT ###
 # Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
 # Or install it from the Arch User Repository: shell-color-scripts
-colorscript random
+# colorscript random
 
 ### SOURCING BROOT ###
 #source ~/.config/broot/launcher/bash/br

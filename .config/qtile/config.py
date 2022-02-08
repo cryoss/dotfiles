@@ -24,6 +24,7 @@ myTerm = "alacritty"                             # My terminal of choice
 calendar = "thunderbird"
 browser = "firefox"
 files = "dolphin"
+launcher = "/home/cryoss/.config/rofi/bin/launcher_misc"
 #START_KEYS
 keys = [
          Key([mod, "shift"], "s",
@@ -35,7 +36,7 @@ keys = [
              desc='Launches My Terminal'
              ),
          Key([mod, "shift"], "Return",
-             lazy.spawn("bash launcher_text"),
+             lazy.spawn("bash "+launcher),
              desc='Run Launcher'
              ),
          Key([mod, "shift"], "l",
@@ -54,7 +55,7 @@ keys = [
              lazy.spawn(files),
              desc='files'
              ),
-         Key([mod], "Tab",
+         Key([mod], "space",
              lazy.next_layout(),
              desc='Toggle through layouts'
              ),
@@ -175,7 +176,7 @@ keys = [
              lazy.layout.flip(),
              desc='Switch which side main pane occupies (XmonadTall)'
              ),
-         Key([mod], "space",
+         Key([mod], "Tab",
              lazy.layout.next(),
              desc='Switch window focus to other pane(s) of stack'
              ),
@@ -242,7 +243,6 @@ for i in groups:
         #     desc="move focused window to group {}".format(i.name)),
     ])
 
-
 #END_KEYS
 #
     layout_theme = {"border_width": 2,
@@ -256,10 +256,10 @@ layouts = [
     #layout.Stack(stacks=2, **layout_theme),
     layout.Columns(num_columns=4,**layout_theme),
     layout.MonadTall(**layout_theme),
-    layout.MonadWide(**layout_theme),
     layout.Max(**layout_theme),
     layout.Zoomy(**layout_theme),
     layout.Matrix(**layout_theme),
+    layout.MonadWide(**layout_theme),
     layout.RatioTile(**layout_theme),
     #layout.RatioTile(**layout_theme),
     #layout.Tile(shift_windows=True, **layout_theme),
@@ -606,6 +606,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='tk'),
     Match(wm_class='Toplevel'),
     Match(wm_class='forcemeter.py'),
+    Match(wm_class='flameshot'),
     Match(wm_class='feh'),
 ])
 auto_fullscreen = True

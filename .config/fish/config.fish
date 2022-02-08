@@ -232,8 +232,8 @@ alias doompurge="~/.emacs.d/bin/doom purge"
 # alias cat='bat'
 
 #virtual environment activate
-alias venvtensor='cd ~/dev/tensor && source bin/activate.fish'
-alias venvdev='cd ~/dev/venv && source bin/activate.fish'
+# alias venvtensor='cd ~/dev/tensor && source bin/activate.fish'
+# alias venvdev='cd ~/dev/venv && source bin/activate.fish'
 
 # broot
 alias br='broot -dhp'
@@ -267,9 +267,9 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # confirm before overwriting something
-alias cp="cp -i"
-alias mv='mv -i'
-alias rm='rm -i'
+# alias cp="cp"
+# alias mv='mv'
+# alias rm='rm'
 
 # adding flags
 alias df='df -h'                          # human-readable sizes
@@ -348,7 +348,7 @@ alias tos="~/thinkorswim/thinkorswim"
 alias kak="/usr/bin/kak -c mysession"
 alias kaks="/usr/bin/kak -s mysession"
 alias kakd="/usr/bin/kak -d -s mysession &"
-
+alias sourceall="source ~/.config/fish/config.fish"
 alias zotero="nohup ~/org/bib/zotero/zotero & "
 ### RANDOM COLOR SCRIPT ###
 # Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
