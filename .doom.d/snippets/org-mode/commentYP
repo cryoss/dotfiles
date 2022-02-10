@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name:commentYP
+# key: CommentYP
+# --
+$\colorbox{yellow}{$1} \colorbox{pink}{$2}$

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: commentYP
+# uuid: commentYP
+# key: trigger-key
+# condition: t
+# --
+$\colorbox{yellow}{$1} \colorbox{pink}{$2}$
