@@ -30,8 +30,8 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (after! org
-(setq org-directory "~/org/")
-(setq org-agenda-files '("~/org/agenda.org"))
+(setq org-directory "~/dev/org/")
+(setq org-agenda-files '("~/dev/org/agenda.org"))
 (setq org-log-done 'note))
 
 
@@ -156,9 +156,9 @@
 
 (setq selection-coding-system 'utf-8)
 (require 'bibtex)
-(setq bibtex-completion-bibliography '("~/org/Bachelorarbeit/ba.bib" "~/org/IuG/IuG.bib")
-	bibtex-completion-library-path '("~/org/bib/documents")
-	bibtex-completion-notes-path "~/org/bib/notes/"
+(setq bibtex-completion-bibliography '("~/dev/org/Bachelorarbeit/ba.bib" "~/dev/org/IuG/IuG.bib")
+	bibtex-completion-library-path '("~/dev/org/bib/documents")
+	bibtex-completion-notes-path "~/dev/org/bib/notes/"
 	bibtex-completion-notes-template-multiple-files "* ${author-or-editor}, ${title}, ${journal}, (${year}) :${=type=}: \n\nSee [[cite:&${=key=}]]\n"
 	bibtex-completion-additional-search-fields '(keywords)
 	bibtex-completion-display-formats
@@ -208,6 +208,9 @@
 (setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
 
 
+
+(require 'auto-virtualenv)
+(add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv)
 
 ;;; replace-umlauts.el
 ;;;
