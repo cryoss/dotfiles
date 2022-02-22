@@ -22,7 +22,8 @@ def to_prev_group(qtile):
 mod = "mod4"                                     # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"                             # My terminal of choice
 calendar = "thunderbird"
-browser = "firefox"
+# browser = "firefox"
+browser = "qutebrowser"
 files = "dolphin"
 launcher = "/home/cryoss/.config/rofi/bin/launcher_misc"
 #START_KEYS
@@ -163,11 +164,11 @@ keys = [
              desc='toggle fullscreen'
              ),
          Key([mod], "Page_Up",
-             lazy.spawn("amixer -D pulse sset Master 5%+"),
+             lazy.spawn("amixer -c 2 set Master 2+"),
              desc='Vol +'
              ),
          Key([mod], "Page_Down",
-             lazy.spawn("amixer -D pulse sset Master 5%-"),
+             lazy.spawn("amixer -c 2 set Master 2-"),
              desc='Vol -'
              ),
          ### Stack controls
@@ -186,7 +187,8 @@ keys = [
              ),
          KeyChord(["control"], "b",[
              Key([], "b",
-                 lazy.spawn(browser+" --new-window"),
+                 # lazy.spawn(browser+" --new-window"),
+                 lazy.spawn(browser),
                  desc="Launch browser emby"
                  ),
              Key([], "e",
@@ -396,11 +398,25 @@ def init_widgets_list():
                        ),
               widget.Sep( #12
                        linewidth = 0,
-                       padding = 600,
+                       padding = 200,
                        foreground = colors[0],
                        background = colors[0]
                        ),
-               widget.TextBox( #13
+              widget.Cmus( #13
+                       foreground = colors[6],
+                       background = colors[0],
+                       noplay_color = colors[6],
+                       play_color = '4893f5',
+                       update_interval = .5,
+                       padding = 2,
+                       ),
+              widget.Sep( #14
+                       linewidth = 0,
+                       padding = 200,
+                       foreground = colors[0],
+                       background = colors[0]
+                       ),
+               widget.TextBox( #15
                        text = " ⟳",
                        padding = 2,
                        foreground = colors[6],
@@ -428,11 +444,18 @@ def init_widgets_list():
                        background = colors[0],
                        padding = 0
                        ),
-              widget.Volume( #17
+              # widget.Volume( #17
+              #          foreground = colors[6],
+              #          background = colors[0],
+              #          mouse_callbacks = {'Button3' : lambda: qtile.cmd_spawn("pavucontrol")},
+              #          #volume_app = "pavucontrol",
+              #          padding = 5
+              #          ),
+              widget.PulseVolume( #17
                        foreground = colors[6],
                        background = colors[0],
-                       mouse_callbacks = {'Button3' : lambda: qtile.cmd_spawn("pavucontrol")},
-                       #volume_app = "pavucontrol",
+                       # mouse_callbacks = {'Button3' : lambda: qtile.cmd_spawn("pavucontrol")},
+                       volume_app = "pavucontrol",
                        padding = 5
                        ),
               widget.TextBox( #18
@@ -551,7 +574,7 @@ def init_widgets_list():
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
-    del widgets_screen1[23:29] # Uncomment for Desktop
+    del widgets_screen1[25:31] # Uncomment for Desktop
     #del widgets_screen1[27:30] #Uncomment for Laptop
     ####################################del widget_screen[22:24] #Uncomment for Laptop
     return widgets_screen1                 # Monitor 2 will display all widgets in widgets_list
@@ -621,6 +644,11 @@ def start_once():
 def start_once():
     home = os.path.expanduser('~')
     subprocess.call([home + '/.config/qtile/onreload.sh'])
+    lazy.to_group(0)
+    lazy.spawn('thunderbird')
+    lazy.to_screen(1)
+    lazy.to_group(9)
+    lazy.spawn(myterm+'cmus')
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the

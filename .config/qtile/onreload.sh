@@ -6,4 +6,4 @@
 #killall picom &
 sleep 2
 #picom &
-feh --randomize --bg-fill ~/Pictures/Wallpaper/dWallpaper/ &
+feh --randomize --bg-fill ~/Pictures/dWallpaper/ &

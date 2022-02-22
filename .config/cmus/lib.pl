@@ -1,3 +1,6 @@
+/home/cryoss/disk1/Medien/Musik/ck2/Campfire (From The Viking Metal Soundtrack)-k8F9qRiy7rk.mp3
+/home/cryoss/disk1/Medien/Musik/ck2/Our Kingdom Will Fall (From The Viking Metal Soundtrack)-hfJOPQHOCeg.mp3
+/home/cryoss/disk1/Medien/Musik/ck2/The Sun And Earth (From The Viking Metal Soundtrack)-d9VUOSzDnFU.mp3
 /home/cryoss/disk1/Medien/Musik/Ewan McColl/Ewan MacColl & Peggy Seeger - Ballad of Accounting.mp3
 /home/cryoss/disk1/Medien/Musik/Ewan McColl/Ewan MacColl & Peggy Seeger - North Sea Holes.mp3
 /home/cryoss/disk1/Medien/Musik/Ewan McColl/Johnny O'breadiesley.mp3
@@ -245,6 +248,10 @@
 /home/cryoss/disk1/Medien/Musik/ACDC/17. ACDC - Kicked In The Teeth.mp3
 /home/cryoss/disk1/Medien/Musik/ACDC/18. ACDC - Big Balls.mp3
 /home/cryoss/disk1/Medien/Musik/The Real McKenzies/Barrett's Privateers - The Real McKenzies.mp3
+/home/cryoss/disk1/Medien/Musik/Altan/A Bhean Udaí Thall - Altan.opus
+/home/cryoss/disk1/Medien/Musik/Altan/Daily Growing- Altan.opus
+/home/cryoss/disk1/Medien/Musik/Altan/Dónal Agus Mórag - Altan.opus
+/home/cryoss/disk1/Medien/Musik/Altan/Dúlamán- Altan.opus
 /home/cryoss/disk1/Medien/Musik/Billy Joel/1971 - Cold Spring Harbor [1990 Columbia 982637 2] UK/03 - Everybody Loves You Now.mp3
 /home/cryoss/disk1/Medien/Musik/Billy Joel/1971 - Cold Spring Harbor [1990 Columbia 982637 2] UK/05 - Falling Of The Rain.mp3
 /home/cryoss/disk1/Medien/Musik/Billy Joel/1971 - Cold Spring Harbor [1990 Columbia 982637 2] UK/10 - Got To Begin Again.mp3
@@ -1188,6 +1195,11 @@
 /home/cryoss/disk1/Medien/Musik/Billy Joel/2011 - Live at Shea Stadium [Original Edition]/CD1/13 - This Is The Time (with John Mayer).mp3
 /home/cryoss/disk1/Medien/Musik/Billy Joel/2011 - Live at Shea Stadium [Original Edition]/CD1/14 - Keeping The Faith.mp3
 /home/cryoss/disk1/Medien/Musik/Welsh/Dafydd Iwan - Yma O Hyd.mp3
+/home/cryoss/disk1/Medien/Musik/Damh the Bard/Ceridwen and Taliesin - Damh the Bard.opus
+/home/cryoss/disk1/Medien/Musik/Damh the Bard/Sons and Daughters (of Robin Hood) - Damh the Bard.opus
+/home/cryoss/disk1/Medien/Musik/Damh the Bard/Spirit Of Albion - Damh the Bard.opus
+/home/cryoss/disk1/Medien/Musik/Damh the Bard/The Cauldron Born - Damh the Bard.opus
+/home/cryoss/disk1/Medien/Musik/Damh the Bard/The Hills They Are Hollow - Damh the Bard.opus
 /home/cryoss/disk1/Medien/Musik/Danko Jones/Danko Jones - I Will Break Your Heart.mp3
 /home/cryoss/disk1/Medien/Musik/Darrell Scott - Youll never leave Harlan alive.mp3
 /home/cryoss/disk1/Medien/Musik/Detroit Spinners/Detroit Spinners  -  Rubberband Man.mp3
@@ -2148,6 +2160,11 @@
 /home/cryoss/disk1/Medien/Musik/The Fishermans Friends/Yarmouth Town.mp3
 /home/cryoss/disk1/Medien/Musik/The Fishermans Friends/Donkey Riding.mp3
 /home/cryoss/disk1/Medien/Musik/The Fishermans Friends/Billy o Shea.mp3
+/home/cryoss/disk1/Medien/Musik/The Longest Johns/Cures What Ails Ya/Ashes - The Longest Johns.opus
+/home/cryoss/disk1/Medien/Musik/The Longest Johns/Cures What Ails Ya/Bonny Ship The Diamond,-  The Longest Johns.opus
+/home/cryoss/disk1/Medien/Musik/The Longest Johns/Cures What Ails Ya/Here's A Health to the Company -The Longest Johns.opus
+/home/cryoss/disk1/Medien/Musik/The Longest Johns/Cures What Ails Ya/Hoist Up The Thing, from Cures What Ails Ya - The Longest Johns.opus
+/home/cryoss/disk1/Medien/Musik/The Longest Johns/Cures What Ails Ya/Oak & Ash & Thorn - The Longest Johns.opus
 /home/cryoss/disk1/Medien/Musik/The Real McKenzies/My Head is Filled With Music - The Real McKenzies.mp3
 /home/cryoss/disk1/Medien/Musik/The Real McKenzies/The Massacre of Glencoe - The Real McKenzies.mp3
 /home/cryoss/disk1/Medien/Musik/Rolling Stones/01 The Rolling Stones Street Fighting Man Forty Licks - CD1 2002.mp3

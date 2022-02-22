@@ -1,6 +1,8 @@
+w
+pl-create mk
+w 2
 save
 shell 
-w
 filter Fish
 h
 load
