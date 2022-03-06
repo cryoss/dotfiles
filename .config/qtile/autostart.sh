@@ -14,5 +14,6 @@ flameshot &
 thunderbird &
 volumeicon &
 nm-applet &
-xfce4-power-manager &
+xfce4-power-manager --daemon &
+pulse-audio --start &
 kdeconnect-indicator &

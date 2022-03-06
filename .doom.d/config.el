@@ -33,8 +33,8 @@
 (setq org-directory "~/dev/org/")
 (setq org-agenda-files '("~/dev/org/agenda.org"))
 (setq org-log-done 'note))
-
-
+(setq browse-url-browser-function 'browse-url-generic
+        browse-url-generic-program "qutebrowser")
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)

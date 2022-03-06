@@ -213,8 +213,12 @@ keys = [
                  lazy.spawn("./dmscripts/scripts/dm-kill"),
                  desc='Kill processes via dmenu'
                  ),
+             Key([], "p",
+                 lazy.spawn("menu_battery"),
+                 desc='Powermenu'
+                 ),
              Key([], "q",
-                 lazy.spawn("bash powermenu"),
+                 lazy.spawn("menu_powermenu"),
                  desc='A logout menu'
                  ),
              Key([], "o",

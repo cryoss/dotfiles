@@ -52,3 +52,4 @@
  '(font-lock-comment-face ((t (:slant italic))))
  '(font-lock-keyword-face ((t (:slant italic)))))
 (put 'narrow-to-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
