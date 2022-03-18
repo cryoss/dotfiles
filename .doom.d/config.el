@@ -211,6 +211,8 @@
 
 (require 'auto-virtualenv)
 (add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv)
+(setq org-src-fontify-natively t)
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 5.0))
 
 ;;; replace-umlauts.el
 ;;;
