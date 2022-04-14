@@ -19,6 +19,7 @@
  '(jdee-db-spec-breakpoint-face-colors (cons "#070A0E" "#64727d"))
  '(objed-cursor-color "#c6797e")
  '(org-agenda-files '("~/org/agenda.org"))
+ '(package-selected-packages '(citeproc-org))
  '(pdf-view-midnight-colors (cons "#FAFFF6" "#172030"))
  '(rustic-ansi-faces
    ["#172030" "#c6797e" "#A3B09A" "#F7E3AF" "#6e94b9" "#b18bb1" "#88C0D0" "#FAFFF6"])

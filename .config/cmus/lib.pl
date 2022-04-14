@@ -1,10 +1,6 @@
 /home/cryoss/disk1/Medien/Musik/ck2/Campfire (From The Viking Metal Soundtrack)-k8F9qRiy7rk.mp3
 /home/cryoss/disk1/Medien/Musik/ck2/Our Kingdom Will Fall (From The Viking Metal Soundtrack)-hfJOPQHOCeg.mp3
 /home/cryoss/disk1/Medien/Musik/ck2/The Sun And Earth (From The Viking Metal Soundtrack)-d9VUOSzDnFU.mp3
-/home/cryoss/disk1/Medien/Musik/Ewan McColl/Ewan MacColl & Peggy Seeger - Ballad of Accounting.mp3
-/home/cryoss/disk1/Medien/Musik/Ewan McColl/Ewan MacColl & Peggy Seeger - North Sea Holes.mp3
-/home/cryoss/disk1/Medien/Musik/Ewan McColl/Johnny O'breadiesley.mp3
-/home/cryoss/disk1/Medien/Musik/Ewan McColl/The Manchester Rambler.mp3
 /home/cryoss/disk1/Medien/Musik/Fledermausland - Trailerpark.mp3
 /home/cryoss/disk1/Medien/Musik/Greta van Fleet/Age of Man/Greta Van Fleet - Brave New World (Audio) (128kbit_AAC).mp3
 /home/cryoss/disk1/Medien/Musik/Greta van Fleet/Age of Man/Greta Van Fleet - Highway Tune (128kbit_AAC).mp3
@@ -2265,6 +2261,36 @@
 /home/cryoss/disk1/Medien/Musik/Thin Lizzy/Angel of Death.mp3
 /home/cryoss/disk1/Medien/Musik/Thin Lizzy/Cowboy Song [Live].mp3
 /home/cryoss/disk1/Medien/Musik/Thin Lizzy/The Boys Are Back in Town [Live].mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 1]/01- Santana - Well All Right.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 1]/02- Toto - Africa.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 1]/03- Alice Cooper - No More Mister Nice Guy.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 1]/04- Kiss - Sure Know Something.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 1]/05- Foreigner - Urgent.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 1]/06- Osmonds - Crazy Horses.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 1]/07- Peter Frampton - I'm In You.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 1]/08- Allman Brothers - Jessica.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 1]/09- Rod Stewart - Bring It On Home.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 1]/10- Bonnie Tyler - It's A Heartache.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 1]/11- Nazareth - This Flight Tonight.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 1]/12- Electric Light Orchestra - Hold On Tight.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 1]/13- Manfred Mann - The Mighty Quinn.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 1]/14- Doobie Brothers - What A Fool Believers.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 1]/15- Reo Speedwagon - Take It On The Run.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 2]/01 - Rainbow - I Surrender.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 2]/02 - Status Quo - Roll Over Lay Down.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 2]/03 - Lynyrd Skynyrd - Freebird.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 2]/04 - Bachman Turner Overdrive - Roll On Down The Highway.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 2]/05 - Joe Walsh - Rocky Mountain Way.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 2]/06 - Wishbone Ash - Outward Bound.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 2]/07 - Yes - Wonderous Stories.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 2]/08 - Frijid Pink - House Of The Rising Sun.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 2]/09 - Atomic Rooster - Tomorrow Night.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 2]/10 - Emerson Lake & Palmer - Lucky Man.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 2]/11 - Rory Gallagher - Moonchild.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 2]/12 - Journey - Who's Crying Now.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 2]/13 - Ted Nugent - Cat Scratch Fever.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 2]/14 - Rush - Tom Sawyer.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Rock Legends/Rock Classics - Rock Legends [Disc 2]/15 - ZZ Top - Gimme All Your Lovin'.mp3
 /home/cryoss/disk1/Medien/Musik/Tom Petty/1985 - Southern Accents/Tom Petty - Southern Accents - 01 - Rebels.mp3
 /home/cryoss/disk1/Medien/Musik/Tom Petty/1985 - Southern Accents/Tom Petty - Southern Accents - 02 - It Ain't Nothin' To Me.mp3
 /home/cryoss/disk1/Medien/Musik/Tom Petty/1985 - Southern Accents/Tom Petty - Southern Accents - 04 - Southern Accents.mp3
@@ -2479,3 +2505,153 @@
 /home/cryoss/disk1/Medien/Musik/Tyr/Tyr - Ragnarok.mp3
 /home/cryoss/disk1/Medien/Musik/Tyr/02_ Týr - Shadow Of The Swastika.mp3
 /home/cryoss/disk1/Medien/Musik/Tyr/Týr - The Lay of Thrym [2011].mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 2]/01 - Iron Butterfly - In-A-Gadda-Da-Vida.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 2]/02 - Zombies - She's Not There.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 2]/03 - Jethro Tull - Living In The Past.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 2]/04 - Shocking Blue - Venus.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 2]/05 - Fleetwood Mac - Albatross.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 2]/06 - Jefferson Airplane - Somebody To Love.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 2]/09 - Humble Pie - Natural Born Bugie.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 2]/10 - Traffic - Hole In My Shoe.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 2]/11 - Vanilla Fudge - You Keep Me Hangin' On.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 2]/12 - Nazareth - Broken Down Angel.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 2]/13 - Delaney & Bonnie - Comin' Home.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 2]/14 - Moody Blues - Nights In White Satin.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 2]/15 - Gun - Race With The Devil.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 2]/07 - Pretty Things - Cry To Me.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 2]/08 - Blue Cheer - Summertime Blues.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 1]/01 - Rainbow - Since You've Been Gone.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 1]/02 - Judas Priest - Breaking The Law.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 1]/03 - Brownsville Station - Smokin' In The Boy's Room.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 1]/04 - C.C.S. - Tap Turns On The Water.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 1]/05 - Saxon - 747 (Strangers In The Night).mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 1]/06 - Knack - My Sharona.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 1]/07 - ZZ Top - Legs.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 1]/08 - Cheap Trick - I Want You To Want Me (Live).mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 1]/09 - UFO - Doctor Doctor.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 1]/10 - Deep Purple - Strange Kind Of Woman.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 1]/11 - Heart - Barracuda.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 1]/12 - Black Sabbath - Never Say Die.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 1]/13 - Juicy Lucy - Who Do You Love.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 1]/14 - Uriah Heep - Free Me.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 1]/15 - Boston - Don't Look Back.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 1]/01 - Black Sabbath - Paranoid.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 1]/02 - Golden Earring - Radar Love .mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 1]/03 - Alice Cooper - School's Out.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 1]/04 - Free - Wishing Well.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 1]/05 - Deep Purple - Smoke On The Water.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 1]/06 - Blue Oyster Cult - (Don't Fear) The Reaper.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 1]/07 - Status Quo - Rockin' All Over The World.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 1]/08 - Sweet - The Ballroom Blitz.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 1]/09 - Motorhead - Ace Of Spades.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 1]/10 - T Rex - Get It On.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 1]/11 - Wishbone Ash - Blowin' Free.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 1]/12 - Faces - Stay With Me.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 1]/13 - Roger Daltrey - Giving It All Away.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 1]/14 - Bad Company - Can't Get Enough.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 1]/15 - Chicago - 25 Or 6 To 4.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 2]/01 - Ten Years After - I'm Going Home (Live).mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 2]/02 - Hawkwind - Silver Machine.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 2]/03 - Meat Loaf - You Took The Words Right Out Of My Mouth.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 2]/04 - Kiss - I Was Made For Lovin' You.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 2]/05 - Mott The Hoople - Roll Away The Stone.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 2]/06 - Allman Brothers Band - Ramblin' Man.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 2]/07 - Lynard Skynard - Sweet Home Alabama.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 2]/08 - McGuiness Flint - When I'm Dead And Gone.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 2]/09 - Spencer Davis Group - Keep On Running.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 2]/10 - Velvet Underground - I'm Waiting For The Man.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 2]/11 - Greatful Dead - Truckin'.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 2]/12 - Electric Light Orchestra - Livin' Thing.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 2]/13 - Toto - Hold The Line.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 2]/14 - Rainbow - All Night Long.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Masterpieces/Rock Classics - Masterpieces [Disc 2]/15 - Gary Moore - Parisienne Walkways.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 1]/01 - Deep Purple - Black Night.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 1]/02 - Free - All Right Now.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 1]/03 - Guess Who - American Woman.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 1]/04 - T-Rex - Hot Love.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 1]/05 - Steve Harley & Cockney Rebel - Make Me Smile.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 1]/06 - Elton John - Crocodile Rock.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 1]/07 - Nazareth - Love Hurts.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 1]/08 - Dave Edmunds - I Hear You Knocking.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 1]/09 - Rod Stewart - Maggie May.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 1]/10 - Sweet - Blockbuster.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 1]/11 - Slade - Mama Weer All Crazee Now.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 1]/12 - Alice Cooper - Elected.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 1]/13 - Status Quo - Down Down.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 1]/14 - Rory Gallagher - Let Me In.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 1]/15 - Focus - Hocus Pocus.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 2]/01 - Emerson, Lake & Palmer - Fnafare For The Common Man.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 2]/02 - Boston - More Than A Feeling.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 2]/03 - Manfred Mann's Earthband - Blinded By The Light.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 2]/04 - Ram Jam - Black Betty.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 2]/05 - Bachman Turner Overdrive - You Ain't Seen Nothin' Yet.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 2]/06 - Doobie Brothers - Listen To The Music.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 2]/07 - Santana - She's Not There.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 2]/08 - Steve Miller Band - The Joker.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 2]/09 - Redbone - Witch Queen Of New Orleans.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 2]/10 - J.J. Cale - Cocaine.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 2]/11 - Peter Frampton - Show Me The Way.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 2]/12 - Fleetwood Mac - Don't Stop.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 2]/13 - Three Dog Night - Mama Told Me Not To Come.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 2]/14 - Argent - Hold Your Head Up.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Milestones/Rock Classics - Milestones [Disc 2]/15 - Cozy Powell - Dance With The Devil.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 1]/01 - Spencer Davis Group - Somebody Help Me.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 1]/02 - Small Faces - All Or Nothing.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 1]/03 - Deep Purple - Hush.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 1]/04 - Kinks - All Day And All Of The Night.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 1]/05 - T-Rex - Ride A White Swan.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 1]/06 - Mott The Hoople - All The Young Dudes.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 1]/07 - Faces - Cindy Incidentally.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 1]/08 - Yardbirds - For Your Love.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 1]/09 - Animals - We've Gotta Get Out Of This Place.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 1]/10 - Electric Light Orchestra - Roll Over Beethoven.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 1]/11 - Traffic - Paper Sun.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 1]/12 - Free - My Brother Jake.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 1]/13 - Johnny Winter - Rock 'N' Roll Hoochie Coo.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 1]/14 - Procal Harum - Homburg.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 1]/15 - Nice - America.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 2]/01 - Rod Stewart - You Wear It Well.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 2]/02 - Canned Heat - On The Road Again.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 2]/03 - Moody Blues - Question.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 2]/04 - Joe Cocker - Delta Lady.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 2]/05 - Jethro Tull - Sweet Dream.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 2]/06 - Iron Butterfly - Easy Rider (Let The Wind Pay The Way).mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 2]/07 - Troggs - I Can't Control Myself.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 2]/08 - Three Dog Night - Joy To The World.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 2]/09 - Band - Rag Mama Rag.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 2]/10 - Fleetwood Mac - Man Of The World.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 2]/11 - Kansas - Carry On Wayward Son.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 2]/12 - John Mayall - Steppin' Out.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 2]/13 - CCS - Walkin'.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 2]/14 - Atomic Rooster - Devil's Answer.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Raised On Rock/Rock Classics - Raised On Rock [Disc 2]/15 - Jefferson Airplane - White Rabbit.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 1]/01 - Crazy World Of Arthur Brown - Fire.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 1]/02 - Kinks - You Really Got Me.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 1]/03 - Spencer Davis Group - Gimme Some Loving.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 1]/04 - Yardbirds - Heart Full Of Soul.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 1]/05 - Canned Heat - Going Up The Country.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 1]/06 - Joe Cocker - With A Little Help From My Friends.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 1]/07 - Band - The Weight.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 1]/08 - Small Faces - Itchycoo Park.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 1]/09 - Jeff Beck - Hi Ho Silver Lining.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 1]/10 - Animals - House Of The Rising Sun.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 1]/11 - Herd - From The Underworld.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 1]/12 - Chris Farlowe - Out Of Time.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 1]/13 - Procal Harum - A Whiter Shade Of Pale.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 1]/14 - Troggs - Wild Thing.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Roots Of Rock/Rock Classics - Roots Of Rock [Disc 1]/15 - Love Sculpture - Sabre Dance.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 2]/01 - Manfred Mann's Earthband - Davy's On The Road Again.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 2]/02 - Asis - Heat Of The Moment.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 2]/03 - Journey - Don't Stop Believin'.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 2]/04 - Electric Light Orchestra - Don't Bring Me Down.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 2]/05 - Tom Robinson Band - 2-4-6-8 Motorway.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 2]/06 - Reo Speedwagon - Keep On Loving You.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 2]/07 - Patti Smith - Because The Night.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 2]/08 - Toto - Rosanna.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 2]/09 - Edgar Winter Group - Frankenstein.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 2]/10 - Ten Years After - Love Like A Man.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 2]/11 - Rush - Spirit Of Radio.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 2]/12 - Status Quo - Whatever You Want.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 2]/13 - Steve Winwood - While You See A Chance.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 2]/14 - Yes - Owner Of A Lonely Heart.mp3
+/home/cryoss/disk1/Medien/Musik/Time Life Rock Classics/Time-Life Rock Classics - Hard & Heavy/Rock Classics - Hard & Heavy [Disc 2]/15 - Robert Plant - Big Log.mp3

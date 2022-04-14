@@ -105,6 +105,14 @@ keys = [
              lazy.screen.next_group(),
              desc='Left Group'
              ),
+         Key([mod, "shift"], "o",
+             lazy.spawn("setxkbmap -model pc104 -layout de"),
+             desc='de layout'
+             ),
+         Key([mod, "shift"], "p",
+             lazy.spawn("setxkbmap -model pc104 -layout us"),
+             desc='us layout'
+             ),
          Key([mod], "Left",
              lazy.screen.prev_group(),
              desc='Right Group'
@@ -164,11 +172,15 @@ keys = [
              desc='toggle fullscreen'
              ),
          Key([mod], "Page_Up",
-             lazy.spawn("amixer -c 2 set Master 2+"),
+             lazy.spawn("pactl -- set-sink-volume 0 +5%"),
+             lazy.spawn("pactl -- set-sink-volume 1 +5%"),
+             lazy.spawn("pactl -- set-sink-volume 2 +5%"),
              desc='Vol +'
              ),
          Key([mod], "Page_Down",
-             lazy.spawn("amixer -c 2 set Master 2-"),
+             lazy.spawn("pactl -- set-sink-volume 0 -5%"),
+             lazy.spawn("pactl -- set-sink-volume 1 -5%"),
+             lazy.spawn("pactl -- set-sink-volume 2 -5%"),
              desc='Vol -'
              ),
          ### Stack controls
@@ -337,7 +349,8 @@ def init_widgets_list():
                        ),
               widget.GroupBox( #4
                        font = "Ubuntu Bold",
-                       fontsize = 19,
+                       # font = "Fraktur",
+                       fontsize = 25,
                        margin_y = 0,
                        margin_x = 0,
                        padding_y = 0 ,
@@ -364,7 +377,7 @@ def init_widgets_list():
                        ),
               widget.Sep( #6
                        linewidth = 0,
-                       padding = 40,
+                       padding = 30,
                        foreground = colors[8],
                        background = colors[0]
                        ),
@@ -402,7 +415,7 @@ def init_widgets_list():
                        ),
               widget.Sep( #12
                        linewidth = 0,
-                       padding = 200,
+                       padding = 500,
                        foreground = colors[0],
                        background = colors[0]
                        ),
@@ -589,7 +602,7 @@ def init_widgets_screen2():
     return widgets_screen2
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=0.9, size=35, margin=2)),
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=0.9, size=38, margin=2)),
             Screen()]
             #Screen()]
 
@@ -652,7 +665,14 @@ def start_once():
     lazy.spawn('thunderbird')
     lazy.to_screen(1)
     lazy.to_group(9)
-    lazy.spawn(myterm+'cmus')
+    lazy.spawn(myTerm+" -e cmus")
+
+
+def startup():
+     if qtile.current_group.get_next_group().name == '1':
+          lazy.spawn()
+
+
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the

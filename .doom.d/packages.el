@@ -93,3 +93,6 @@
 ;; (package! zeal-at-point)
 (package! helm-dash)
 (package! auto-virtualenv)
+(package! beacon)
+(package! clippy)
+(package! citeproc)

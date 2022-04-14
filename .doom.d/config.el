@@ -6,12 +6,12 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "cryoss"
-      user-mail-address "cryoss9@gmail.com")
+      user-mail-address "n.billing@billtec.de")
 
 (prefer-coding-system 'utf-8)
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
-;;
+        ;;
 ;; + `doom-font'
 ;; + `doom-variable-pitch-font'
 ;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
@@ -26,7 +26,11 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-one)
-(setq-default cursor-type 'bar)
+;;(setq-default cursor-type 'hbar)
+(setq evil-normal-state-cursor '(bar . 3)
+      evil-insert-state-cursor '(bar "medium sea green")
+      evil-visual-state-cursor '(hollow "orange"))
+ (blink-cursor-mode 0)
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (after! org
@@ -72,59 +76,8 @@
   '(font-lock-comment-face :slant italic)
   '(font-lock-keyword-face :slant italic))
 
-;; (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
-;; (map! :leader
-;;       (:prefix ("d" . "dired")
-;;        :desc "Open dired" "d" #'dired
-;;        :desc "Dired jump to current" "j" #'dired-jump)
-;;       (:after dired
-;;        (:map dired-mode-map
-;;         :desc "Peep-dired image previews" "d p" #'peep-dired
-;;         :desc "Dired view file" "d v" #'dired-view-file)))
-;; ;; Make 'h' and 'l' go back and forward in dired. Much faster to navigate the directory structure!
-;; (evil-define-key 'normal dired-mode-map
-;;   (kbd "M-RET") 'dired-display-file
-;;   (kbd "h") 'dired-up-directory
-;;   (kbd "l") 'dired-open-file ; use dired-find-file instead of dired-open.
-;;   (kbd "m") 'dired-mark
-;;   (kbd "t") 'dired-toggle-marks
-;;   (kbd "u") 'dired-unmark
-;;   (kbd "C") 'dired-do-copy
-;;   (kbd "D") 'dired-do-delete
-;;   (kbd "J") 'dired-goto-file
-;;   (kbd "M") 'dired-chmod
-;;   (kbd "O") 'dired-chown
-;;   (kbd "P") 'dired-do-print
-;;   (kbd "R") 'dired-rename
-;;   (kbd "T") 'dired-do-touch
-;;   (kbd "Y") 'dired-copy-filenamecopy-filename-as-kill ; copies filename to kill ring.
-;;   (kbd "+") 'dired-create-directory
-;;   (kbd "-") 'dired-up-directory
-;;   (kbd "% l") 'dired-downcase
-;;   (kbd "% u") 'dired-upcase
-;;   (kbd "; d") 'epa-dired-do-decrypt
-;;   (kbd "; e") 'epa-dired-do-encrypt)
-;; ;; If peep-dired is enabled, you will get image previews as you go up/down with 'j' and 'k'
-;; (evil-define-key 'normal peep-dired-mode-map
-;;   (kbd "j") 'peep-dired-next-file
-;;   (kbd "k") 'peep-dired-prev-file)
-;; (add-hook 'peep-dired-hook 'evil-normalize-keymaps)
-;; ;; Get file icons in dired
-;; ;; With dired-open plugin, you can launch external programs for certain extensions
-;; ;; For example, I set all .png files to open in 'sxiv' and all .mp4 files to open in 'mpv'
-;; (setq dired-open-extensions '(("gif" . "sxiv")
-;;                               ("jpg" . "sxiv")
-;;                               ("png" . "sxiv")
-;;                               ("mkv" . "mpv")
-;;                               ("mp4" . "mpv")))
-;; (use-package jupyter
-;;   :ensure t
-;;   :defer t
-;;   :init
-;;   (setq org-babel-default-header-args:jupyter-python '((:async . "yes")
-;;                                                        (:session . "py")
-;;                                                        (:kernel . "python3"))))
-;;(setq ein:output-area-inlined-images t)
+
+
 (setq undo-limit 80000000
       auto-save-default t)
 (setenv "DICTIONARY" "de_DE")
@@ -197,6 +150,7 @@
       org-ref-insert-ref-function 'org-ref-insert-ref-link
       org-ref-cite-onclick-function (lambda (_) (org-ref-citation-hydra/body)))
 
+
 ;; (require 'org-ref-ivy)
 
 ;; (setq org-ref-insert-link-function 'org-ref-insert-link-hydra/body
@@ -205,15 +159,29 @@
 ;;       org-ref-insert-ref-function 'org-ref-insert-ref-link
 ;;       org-ref-cite-onclick-function (lambda (_) (org-ref-citation-hydra/body)))
 
-(setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
+(setq org-cite-csl-styles-dir "~/dev/org/bib/Zotero/styles")
+;; (setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
+
+(setq org-latex-pdf-process
+      '("latexmk -gg -lualatex %f"
+        ))
 
 
 
 (require 'auto-virtualenv)
 (add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv)
 (setq org-src-fontify-natively t)
-(setq org-format-latex-options (plist-put org-format-latex-options :scale 5.0))
+;; (setq org-format-latex-options (plist-put org-format-latex-options :scale 5.0))
+(setq org-latex-pdf-process
+  '("lualatex -shell-escape -interaction nonstopmode %f"
+    "lualatex -shell-escape -interaction nonstopmode %f"))
 
+
+
+(map! :leader
+        (:prefix ("d" . "application")
+       :desc "export to pdf"
+      "e p" #'org-export-dispatch))
 ;;; replace-umlauts.el
 ;;;
 ;;; Replace transcription for german umlauts (ae, oe, etc.); keep

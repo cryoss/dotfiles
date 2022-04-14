@@ -14,6 +14,10 @@ export EDITOR="emacsclient -t -a ''"              # $EDITOR use Emacs in termina
 export VISUAL="emacsclient -c -a emacs"           # $VISUAL use Emacs in GUI mode
 export JAVA_HOME="/usr/lib/jvm/default/bin/java"
 export PATH=$JAVA_HOME/bin:$PATH
+export QT_QPA_PLATFORMTHEME=qt5ct
+export XDG_CURRENT_DESKTOP=KDE
+
+
 ### SET MANPAGER
 ### Uncomment only one of these!
 export PATH=$PATH:~/.config/rofi/bin
@@ -62,6 +66,7 @@ case ${TERM} in
     ;;
 esac
 
+pulseaudio --start
 ### SHOPT
 #shopt -s autocd # change to named directory
 #shopt -s cdspell # autocorrects cd misspellings
