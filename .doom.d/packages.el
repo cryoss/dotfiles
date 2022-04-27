@@ -96,3 +96,4 @@
 (package! beacon)
 (package! clippy)
 (package! citeproc)
+(package! arduino-mode)
