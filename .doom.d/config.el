@@ -66,9 +66,9 @@
        :desc "Save current bookmarks to bookmark file" "w" #'bookmark-save))
 (xterm-mouse-mode 1)
 
-(setq doom-font (font-spec :family "Source Code Pro" :size 20)
+(setq doom-font (font-spec :family "Comic Mono" :size 20)
       doom-variable-pitch-font (font-spec :family "Ubuntu" :size 20)
-      doom-big-font (font-spec :family "Source Code Pro" :size 25))
+      doom-big-font (font-spec :family "Comic Mono" :size 25))
 (after! doom-themes
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t))
