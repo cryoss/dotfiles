@@ -4,12 +4,13 @@ import re
 import socket
 import subprocess
 from libqtile import qtile
-from libqtile.config import Click, Drag, Group, KeyChord, Key, Match, Screen
+from libqtile.config import Click, Drag, Group, KeyChord, Key, Match, Screen, ScratchPad, DropDown
 from libqtile import layout, bar, widget, hook
 from libqtile.command import lazy
 from typing import List  # noqa: F401
 from libqtile.lazy import LazyCall
 
+from libqtile.log_utils import logger
 
 def to_next_group(qtile):
      next_group_name = qtile.current_group.get_next_group().name
@@ -44,10 +45,10 @@ keys = [
              lazy.spawn("looking-glass-client -C /home/cryoss/VM/lg.rc"),
              desc='looking-glass-client'
              ),
-         Key([mod, "shift"], "m",
-             lazy.spawn("thunderbird"),
-             desc='thunderbird'
-             ),
+         # Key([mod, "shift"], "m",
+         #     lazy.spawn("thunderbird"),
+         #     desc='thunderbird'
+         #     ),
          Key([mod, "shift"], "c",
              lazy.spawn("qalculate-gtk"),
              desc='qalculate'
@@ -159,10 +160,10 @@ keys = [
              lazy.layout.normalize(),
              desc='normalize window size ratios'
              ),
-         Key([mod], "m",
-             lazy.layout.maximize(),
-             desc='toggle window between minimum and maximum sizes'
-             ),
+         # Key([mod], "m",
+         #     lazy.layout.maximize(),
+         #     desc='toggle window between minimum and maximum sizes'
+         #     ),
          Key([mod, "shift"], "f",
              lazy.window.toggle_floating(),
              desc='toggle floating'
@@ -171,6 +172,9 @@ keys = [
              lazy.window.toggle_fullscreen(),
              desc='toggle fullscreen'
              ),
+
+     ### Volume Control
+
          Key([mod], "Page_Up",
              lazy.spawn("pactl -- set-sink-volume 0 +5%"),
              lazy.spawn("pactl -- set-sink-volume 1 +5%"),
@@ -183,10 +187,13 @@ keys = [
              lazy.spawn("pactl -- set-sink-volume 2 -5%"),
              desc='Vol -'
              ),
+
          ### Stack controls
+
          Key([mod, "shift"], "Tab",
              lazy.layout.rotate(),
              lazy.layout.flip(),
+             lazy.layout.swap_column_left(),
              desc='Switch which side main pane occupies (XmonadTall)'
              ),
          Key([mod], "Tab",
@@ -197,6 +204,88 @@ keys = [
              lazy.layout.toggle_split(),
              desc='Toggle between split and unsplit sides of stack'
              ),
+
+     ### Groups
+
+         Key([mod], '1',
+             lazy.group['1'].toscreen(),
+             desc="switch to group {}".format('1')
+             ),
+         Key([mod], '2',
+             lazy.group['2'].toscreen(),
+             desc="switch to group {}".format('2')
+             ),
+         Key([mod], '3',
+             lazy.group['3'].toscreen(),
+             desc="switch to group {}".format('3')
+             ),
+         Key([mod], '4',
+             lazy.group['4'].toscreen(),
+             desc="switch to group {}".format('4')
+             ),
+         Key([mod], '5',
+             lazy.group['5'].toscreen(),
+             desc="switch to group {}".format('5')
+             ),
+         Key([mod], '6',
+             lazy.group['6'].toscreen(),
+             desc="switch to group {}".format('6')
+             ),
+         Key([mod], '7',
+             lazy.group['7'].toscreen(),
+             desc="switch to group {}".format('7')
+             ),
+         Key([mod], '8',
+             lazy.group['8'].toscreen(),
+             desc="switch to group {}".format('8')
+             ),
+         Key([mod], 'v',
+             lazy.group['vid'].toscreen(),
+             desc="switch to group {}".format('vid')
+             ),
+         Key([mod], 'm',
+             lazy.group['mail'].toscreen(),
+             desc="switch to group {}".format('mail')
+             ),
+
+### Window To Group
+         Key([mod, "shift"], '1', lazy.window.togroup('1', switch_group=True),
+             lazy.group['1'].toscreen(),
+             desc="switch to group"
+             ),
+         Key([mod, "shift"], '2', lazy.window.togroup('2', switch_group=True),
+             lazy.group['2'].toscreen(),
+             desc="switch to group"
+             ),
+         Key([mod, "shift"], '3', lazy.window.togroup('3', switch_group=True),
+             lazy.group['3'].toscreen(),
+             desc="switch to group"
+             ),
+         Key([mod, "shift"], '4', lazy.window.togroup('4', switch_group=True),
+             lazy.group['4'].toscreen(),
+             desc="switch to group"
+             ),
+         Key([mod, "shift"], '5', lazy.window.togroup('5', switch_group=True),
+             lazy.group['5'].toscreen(),
+             desc="switch to group"
+             ),
+         Key([mod, "shift"], '6', lazy.window.togroup('6', switch_group=True),
+             lazy.group['6'].toscreen(),
+             desc="switch to group"
+             ),
+         Key([mod, "shift"], '7', lazy.window.togroup('7', switch_group=True),
+             lazy.group['7'].toscreen(),
+             desc="switch to group"
+             ),
+         Key([mod, "shift"], '8', lazy.window.togroup('8', switch_group=True),
+             lazy.group['8'].toscreen(),
+             desc="switch to group"
+             ),
+         Key([mod, "shift"], 'm', lazy.window.togroup('vid', switch_group=True),
+             lazy.group['vid'].toscreen(),
+             desc="switch to group"
+             ),
+
          KeyChord(["control"], "b",[
              Key([], "b",
                  # lazy.spawn(browser+" --new-window"),
@@ -207,10 +296,10 @@ keys = [
                  lazy.spawn(myTerm+" -e cmus"),
                  desc="Launch cmus"
                  ),
-             Key([], "y",
-                 lazy.spawn(browser+" --new-window https://youtube.com"),
-                 desc="Launch browser emby"
-                 )
+             # Key([], "y",
+             #     lazy.spawn(browser+" --new-window https://youtube.com"),
+             #     desc="Launch browser emby"
+             #     )
          ]),
          # Emacs programs launched using the key chord CTRL+e followed by 'key'
          KeyChord(["control"],"e", [
@@ -238,36 +327,41 @@ keys = [
                  desc='Search your qutebrowser bookmarks and quickmarks'
                  ),
               Key([], "a",
-                 lazy.spawn("pavucontrol"),
+                 lazy.group['scratchpad'].dropdown_toggle('audio'),
                  desc='audioMixer'
                  )
          ])
+
 ]
 
-groups = [Group(i) for i in "123456789"]
-for i in groups:
-    keys.extend([
-        # mod1 + letter of group = switch to group
-        Key([mod], i.name, lazy.group[i.name].toscreen(),
-            desc="Switch to group {}".format(i.name)),
-        # Key([mod, "shift"], "left", lazy.window.togroup(i.name-1)))
-
-        # mod1 + shift + letter of group = switch to & move focused window to group
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
-            desc="Switch to & move focused window to group {}".format(i.name)),
-                        # Or, use below if you prefer not to switch to that group.
-        # # mod1 + shift + letter of group = move focused window to group
-        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-        #     desc="move focused window to group {}".format(i.name)),
-    ])
-
 #END_KEYS
+
+groups = [
+     Group("1"),
+     Group("2"),
+     Group("3"),
+     Group("4"),
+     Group("5"),
+     Group("6"),
+     Group("7"),
+     Group("8"),
+     Group("vid"),
+     Group("mail", matches=[Match(wm_class=["Mail"])]),
+     # Group("sys", matches=[Match(wm_class=["pavucontrol", "arandr"])]),
+     ScratchPad("scratchpad", [
+          # define a drop down terminal.
+          # it is placed in the upper third of screen by default.
+          # DropDown("audio", myTerm+" -e fish", opacity=0.8)])
+          DropDown("audio", 'pavucontrol', opacity=0.95)])
+
+]
+
 #
-    layout_theme = {"border_width": 2,
-                "margin": 1,
-                "border_focus": "e1acff",
-                "border_normal": "1D2330"
-                }
+layout_theme = {"border_width": 2,
+               "margin": 1,
+               "border_focus": "e1acff",
+               "border_normal": "1D2330"
+               }
 
 layouts = [
     # layout.Bsp(**layout_theme),
@@ -276,7 +370,7 @@ layouts = [
     layout.MonadTall(**layout_theme),
     layout.Max(**layout_theme),
     layout.Zoomy(**layout_theme),
-    layout.Matrix(**layout_theme),
+    # layout.Matrix(**layout_theme),
     layout.MonadWide(**layout_theme),
     layout.RatioTile(**layout_theme),
     #layout.RatioTile(**layout_theme),
@@ -341,7 +435,7 @@ def init_widgets_list():
                        scale = "False",
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)}
                        ),
-             widget.Sep( #3
+              widget.Sep( #3
                        linewidth = 0,
                        padding = 6,
                        foreground = colors[8],
@@ -370,7 +464,7 @@ def init_widgets_list():
                        ),
               widget.Prompt( #5
                        prompt = prompt,
-                       font = "Ubuntu Mono",
+                       font = "Comic Mono",
                        padding = 10,
                        foreground = colors[3],
                        background = colors[1]
@@ -471,7 +565,7 @@ def init_widgets_list():
               widget.PulseVolume( #17
                        foreground = colors[6],
                        background = colors[0],
-                       # mouse_callbacks = {'Button3' : lambda: qtile.cmd_spawn("pavucontrol")},
+                       mouse_callbacks = {'Button3' : lambda: lazy.group['scratchpad'].dropdown_toggle('audio')},
                        volume_app = "pavucontrol",
                        padding = 5
                        ),
@@ -634,7 +728,7 @@ floating_layout = layout.Floating(float_rules=[
     # file_progress, confirm, download and error.
     *layout.Floating.default_float_rules,
     Match(title='Confirmation'),
-    Match(wm_class='pavucontrol'),# tastyworks exit box
+    #Match(wm_class='pavucontrol'),# tastyworks exit box
     Match(title='Qalculate!'),        # qalculate-gtk
     Match(wm_class='kdenlive'),       # kdenlive
     Match(wm_class='pinentry-gtk-2'),# GPG key password entry
@@ -661,16 +755,8 @@ def start_once():
 def start_once():
     home = os.path.expanduser('~')
     subprocess.call([home + '/.config/qtile/onreload.sh'])
-    lazy.to_group(0)
-    lazy.spawn('thunderbird')
-    lazy.to_screen(1)
-    lazy.to_group(9)
-    lazy.spawn(myTerm+" -e cmus")
+    lazy.group['vid'].toscreen()
 
-
-def startup():
-     if qtile.current_group.get_next_group().name == '1':
-          lazy.spawn()
 
 
 
