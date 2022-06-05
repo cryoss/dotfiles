@@ -35,7 +35,7 @@
 ;; change `org-directory'. It must be set before org loads!
 (after! org
 (setq org-directory "~/dev/org/")
-(setq org-agenda-files '("~/dev/org/agenda.org"))
+(setq org-agenda-files '("~/dev/org/ideas.org"))
 (setq org-log-done 'note))
 (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "qutebrowser")

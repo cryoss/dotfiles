@@ -3,7 +3,7 @@
 # key: src_ipy
 # --
 
-#+BEGIN_SRC python :results {output, pp}  :session $1
-$2
+#+BEGIN_SRC python :results {output, pp}  :session $1 :tangle $2.py :comments org
+$3
 
 #+END_SRC
