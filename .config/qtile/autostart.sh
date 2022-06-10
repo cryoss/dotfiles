@@ -15,3 +15,4 @@ pavucontrol &
 nm-applet &
 xfce4-power-manager --daemon &
 kdeconnect-indicator &
+arandr &

@@ -1,5 +1,5 @@
 ##  from arch repos 
-    pacman -Syu trayer dolphin alacritty ranger dmenu texlive-most fish nvim qalculate-gtk mypy emacs fd git okular ripgrep thunderbird cmus 
+    pacman -Syu trayer alacritty dmenu texlive-most fish qalculate-gtk emacs fd exa git ripgrep thunderbird cmus locate starship
 ##  from aur    
     yay -S paru
     paru -S shell-color-scripts 
@@ -13,6 +13,8 @@
     git config --global core.editor "vim" \
     git config credential.${remote}.username cryoss \ 
     git config credential.helper store
+## Starship
+curl -sS https://starship.rs/install.sh | sh
 
 ##  oh-my-fish
     curl -L https://get.oh-my.fish | fish 
@@ -36,5 +38,11 @@
    
    
 ## in needed /etc/pam.d/... (sudo, system-local-login ...)
-   auth		sufficient  	pam_unix.so try_first_pass likeauth nullok
-   auth		sufficient  	pam_python.so /lib/security/howdy/pam.py
+   auth sufficient pam_unix.so try_first_pass likeauth nullok
+   auth sufficient pam_python.so /lib/security/howdy/pam.py
+
+## new FONTS ACTUAL ::
+Comic Sans
+paru -S ttf-comic-mono-git
+
+/

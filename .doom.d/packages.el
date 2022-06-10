@@ -97,3 +97,4 @@
 (package! clippy)
 (package! citeproc)
 (package! arduino-mode)
+(package! gcode-mode)
