@@ -191,6 +191,18 @@ keys = [
              lazy.spawn("pactl -- set-sink-volume 2 -5%"),
              desc='Vol -'
              ),
+         Key([mod, "shift"], "F3",
+             lazy.spawn("pactl -- set-sink-volume 0 +5%"),
+             lazy.spawn("pactl -- set-sink-volume 1 +5%"),
+             lazy.spawn("pactl -- set-sink-volume 2 +5%"),
+             desc='Vol +'
+             ),
+         Key([mod, "shift"], "F2",
+             lazy.spawn("pactl -- set-sink-volume 0 -5%"),
+             lazy.spawn("pactl -- set-sink-volume 1 -5%"),
+             lazy.spawn("pactl -- set-sink-volume 2 -5%"),
+             desc='Vol -'
+             ),
 
          ### Stack controls
 
@@ -361,9 +373,9 @@ groups = [
 ]
 
 #
-layout_theme = {"border_width": 2,
+layout_theme = {"border_width": 3,
                "margin": 1,
-               "border_focus": "e1acff",
+               "border_focus": "#12e038",
                "border_normal": "1D2330"
                }
 

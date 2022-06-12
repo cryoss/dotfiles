@@ -25,6 +25,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
+(beacon-mode 1)
 (setq doom-theme 'doom-one)
 ;;(setq-default cursor-type 'hbar)
 (setq evil-normal-state-cursor '(box "dark cyan" )
