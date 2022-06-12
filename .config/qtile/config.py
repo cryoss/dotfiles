@@ -708,11 +708,236 @@ if type_of_dev == "desktop":
 
 if type_of_dev == "laptop":
 
+     def init_widgets_list():
+          widgets_list = [
+                    widget.Sep( #1
+                              linewidth = 0,
+                              padding = 6,
+                              foreground = colors[8],
+                              background = colors[0]
+                              ),
+                    widget.Image( #2
+                              filename = "~/.config/qtile/icons/python-white.png",
+                              scale = "False",
+                              mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)}
+                              ),
+                    widget.Sep( #3
+                              linewidth = 0,
+                              padding = 6,
+                              foreground = colors[8],
+                              background = colors[0]
+                              ),
+                    widget.GroupBox( #4
+                              font = "Comic Mono",
+                              fontsize = 32,
+                              margin_y = 0,
+                              margin_x = 0,
+                              padding_y = 0 ,
+                              padding_x = 5,
+                              borderwidth = 1,
+                              active = colors[6],
+                              inactive = colors[7],
+                              rounded = True,
+                              highlight_color = colors[1],
+                              highlight_method = "box",
+                              this_current_screen_border = colors[10],
+                              this_screen_border = colors [4],
+                              other_current_screen_border = colors[10],
+                              other_screen_border = colors[4],
+                              foreground = colors[6],
+                              background = colors[0]
+                              ),
+                    widget.Prompt( #5
+                              prompt = prompt,
+                              font = "Ubuntu Mono",
+                              padding = 10,
+                              foreground = colors[3],
+                              background = colors[1]
+                              ),
+                    widget.Sep( #6
+                              linewidth = 0,
+                              padding = 40,
+                              foreground = colors[8],
+                              background = colors[0]
+                              ),
+                    widget.WindowName( #7
+                              foreground = colors[6],
+                              background = colors[0],
+                              padding = 0
+                              ),
+                    widget.Sep( #8
+                              linewidth = 0,
+                              padding = 6,
+                              foreground = colors[0],
+                              background = colors[0]
+                              ),
+                    widget.TextBox( #9
+                              text = '|',
+                              background = colors[0],
+                              foreground = colors[9],
+                              padding = 5,
+                              fontsize = 37
+                              ),
+                         widget.Clock( #10
+                              foreground = colors[6],
+                              background = colors[0],
+                              padding = 5,
+                              mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(calendar)},
+                              format = "KW%W %A %d.%m.%Y - %H:%M:%S"
+                              ),
+                         widget.TextBox( #11
+                              text = '|',
+                              background = colors[0],
+                              foreground = colors[9],
+                              padding = 0,
+                              fontsize = 37
+                              ),
+                    widget.Sep( #12
+                              linewidth = 0,
+                              padding = 200,
+                              foreground = colors[0],
+                              background = colors[0]
+                              ),
+                         widget.TextBox( #13
+                              text = " ⟳",
+                              padding = 2,
+                              foreground = colors[6],
+                              background = colors[0],
+                              fontsize = 14
+                              ),
+                    widget.CheckUpdates( #14
+                              update_interval = 1800,
+                              distro = "Arch_checkupdates",
+                              display_format = "{updates} Updates",
+                              foreground = colors[6],
+                              mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
+                              background = colors[0]
+                              ),
+                    widget.TextBox( #15
+                              text = '|',
+                              background = colors[0],
+                              foreground = colors[9],
+                              padding = 0,
+                              fontsize = 37
+                              ),
+                    widget.TextBox( #16
+                              text = " Vol:",
+                              foreground = colors[6],
+                              background = colors[0],
+                              padding = 0
+                              ),
+                    widget.Volume( #17
+                              foreground = colors[6],
+                              background = colors[0],
+                              mouse_callbacks = {'Button3' : lambda: qtile.cmd_spawn("pavucontrol")},
+                              #volume_app = "pavucontrol",
+                              padding = 5
+                              ),
+                    widget.TextBox( #18
+                              text = '|',
+                              background = colors[0],
+                              foreground = colors[9],
+                              padding = 0,
+                              fontsize = 37
+                              ),
+                    widget.CPU( #19
+                              padding = 2,
+                              foreground = colors[6],
+                              background = colors[0],
+                              mouse_callbacks = {'Button1' : lambda: qtile.cmd_spawn(myTerm+ ' -e htop')},
+                              fontsize = 14
+                              ),
+                    widget.TextBox( #20
+                              text = '|',
+                              background = colors[0],
+                              foreground = colors[9],
+                              padding = 0,
+                              fontsize = 37
+                              ),
+                    widget.Memory( #21
+                              background = colors[0],
+                              foreground = colors[6],
+                              padding = 0,
+                              measure_mem = 'G',
+                              fontsize = 17
+                              ),
+                    widget.TextBox( #22
+                              text = '|',
+                              background = colors[0],
+                              foreground = colors[9],
+                              padding = 0,
+                              fontsize = 37
+                              ),
+                    widget.Net( #23
+                              padding = 2,
+                              foreground = colors[6],
+                              background = colors[0],
+                              mouse_callbacks = {'Button1' : lambda: qtile.cmd_spawn(myTerm+ ' -e htop')},
+                              fontsize = 14
+                              ),
+                    widget.TextBox( #24
+                              text = '|',
+                              background = colors[0],
+                              foreground = colors[9],
+                              padding = 0,
+                              fontsize = 37
+                              ),
+                    widget.Battery( #27
+                              padding = 2,
+                              foreground = colors[6],
+                              background = colors[0],
+                              fontsize = 14
+                              ),
+                    widget.TextBox( #30
+                              text = '|',
+                              background = colors[0],
+                              foreground = colors[9],
+                              padding = 0,
+                              fontsize = 37
+                              ),
+                    widget.CurrentLayoutIcon( #31
+                              custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
+                              foreground = colors[0],
+                              background = colors[0],
+                              padding = 0,
+                              scale = 0.7
+                              ),
+                    widget.CurrentLayout( #32
+                              foreground = colors[6],
+                              background = colors[0],
+                              padding = 5
+                              ),
+                    widget.TextBox( #33
+                              text = '|',
+                              background = colors[0],
+                              foreground = colors[9],
+                              padding = 0,
+                              fontsize = 37
+                              ),
+                    widget.Systray( #34
+                              background = colors[0],
+                              padding = 5
+                              ),
+                    ]
+          return widgets_list
+
+     def init_widgets_screen1():
+          widgets_screen1 = init_widgets_list()
+          del widgets_screen1[25:29] # Uncomment for Desktop
+     # del widgets_screen1[23:29] # Uncomment for Desktop
+     #del widgets_screen1[27:30] #Uncomment for Laptop
+     ####################################del widget_screen[22:24] #Uncomment for Laptop
+          return widgets_screen1                 # Monitor 2 will display all widgets in widgets_list
 
 
+     def init_widgets_screen2():
+          widgets_screen2 = init_widgets_list()
+          return widgets_screen2
 
-
-
+     def init_screens():
+          return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=0.9, size=40, margin=2)),
+                    Screen()]
+               #Screen()]
 
 
 if __name__ in ["config", "__main__"]:
