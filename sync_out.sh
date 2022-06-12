@@ -14,3 +14,5 @@ cp -rf .config/qtile/onreload.sh ~/.config/qtile/
 cp -rf .config/qtile/showkeys.sh ~/.config/qtile/
 
 cp -rf .config/starship.toml ~/.config/starship.toml
+
+cp -rf .doom.d/* ~/.doom.d/

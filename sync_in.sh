@@ -11,3 +11,5 @@ cp -rf ~/.config/qtile/config.py .config/qtile/
 cp -rf ~/.config/qtile/autostart.sh .config/qtile/
 cp -rf ~/.config/qtile/onreload.sh .config/qtile/
 cp -rf ~/.config/qtile/showkeys.sh .config/qtile/
+
+cp -rf ~/.doom.d/* .doom.d/
