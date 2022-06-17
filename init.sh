@@ -22,8 +22,8 @@ sudo cp .fonts/* /usr/share/fonts/comic-mono/
 
 #SHELL and Stuff
 
-curl -sS https://starship.rs/install.sh | sh
-curl -L https://get.oh-my.fish | fish
+#curl -sS https://starship.rs/install.sh | sh
+#curl -L https://get.oh-my.fish | fish
 
 cp -rf .config/fish/* ~/.config/fish/
 cp -rf .config/picom/* ~/.config/picom/

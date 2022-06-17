@@ -7,6 +7,7 @@ cp -rf .config/rofi ~/.config/
 cp -rf .config/alacritty ~/.config/
 cp -rf .config/qutebrowser ~/.config/
 cp -rf .config/cmus ~/.config/
+cp -f .bashrc ~/
 
 cp -rf .config/qtile/config.py ~/.config/qtile/
 cp -rf .config/qtile/autostart.sh ~/.config/qtile/
