@@ -14,7 +14,7 @@ from libqtile.log_utils import logger
 
 
 
-type_of_dev = "desktop"
+type_of_dev = "laptop"
 
 def to_next_group(qtile):
      next_group_name = qtile.current_group.get_next_group().name
@@ -916,19 +916,19 @@ if type_of_dev == "laptop":
                               mouse_callbacks = {'Button1' : lambda: qtile.cmd_spawn(myTerm+ ' -e htop')},
                               fontsize = 14
                               ),
-                    widget.TextBox( #24
-                              text = '|',
-                              background = colors[0],
-                              foreground = colors[11],
-                              padding = 0,
-                              fontsize = 37
-                              ),
-                    widget.Wlan( #25
-                              background = colors[0],
-                              foreground = colors[12],
-                              padding = 0,
-                              fontsize = 17
-                              ),
+                    # widget.TextBox( #24
+                    #           text = '|',
+                    #           background = colors[0],
+                    #           foreground = colors[11],
+                    #           padding = 0,
+                    #           fontsize = 37
+                    #           ),
+                    # widget.Wlan( #25
+                    #           background = colors[0],
+                    #           foreground = colors[12],
+                    #           padding = 0,
+                    #           fontsize = 17
+                    #           ),
                     widget.TextBox( #26
                               text = '|',
                               background = colors[0],
@@ -983,7 +983,7 @@ if type_of_dev == "laptop":
                               ),
                     widget.Systray( #34
                               background = colors[0],
-                              padding = 5
+                              padding = 100
                               ),
                     ]
           return widgets_list
