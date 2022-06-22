@@ -814,7 +814,7 @@ if type_of_dev == "laptop":
                               ),
                     widget.Sep( #12
                               linewidth = 0,
-                              padding = 500,
+                              padding = 100,
                               foreground = colors[0],
                               background = colors[0]
                               ),
