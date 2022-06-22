@@ -426,7 +426,14 @@ colors = ["#282c34", #0 panel background
           "#454649", #7 backround for inactive screens
           "#8574b5", #8 widget text colour
           "#17202a", #9
-          "#6b86b0"] #10
+          "#6b86b0", #10
+          "#51afef", #11
+          "#98be65", #12
+          "#12e038", #13
+          "#1D2330" , #14
+          "#2b6917"]  #15
+
+
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 ##### DEFAULT WIDGET SETTINGS #####
@@ -445,7 +452,7 @@ if type_of_dev == "desktop":
                     widget.Sep( #1
                               linewidth = 0,
                               padding = 6,
-                              foreground = colors[8],
+                              foreground = colors[11],
                               background = colors[0]
                               ),
                     widget.Image( #2
@@ -456,7 +463,7 @@ if type_of_dev == "desktop":
                     widget.Sep( #3
                               linewidth = 0,
                               padding = 6,
-                              foreground = colors[8],
+                              foreground = colors[11],
                               background = colors[0]
                               ),
                     widget.GroupBox( #4
@@ -468,51 +475,51 @@ if type_of_dev == "desktop":
                               padding_y = 0 ,
                               padding_x = 7,
                               borderwidth = 1,
-                              active = colors[6],
+                              active = colors[12],
                               inactive = colors[7],
                               rounded = True,
-                              highlight_color = colors[1],
+                              highlight_color = colors[14],
                               highlight_method = "border",
-                              this_current_screen_border = colors[10],
-                              this_screen_border = colors [4],
-                              other_current_screen_border = colors[10],
-                              other_screen_border = colors[4],
-                              foreground = colors[6],
+                              this_current_screen_border = colors[13],
+                              this_screen_border = colors [1],
+                              other_current_screen_border = colors[15],
+                              other_screen_border = colors[15],
+                              foreground = colors[12],
                               background = colors[0]
                               ),
                     widget.Prompt( #5
                               prompt = prompt,
                               font = "Comic Mono",
                               padding = 10,
-                              foreground = colors[3],
+                              foreground = colors[12],
                               background = colors[1]
                               ),
                     widget.Sep( #6
                               linewidth = 0,
                               padding = 30,
-                              foreground = colors[8],
+                              foreground = colors[11],
                               background = colors[0]
                               ),
                     widget.WindowName( #7
-                              foreground = colors[6],
+                              foreground = colors[12],
                               background = colors[0],
                               padding = 0
                               ),
                     widget.Sep( #8
                               linewidth = 0,
                               padding = 6,
-                              foreground = colors[0],
+                              foreground = colors[11],
                               background = colors[0]
                               ),
                     widget.TextBox( #9
                               text = '|',
                               background = colors[0],
-                              foreground = colors[9],
+                              foreground = colors[11],
                               padding = 5,
                               fontsize = 37
                               ),
                          widget.Clock( #10
-                              foreground = colors[6],
+                              foreground = colors[12],
                               background = colors[0],
                               padding = 5,
                               mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(calendar)},
@@ -521,7 +528,7 @@ if type_of_dev == "desktop":
                          widget.TextBox( #11
                               text = '|',
                               background = colors[0],
-                              foreground = colors[9],
+                              foreground = colors[11],
                               padding = 0,
                               fontsize = 37
                               ),
@@ -532,7 +539,7 @@ if type_of_dev == "desktop":
                               background = colors[0]
                               ),
                     widget.Cmus( #13
-                              foreground = colors[6],
+                              foreground = colors[12],
                               background = colors[0],
                               noplay_color = colors[6],
                               play_color = '4893f5',
@@ -548,7 +555,7 @@ if type_of_dev == "desktop":
                          widget.TextBox( #15
                               text = " ⟳",
                               padding = 2,
-                              foreground = colors[6],
+                              foreground = colors[12],
                               background = colors[0],
                               fontsize = 14
                               ),
@@ -556,20 +563,20 @@ if type_of_dev == "desktop":
                               update_interval = 1800,
                               distro = "Arch_checkupdates",
                               display_format = "{updates} Updates",
-                              foreground = colors[6],
+                              foreground = colors[12],
                               mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
                               background = colors[0]
                               ),
                     widget.TextBox( #15
                               text = '|',
                               background = colors[0],
-                              foreground = colors[9],
+                              foreground = colors[11],
                               padding = 0,
                               fontsize = 37
                               ),
                     widget.TextBox( #16
                               text = " Vol:",
-                              foreground = colors[6],
+                              foreground = colors[12],
                               background = colors[0],
                               padding = 0
                               ),
@@ -581,7 +588,7 @@ if type_of_dev == "desktop":
                     #          padding = 5
                     #          ),
                     widget.PulseVolume( #17
-                              foreground = colors[6],
+                              foreground = colors[12],
                               background = colors[0],
                               mouse_callbacks = {'Button3' : lambda: lazy.group['scratchpad'].dropdown_toggle('audio')},
                               volume_app = "pavucontrol",
@@ -590,13 +597,13 @@ if type_of_dev == "desktop":
                     widget.TextBox( #18
                               text = '|',
                               background = colors[0],
-                              foreground = colors[9],
+                              foreground = colors[11],
                               padding = 0,
                               fontsize = 37
                               ),
                     widget.CPU( #19
                               padding = 2,
-                              foreground = colors[6],
+                              foreground = colors[12],
                               background = colors[0],
                               mouse_callbacks = {'Button1' : lambda: qtile.cmd_spawn(myTerm+ ' -e htop')},
                               fontsize = 14
@@ -604,13 +611,13 @@ if type_of_dev == "desktop":
                     widget.TextBox( #20
                               text = '|',
                               background = colors[0],
-                              foreground = colors[9],
+                              foreground = colors[11],
                               padding = 0,
                               fontsize = 37
                               ),
                     widget.Memory( #21
                               background = colors[0],
-                              foreground = colors[6],
+                              foreground = colors[12],
                               padding = 0,
                               measure_mem = 'G',
                               fontsize = 17
@@ -618,13 +625,13 @@ if type_of_dev == "desktop":
                     widget.TextBox( #22
                               text = '|',
                               background = colors[0],
-                              foreground = colors[9],
+                              foreground = colors[11],
                               padding = 0,
                               fontsize = 37
                               ),
                     widget.Net( #23
                               padding = 2,
-                              foreground = colors[6],
+                              foreground = colors[12],
                               background = colors[0],
                               mouse_callbacks = {'Button1' : lambda: qtile.cmd_spawn(myTerm+ ' -e htop')},
                               fontsize = 14
@@ -632,33 +639,33 @@ if type_of_dev == "desktop":
                     widget.TextBox( #24
                               text = '|',
                               background = colors[0],
-                              foreground = colors[9],
+                              foreground = colors[11],
                               padding = 0,
                               fontsize = 37
                               ),
                     widget.Wlan( #25
                               background = colors[0],
-                              foreground = colors[6],
+                              foreground = colors[12],
                               padding = 0,
                               fontsize = 17
                               ),
                     widget.TextBox( #26
                               text = '|',
                               background = colors[0],
-                              foreground = colors[9],
+                              foreground = colors[11],
                               padding = 0,
                               fontsize = 37
                               ),
                     widget.Battery( #27
                               padding = 2,
-                              foreground = colors[6],
+                              foreground = colors[12],
                               background = colors[0],
                               fontsize = 14
                               ),
                     widget.TextBox( #28
                               text = '|',
                               background = colors[0],
-                              foreground = colors[9],
+                              foreground = colors[11],
                               padding = 0,
                               fontsize = 37
                               ),
@@ -671,26 +678,26 @@ if type_of_dev == "desktop":
                     widget.TextBox( #30
                               text = '|',
                               background = colors[0],
-                              foreground = colors[9],
+                              foreground = colors[11],
                               padding = 0,
                               fontsize = 37
                               ),
                     widget.CurrentLayoutIcon( #31
                               custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
-                              foreground = colors[0],
+                              foreground = colors[12],
                               background = colors[0],
                               padding = 0,
                               scale = 0.7
                               ),
                     widget.CurrentLayout( #32
-                              foreground = colors[6],
+                              foreground = colors[12],
                               background = colors[0],
                               padding = 5
                               ),
                     widget.TextBox( #33
                               text = '|',
                               background = colors[0],
-                              foreground = colors[9],
+                              foreground = colors[11],
                               padding = 0,
                               fontsize = 37
                               ),
@@ -914,11 +921,11 @@ if type_of_dev == "laptop":
                               padding = 0,
                               scale = 0.7
                               ),
-                    widget.CurrentLayout( #32
-                              foreground = colors[6],
-                              background = colors[0],
-                              padding = 5
-                              ),
+                    # widget.CurrentLayout( #32
+                    #           foreground = colors[6],
+                    #           background = colors[0],
+                    #           padding = 5
+                    #           ),
                     widget.TextBox( #33
                               text = '|',
                               background = colors[0],
@@ -935,7 +942,7 @@ if type_of_dev == "laptop":
 
      def init_widgets_screen1():
           widgets_screen1 = init_widgets_list()
-          del widgets_screen1[25:29] # Uncomment for Desktop
+          # del widgets_screen1[25:29] # Uncomment for Desktop
      # del widgets_screen1[23:29] # Uncomment for Desktop
      #del widgets_screen1[27:30] #Uncomment for Laptop
      ####################################del widget_screen[22:24] #Uncomment for Laptop

@@ -38,3 +38,4 @@ then
     kdeconnect-indicator &
     arandr &
 fi
+syncthing &
