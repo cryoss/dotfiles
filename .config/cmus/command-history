@@ -1,5 +1,10 @@
-pl-create came
+Q
+pl-save
 w
+clear 
+pl-create g1
+pl-new
+pl-create came
 pl-create nnew
 pl-create
 pl.create
