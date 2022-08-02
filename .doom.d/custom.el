@@ -44,7 +44,27 @@
     (cons 320 "#7c737d")
     (cons 340 "#64727d")
     (cons 360 "#64727d")))
- '(vc-annotate-very-old-color nil))
+ '(vc-annotate-very-old-color nil)
+ '(warning-suppress-types
+   '((doom-init-ui-hook)
+     (doom-init-ui-hook)
+     (doom-init-ui-hook)
+     (doom-init-ui-hook)
+     (doom-init-ui-hook)
+     (doom-init-ui-hook)
+     (doom-init-ui-hook)
+     (doom-init-ui-hook)
+     (doom-init-ui-hook)
+     (doom-init-ui-hook)
+     (doom-init-ui-hook)
+     (doom-init-ui-hook)
+     (doom-init-ui-hook)
+     (doom-init-ui-hook)
+     (doom-init-ui-hook)
+     (doom-init-ui-hook)
+     (doom-init-ui-hook)
+     (doom-init-ui-hook)
+     (doom-init-ui-hook))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

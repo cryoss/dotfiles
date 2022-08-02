@@ -40,6 +40,7 @@
 (setq org-log-done 'note))
 (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "qutebrowser")
+(setq )
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
@@ -183,3 +184,18 @@
         (:prefix ("d" . "application")
        :desc "export to pdf"
       "e p" #'org-export-dispatch))
+
+(defun dired-open()
+  (interactive)
+  (setq file (dired-get-file-for-visit))
+  (setq ext (file-name-extension file))
+  (cond ((string= ext "pdf")
+         ;; shell-quote-argument escapes white spaces on the file name
+         (async-shell-command (concat "okular " (shell-quote-argument file))))
+        ((string= ext "epub")
+         (async-shell-command (concat "okular " (shell-quote-argument file))))
+        ;;  (async-shell-command (concat "file-roller " (shell-quote-argument file))))
+        ;; ((string= ext "zip")
+        ((string= ext "html")
+         (async-shell-command (concat "qutebrowser " (shell-quote-argument file))))
+        (t (dired-find-file))))
