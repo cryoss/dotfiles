@@ -297,7 +297,7 @@ keys = [
              lazy.group['8'].toscreen(),
              desc="switch to group"
              ),
-         Key([mod, "shift"], 'm', lazy.window.togroup('vid', switch_group=True),
+         Key([mod, "shift"], 'v', lazy.window.togroup('vid', switch_group=True),
              lazy.group['vid'].toscreen(),
              desc="switch to group"
              ),
