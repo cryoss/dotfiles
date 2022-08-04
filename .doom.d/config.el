@@ -199,3 +199,20 @@
         ((string= ext "html")
          (async-shell-command (concat "qutebrowser " (shell-quote-argument file))))
         (t (dired-find-file))))
+
+(defun restart-python-console ()
+  "Restart python console before evaluate buffer or region to avoid various uncanny conflicts, like not reloding modules even when they are changed"
+  (interactive)
+  (if (get-buffer "*Python*")
+      (let ((kill-buffer-query-functions nil)) (kill-buffer "*Python*")))
+  ;; (elpy-shell-send-region-or-buffer)
+      (run-python())
+      (display-buffer (get-buffer "*Python*"))) ;
+
+
+
+
+(map! :leader
+        (:prefix ("e" . "my")
+       :desc "restart python"
+      "r" #'restart-python-console))

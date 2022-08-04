@@ -37,3 +37,4 @@ then
     arandr &
 fi
 syncthing &
+# mount data &
