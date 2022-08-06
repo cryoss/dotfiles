@@ -1,0 +1,128 @@
+version: '3'
+
+services:
+  traefik:
+    # The official v2 Traefik docker image
+    image: traefik:v2.8
+    container_name: traefik
+    # Enables the web UI and tells Traefik to listen to docker
+    command: --api.insecure=true --providers.docker
+    restart: always
+
+    ports:
+      # The HTTP port
+      - "80:80"
+      - "443:443"
+      - "3478:3478"
+      - "50000:50000"
+      - "50001:50002"
+      - "50002:50002"
+
+      # The Web UI (enabled by --api.insecure=true)
+      - "8080:8080"
+    volumes:
+      # So that Traefik can listen to the Docker events
+      - /etc/traefik:/etc/traefik
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  gitea:
+    image: gitea/gitea:1.16.9
+    container_name: gitea
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+
+    volumes:
+      - /files/gitea:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.rtgitea.rule=Host( `gitea.cortex` )"
+ #     - "traefik.http.routers.rtgitea.rule=Host( `cortex` ) && Path( `/gitea` )"
+  #    - "traefik.http.middlewares.rt.stripprefix.prefixes=/gitea"
+
+      - "traefik.http.routers.rtgitea.entrypoints=web"
+      - "traefik.http.services.rtgitea.loadbalancer.server.port=3000"
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    # For DHCP it is recommended to remove these ports and instead add: network_mode: "host"
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "8181:80/tcp"
+    environment:
+      TZ: 'Germany/Berlin'
+      WEBPASSWORD: 'Cry0g3n24'
+    # Volumes store your data between container upgrades
+    volumes:
+      - '/files/pihole/etc:/etc/pihole'
+      - '/files/pihole/dnsmasq.d:/etc/dnsmasq.d'
+    #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+    restart: always
+
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Beril
+      - JELLYFIN_PublishedServerUrl=jellyfin.cortex #optional
+    volumes:
+      - /files/jellyfin:/config
+      - /data/videos:/data
+
+    #ports:
+   #   - 8096:8096
+   #  - 8920:8920 #optional
+   #  - 7359:7359/udp #optional
+   #  - 1900:1900/udp #optional
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.rthjellyfin.rule=Host( `jellyfin.cortex` )"
+      - "traefik.http.routers.rtjellyfin.entrypoints=web"
+      - "traefik.http.services.rtjellyfin.loadbalancer.server.port=8096"
+
+  homeassistant:
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    volumes:
+      - /files/homeassistant:/config
+      - /etc/localtime:/etc/localtime:ro
+    restart: always
+    privileged: true
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.rthome.rule=Host( `home.cortex` )"
+      - "traefik.http.routers.rthome.entrypoints=web"
+      - "traefik.http.services.rthome.loadbalancer.server.port=8123"
+
+  agentdvr:
+    container_name: agentdvr
+    image: "doitandbedone/ispyagentdvr"
+    volumes:
+      - /files/agentdvr/config:/agent/Media/XML
+      - /files/agentdvr/commands/:/agent/Commands
+      - /data/cam:/agent/media/WebServerRoot/Media
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.rtdvr.rule=Host( `dvr.cortex` )"
+      - "traefik.http.routers.rtdvr.entrypoints=web"
+      - "traefik.http.services.rtdvr.loadbalancer.server.port=8090"
+
+      - "traefik.http.routers.rtdvr.entrypoints=web3478"
+      - "traefik.http.services.rtdvr.loadbalancer.server.port=3478"
+
+      - "traefik.http.routers.rtdvr.entrypoints=web50000"
+      - "traefik.http.services.rtdvr.loadbalancer.server.port=50000"
+
+      - "traefik.http.routers.rtdvr.entrypoints=web50001"
+      - "traefik.http.services.rtdvr.loadbalancer.server.port=50001"
+
+      - "traefik.http.routers.rtdvr.entrypoints=web500002"
+      - "traefik.http.services.rtdvr.loadbalancer.server.port=50002"
