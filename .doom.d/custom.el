@@ -7,6 +7,7 @@
    '((doom-init-ui-hook)
      (doom-init-ui-hook)
      (doom-init-ui-hook)
+     (doom-init-ui-hook)
      (doom-init-ui-hook))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

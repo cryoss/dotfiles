@@ -29,7 +29,7 @@ myTerm = "alacritty"                             # My terminal of choice
 calendar = "thunderbird"
 # browser = "firefox"
 browser = "qutebrowser"
-files = "dolphin"
+files = "org.kde.dolphin"
 launcher = "/home/cryoss/.config/rofi/bin/launcher_misc"
 #START_KEYS
 keys = [
