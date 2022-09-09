@@ -7,7 +7,7 @@ set DEVICE "desktop"
 set -e fish_user_paths
 set -U fish_user_paths $HOME/.local/bin $HOME/Applications $fish_user_paths
 set -U fish_user_paths ~/.config/rofi/bin $fish_user_paths
-set -U fish_user_paths ~/anaconda/bin $fish_user_paths
+#set -U fish_user_paths ~/miniconda/bin $fish_user_paths
 ### EXPORT ###
 set fish_greeting                                 # Supresses fish's intro message
 set TERM "xterm-256color"                         # Sets the terminal type
@@ -233,6 +233,8 @@ alias doompurge="~/.emacs.d/bin/doom purge"
 #virtual environment activate
 # alias venvtensor='cd ~/dev/tensor && source bin/activate.fish'
 # alias venvdev='cd ~/dev/venv && source bin/activate.fish'
+# CONDA
+alias conda='~/miniconda3/bin/conda'
 
 # broot
 alias br='broot -dhp'
@@ -356,3 +358,9 @@ alias zotero="nohup ~/dev/org/bib/zotero/zotero & "
 
 ### SETTING THE STARSHIP PROMPT ###
 starship init fish | source
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+#eval /home/cryoss/miniconda2/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
+

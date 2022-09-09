@@ -216,3 +216,4 @@
         (:prefix ("e" . "my")
        :desc "restart python"
       "r" #'restart-python-console))
+
