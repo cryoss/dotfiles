@@ -5,6 +5,7 @@ cp -rf ~/.config/fish .config/
 cp -rf ~/.config/picom .config/
 cp -rf ~/.config/rofi .config/
 cp -rf ~/.config/alacritty .config/
+cp -rf ~/.config/qutebrowser .config/
 cp -rf ~/.config/starship.toml .config/starship.toml
 
 cp -rf ~/.config/qtile/config.py .config/qtile/
