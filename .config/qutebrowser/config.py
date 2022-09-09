@@ -150,6 +150,7 @@ c.url.start_pages = ["https://google.com"]
 c.url.searchengines = {"DEFAULT":"https://www.google.com/search?q={}"}
 # c.url.auto_search = ''
 c.aliases = {'q':'quit', 'w':'session-save', 'wq':'quit --save', 'h':'history'}
+c.colors.webpage.darkmode.enabled = True
 # Load existing settings made via :set
 
 dracula.draw.blood(c, {
