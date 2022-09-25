@@ -17,6 +17,8 @@ services:
       - "50000:50000"
       - "50001:50002"
       - "50002:50002"
+      - "6052:6052"
+      - "1080:1080"
 
       # The Web UI (enabled by --api.insecure=true)
       - "8080:8080"
@@ -73,7 +75,7 @@ services:
       - JELLYFIN_PublishedServerUrl=jellyfin.cortex #optional
     volumes:
       - /files/jellyfin:/config
-      - /data/videos:/data
+      - /data:/data
 
     #ports:
    #   - 8096:8096
@@ -101,28 +103,34 @@ services:
       - "traefik.http.routers.rthome.entrypoints=web"
       - "traefik.http.services.rthome.loadbalancer.server.port=8123"
 
-  agentdvr:
-    container_name: agentdvr
-    image: "doitandbedone/ispyagentdvr"
+
+  esphome:
+    container_name: esphome
+    image: "esphome/esphome"
     volumes:
-      - /files/agentdvr/config:/agent/Media/XML
-      - /files/agentdvr/commands/:/agent/Commands
-      - /data/cam:/agent/media/WebServerRoot/Media
+      - /files/esphome:/config
+      - /etc/localtime:/etc/localtime:ro
     restart: always
+    privileged: true
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.rtdvr.rule=Host( `dvr.cortex` )"
-      - "traefik.http.routers.rtdvr.entrypoints=web"
-      - "traefik.http.services.rtdvr.loadbalancer.server.port=8090"
+      - "traefik.http.routers.rtesp.rule=Host( `esphome.cortex` )"
+      - "traefik.http.routers.rtesp.entrypoints=web"
+      - "traefik.http.services.rtesp.loadbalancer.server.port=6052"
 
-      - "traefik.http.routers.rtdvr.entrypoints=web3478"
-      - "traefik.http.services.rtdvr.loadbalancer.server.port=3478"
 
-      - "traefik.http.routers.rtdvr.entrypoints=web50000"
-      - "traefik.http.services.rtdvr.loadbalancer.server.port=50000"
-
-      - "traefik.http.routers.rtdvr.entrypoints=web50001"
-      - "traefik.http.services.rtdvr.loadbalancer.server.port=50001"
-
-      - "traefik.http.routers.rtdvr.entrypoints=web500002"
-      - "traefik.http.services.rtdvr.loadbalancer.server.port=50002"
+  calc:
+    container_name: calc
+    image: "cryoss99/b_calc:0.1"
+    volumes:
+      - /files/calc:/config
+      - /etc/localtime:/etc/localtime:ro
+    restart: always
+    dns:
+      - 10.20.50.1
+    privileged: true
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.rtcalc.rule=Host( `calc.cortex` )"
+      - "traefik.http.routers.rtcalc.entrypoints=web"
+      - "traefik.http.services.rtcalc.loadbalancer.server.port=8501"
