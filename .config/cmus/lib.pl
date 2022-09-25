@@ -22,7 +22,6 @@
 /home/cryoss/data/music/Anderes/01 SÖHNE MANNHEIMS & XAVIER NAIDOO - GEH DAVON AUS .MP3
 /home/cryoss/data/music/Anderes/01 SPIDERWEBS_1.MP3
 /home/cryoss/data/music/Anderes/01 SPIDERWEBS.MP3
-/home/cryoss/data/music/Anderes/01 Track01.wav
 /home/cryoss/data/music/Anderes/01 - WIE ES GEHT.MP3
 /home/cryoss/data/music/Anderes/01 WIENER BLUT.MP3
 /home/cryoss/data/music/Anderes/01 - WONDERFULL WORLD, TONY JACKSON.MP3
@@ -938,7 +937,6 @@
 /home/cryoss/data/music/Numbered/01 SÖHNE MANNHEIMS & XAVIER NAIDOO - GEH DAVON AUS .MP3
 /home/cryoss/data/music/Numbered/01 SPIDERWEBS_1.MP3
 /home/cryoss/data/music/Numbered/01 SPIDERWEBS.MP3
-/home/cryoss/data/music/Numbered/01 Track01.wav
 /home/cryoss/data/music/Numbered/01 - WIE ES GEHT.MP3
 /home/cryoss/data/music/Numbered/01 WIENER BLUT.MP3
 /home/cryoss/data/music/Numbered/01 - WONDERFULL WORLD, TONY JACKSON.MP3
