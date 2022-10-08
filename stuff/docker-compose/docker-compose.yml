@@ -19,6 +19,7 @@ services:
       - "50002:50002"
       - "6052:6052"
       - "1080:1080"
+      - "5000:5000"
 
       # The Web UI (enabled by --api.insecure=true)
       - "8080:8080"
@@ -121,16 +122,18 @@ services:
 
   calc:
     container_name: calc
-    image: "cryoss99/b_calc:0.1"
+    image: "b_calc_im_1"
     volumes:
       - /files/calc:/config
       - /etc/localtime:/etc/localtime:ro
+
     restart: always
-    dns:
-      - 10.20.50.1
+    stdin_open: true
+    tty: true
+    command: "bash /config/b_calc/init.sh"
     privileged: true
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.rtcalc.rule=Host( `calc.cortex` )"
       - "traefik.http.routers.rtcalc.entrypoints=web"
-      - "traefik.http.services.rtcalc.loadbalancer.server.port=8501"
+      - "traefik.http.services.rtcalc.loadbalancer.server.port=5000"
