@@ -40,7 +40,6 @@
 (setq org-log-done 'note))
 (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "qutebrowser")
-(setq )
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
@@ -68,7 +67,7 @@
        :desc "Save current bookmarks to bookmark file" "w" #'bookmark-save))
 (xterm-mouse-mode 1)
 
-(setq doom-font (font-spec :family "Comic Mono" :size 20)
+(setq doom-font (font-spec :family "Comic Mono" :size 30)
       doom-variable-pitch-font (font-spec :family "Ubuntu" :size 20)
       doom-big-font (font-spec :family "Comic Mono" :size 25))
 (after! doom-themes
@@ -110,47 +109,47 @@
                                               iso-8859-1))
 
 (setq selection-coding-system 'utf-8)
-(require 'bibtex)
-(setq bibtex-completion-bibliography '("~/dev/org/Bachelorarbeit/ba.bib" "~/dev/org/IuG/IuG.bib")
-	bibtex-completion-library-path '("~/dev/org/bib/documents")
-	bibtex-completion-notes-path "~/dev/org/bib/notes/"
-	bibtex-completion-notes-template-multiple-files "* ${author-or-editor}, ${title}, ${journal}, (${year}) :${=type=}: \n\nSee [[cite:&${=key=}]]\n"
-	bibtex-completion-additional-search-fields '(keywords)
-	bibtex-completion-display-formats
-	'((article       . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${journal:40}")
-	  (inbook        . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} Chapter ${chapter:32}")
-	  (incollection  . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${booktitle:40}")
-	  (inproceedings . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${booktitle:40}")
-	  (t             . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*}"))
-	bibtex-completion-pdf-open-function
-	(lambda (fpath)
-	  (call-process "open" nil 0 nil fpath)))
+;; (require 'bibtex)
+;; (setq bibtex-completion-bibliography '("~/dev/org/Bachelorarbeit/ba.bib" "~/dev/org/IuG/IuG.bib")
+;; 	bibtex-completion-library-path '("~/dev/org/bib/documents")
+;; 	bibtex-completion-notes-path "~/dev/org/bib/notes/"
+;; 	bibtex-completion-notes-template-multiple-files "* ${author-or-editor}, ${title}, ${journal}, (${year}) :${=type=}: \n\nSee [[cite:&${=key=}]]\n"
+;; 	bibtex-completion-additional-search-fields '(keywords)
+;; 	bibtex-completion-display-formats
+;; 	'((article       . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${journal:40}")
+;; 	  (inbook        . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} Chapter ${chapter:32}")
+;; 	  (incollection  . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${booktitle:40}")
+;; 	  (inproceedings . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${booktitle:40}")
+;; 	  (t             . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*}"))
+;; 	bibtex-completion-pdf-open-function
+;; 	(lambda (fpath)
+;; 	  (call-process "open" nil 0 nil fpath)))
 
 
-(map! :leader
-      (:prefix-map ("m" . "insert")
-       (:prefix ("l" . "insert")
-        :desc "New journal entry" "C" #'org-ref-cite-insert-helm
-        )))
+;; (map! :leader
+;;       (:prefix-map ("m" . "insert")
+;;        (:prefix ("l" . "insert")
+;;         :desc "New journal entry" "C" #'org-ref-cite-insert-helm
+;;         )))
 
 
-(setq bibtex-autokey-year-length 4
-	bibtex-autokey-name-year-separator "-"
-	bibtex-autokey-year-title-separator "-"
-	bibtex-autokey-titleword-separator "-"
-	bibtex-autokey-titlewords 2
-	bibtex-autokey-titlewords-stretch 1
-	bibtex-autokey-titleword-length 5
-	org-ref-bibtex-hydra-key-binding (kbd "H-b"))
+;; (setq bibtex-autokey-year-length 4
+;; 	bibtex-autokey-name-year-separator "-"
+;; 	bibtex-autokey-year-title-separator "-"
+;; 	bibtex-autokey-titleword-separator "-"
+;; 	bibtex-autokey-titlewords 2
+;; 	bibtex-autokey-titlewords-stretch 1
+;; 	bibtex-autokey-titleword-length 5
+;; 	org-ref-bibtex-hydra-key-binding (kbd "H-b"))
 
-(define-key bibtex-mode-map (kbd "H-b") 'org-ref-bibtex-hydra/body)
+;; (define-key bibtex-mode-map (kbd "H-b") 'org-ref-bibtex-hydra/body)
 
-(require 'org-ref-helm)
-(setq org-ref-insert-link-function 'org-ref-insert-link-hydra/body
-      org-ref-insert-cite-function 'org-ref-cite-insert-helm
-      org-ref-insert-label-function 'org-ref-insert-label-link
-      org-ref-insert-ref-function 'org-ref-insert-ref-link
-      org-ref-cite-onclick-function (lambda (_) (org-ref-citation-hydra/body)))
+;; (require 'org-ref-helm)
+;; (setq org-ref-insert-link-function 'org-ref-insert-link-hydra/body
+;;       org-ref-insert-cite-function 'org-ref-cite-insert-helm
+;;       org-ref-insert-label-function 'org-ref-insert-label-link
+;;       org-ref-insert-ref-function 'org-ref-insert-ref-link
+;;       org-ref-cite-onclick-function (lambda (_) (org-ref-citation-hydra/body)))
 
 
 ;; (require 'org-ref-ivy)
@@ -161,7 +160,7 @@
 ;;       org-ref-insert-ref-function 'org-ref-insert-ref-link
 ;;       org-ref-cite-onclick-function (lambda (_) (org-ref-citation-hydra/body)))
 
-(setq org-cite-csl-styles-dir "~/dev/org/bib/Zotero/styles")
+;; (setq org-cite-csl-styles-dir "~/dev/org/bib/Zotero/styles")
 ;; (setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
 
 (setq org-latex-pdf-process
@@ -170,8 +169,8 @@
 
 
 
-(require 'auto-virtualenv)
-(add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv)
+;; (require 'auto-virtualenv)
+;; (add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv)
 (setq org-src-fontify-natively t)
 ;; (setq org-format-latex-options (plist-put org-format-latex-options :scale 5.0))
 (setq org-latex-pdf-process
@@ -184,36 +183,6 @@
         (:prefix ("d" . "application")
        :desc "export to pdf"
       "e p" #'org-export-dispatch))
-
-(defun dired-open()
-  (interactive)
-  (setq file (dired-get-file-for-visit))
-  (setq ext (file-name-extension file))
-  (cond ((string= ext "pdf")
-         ;; shell-quote-argument escapes white spaces on the file name
-         (async-shell-command (concat "okular " (shell-quote-argument file))))
-        ((string= ext "epub")
-         (async-shell-command (concat "okular " (shell-quote-argument file))))
-        ;;  (async-shell-command (concat "file-roller " (shell-quote-argument file))))
-        ;; ((string= ext "zip")
-        ((string= ext "html")
-         (async-shell-command (concat "qutebrowser " (shell-quote-argument file))))
-        (t (dired-find-file))))
-
-(defun restart-python-console ()
-  "Restart python console before evaluate buffer or region to avoid various uncanny conflicts, like not reloding modules even when they are changed"
-  (interactive)
-  (if (get-buffer "*Python*")
-      (let ((kill-buffer-query-functions nil)) (kill-buffer "*Python*")))
-  ;; (elpy-shell-send-region-or-buffer)
-      (run-python())
-      (display-buffer (get-buffer "*Python*"))) ;
-
-
-
-
-(map! :leader
-        (:prefix ("e" . "my")
-       :desc "restart python"
-      "r" #'restart-python-console))
-
+(when (daemonp)
+  (exec-path-from-shell-initialize))(when (daemonp)
+  (exec-path-from-shell-initialize))
