@@ -1,10 +1,6 @@
-Q
-pl-save
-w
-clear 
-pl-create g1
-pl-new
+q
 pl-create came
+w
 pl-create nnew
 pl-create
 pl.create
@@ -20,5 +16,4 @@ shell
 filter Fish
 h
 load
-q
 L

@@ -13,8 +13,7 @@ from libqtile.lazy import LazyCall
 from libqtile.log_utils import logger
 
 
-
-type_of_dev = "desktop"
+type_of_dev = "laptop"
 
 def to_next_group(qtile):
      next_group_name = qtile.current_group.get_next_group().name
@@ -29,7 +28,7 @@ myTerm = "alacritty"                             # My terminal of choice
 calendar = "thunderbird"
 # browser = "firefox"
 browser = "qutebrowser"
-files = "org.kde.dolphin"
+files = "dolphin"
 launcher = "/home/cryoss/.config/rofi/bin/launcher_misc"
 #START_KEYS
 keys = [
@@ -297,7 +296,7 @@ keys = [
              lazy.group['8'].toscreen(),
              desc="switch to group"
              ),
-         Key([mod, "shift"], 'v', lazy.window.togroup('vid', switch_group=True),
+         Key([mod, "shift"], 'm', lazy.window.togroup('vid', switch_group=True),
              lazy.group['vid'].toscreen(),
              desc="switch to group"
              ),
@@ -331,11 +330,11 @@ keys = [
                  desc='Kill processes via dmenu'
                  ),
              Key([], "p",
-                 lazy.spawn("menu_battery"),
+                 lazy.spawn("bash /home/cryoss/.config/rofi/applets/menu/battery.sh"),
                  desc='Powermenu'
                  ),
              Key([], "q",
-                 lazy.spawn("menu_powermenu"),
+                 lazy.spawn("bash /home/cryoss/.config/rofi/applets/menu/powermenu.sh"),
                  desc='A logout menu'
                  ),
              Key([], "o",
@@ -814,7 +813,7 @@ if type_of_dev == "laptop":
                               ),
                     widget.Sep( #12
                               linewidth = 0,
-                              padding = 500,
+                              padding = 100,
                               foreground = colors[0],
                               background = colors[0]
                               ),
@@ -916,19 +915,19 @@ if type_of_dev == "laptop":
                               mouse_callbacks = {'Button1' : lambda: qtile.cmd_spawn(myTerm+ ' -e htop')},
                               fontsize = 14
                               ),
-                    widget.TextBox( #24
-                              text = '|',
-                              background = colors[0],
-                              foreground = colors[11],
-                              padding = 0,
-                              fontsize = 37
-                              ),
-                    widget.Wlan( #25
-                              background = colors[0],
-                              foreground = colors[12],
-                              padding = 0,
-                              fontsize = 17
-                              ),
+                    # widget.TextBox( #24
+                    #           text = '|',
+                    #           background = colors[0],
+                    #           foreground = colors[11],
+                    #           padding = 0,
+                    #           fontsize = 37
+                    #           ),
+                    # widget.Wlan( #25
+                    #           background = colors[0],
+                    #           foreground = colors[12],
+                    #           padding = 0,
+                    #           fontsize = 17
+                    #           ),
                     widget.TextBox( #26
                               text = '|',
                               background = colors[0],
@@ -983,7 +982,7 @@ if type_of_dev == "laptop":
                               ),
                     widget.Systray( #34
                               background = colors[0],
-                              padding = 5
+                              padding = 100
                               ),
                     ]
           return widgets_list

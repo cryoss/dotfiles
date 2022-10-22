@@ -1,6 +1,0 @@
-(package! company-jedi)
-(package! lsp-jedi)
-(package! exec-path-from-shell)
-(package! dired-open)
-(package! dired-single)
-(package! gcode-mode)
