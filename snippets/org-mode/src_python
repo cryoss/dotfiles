@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: src_python
+# key: src_python
+# --
+#+BEGIN_SRC python :results {output, pp}  :session $1 :tangle $2.py :comments org
+$3
+
+#+END_SRC

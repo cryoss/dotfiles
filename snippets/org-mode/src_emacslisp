@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name:src_emacslisp
+# key: src_emacslisp
+# --
+#+begin_src emacs-lisp :exports both :tangle $1 :comments org
+
+#+end_src

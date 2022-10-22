@@ -1,3 +1,186 @@
+#+title: Config
+* Emacs Config
+** user data
+Define username and email
+#+begin_src emacs-lisp :exports both :tangle config.el :comments org
+
+(setq user-full-name "cryoss"
+      user-mail-address "n.billing@billtec.de")
+
+(prefer-coding-system 'utf-8)
+
+(setq undo-limit 80000000
+      auto-save-default t)
+#+end_src
+
+** Themeing
+#+begin_src emacs-lisp :exports both :tangle config.el :comments org
+(setq doom-theme 'doom-one)
+;;(setq-default cursor-type 'hbar)
+(setq evil-normal-state-cursor '(box "dark cyan" )
+      evil-insert-state-cursor '(bar "medium sea green")
+      evil-visual-state-cursor '(hollow "orange"))
+ (blink-cursor-mode 0)
+
+;; This determines the style of line numbers in effect. If set to `nil', line
+;; numbers are disabled. For relative line numbers, set this to `relative'.
+(setq display-line-numbers-type 'relative)
+
+(setq doom-font (font-spec :family "Comic Mono" :size 30)
+      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 20)
+      doom-big-font (font-spec :family "Comic Mono" :size 25))
+(after! doom-themes
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t))
+(custom-set-faces!
+  '(font-lock-comment-face :slant italic)
+  '(font-lock-keyword-face :slant italic))
+
+#+end_src
+
+#+RESULTS:
+| doom--customize-themes-h-28 | doom--customize-themes-h-60 |
+
+** 
+
+** org mode
+#+begin_src emacs-lisp :exports both :tangle config.el :comments org
+;; If you use `org' and don't want your org files in the default location below,
+;; change `org-directory'. It must be set before org loads!
+(after! org
+(setq org-directory "~/dev/org/")
+(setq org-agenda-files '("~/dev/org/ideas.org"))
+(setq org-log-done 'note))
+(setq browse-url-browser-function 'browse-url-generic
+        browse-url-generic-program "qutebrowser")
+
+(setq org-latex-pdf-process
+      '("latexmk -gg -lualatex %f"
+        ))
+
+
+(setq org-src-fontify-natively t)
+;; (setq org-format-latex-options (plist-put org-format-latex-options :scale 5.0))
+(setq org-latex-pdf-process
+  '("lualatex -shell-escape -interaction nonstopmode %f"
+    "lualatex -shell-escape -interaction nonstopmode %f"))
+
+
+
+(map! :leader
+        (:prefix ("d" . "application")
+       :desc "export to pdf"
+      "e p" #'org-export-dispatch))
+(when (daemonp)
+  (exec-path-from-shell-initialize))(when (daemonp)
+  (exec-path-from-shell-initialize))
+#+end_src
+
+** Sperling Correction
+#+begin_src emacs-lisp :exports both :tangle config.el :comments org
+(setenv "DICTIONARY" "de_DE")
+;; Set $DICPATH to "$HOME/Library/Spelling" for hunspell.
+(setenv
+  "DICPATH"
+  "/usr/share/hunspell")
+;; Tell ispell-mode to use hunspell.
+(setq
+  ispell-program-name
+  "hunspell")
+(require 'ispell)
+(setq ispell-personal-dictionary "~/org/.hunspell")
+(add-to-list 'ispell-local-dictionary-alist '("deutsch-hunspell"
+                                              "[[:alpha:]]"
+                                              "[^[:alpha:]]"
+                                              "[']"
+                                              t
+                                              ("-d" "de_DE"); Dictionary file name
+                                              nil
+                                              iso-8859-1))
+(add-to-list 'ispell-local-dictionary-alist '("english-hunspell"
+                                              "[[:alpha:]]"
+                                              "[^[:alpha:]]"
+                                              "[']"
+                                              t
+                                              ("-d" "en_US")
+                                              nil
+                                              iso-88))
+#+end_src
+
+** dired
+#+begin_src emacs-lisp :exports both :tangle config.el :comments org
+(use-package dired
+  :ensure nil
+  :commands (dired dired-jump)
+  :bind (("C-x C-j" . dired-jump))
+  :custom ((dired-listing-switches "-agho --group-directories-first"))
+  :config
+  (evil-collection-define-key 'normal 'dired-mode-map
+    "h" 'dired-single-up-directory
+    "l" 'dired-single-buffer))
+
+(use-package dired-open
+  :config
+  ;; (add-to-list 'dired-open-functions #'dired-open-xdg t)
+
+  (setq dired-open-extensions ' (("png" . "feh")
+                                 ("pdf" . "org.kde.okular"))
+        ))
+
+#+end_src
+
+#+RESULTS:
+: t
+
+** python lsp
+#+begin_src emacs-lisp :exports both :tangle config.el :comments org
+(use-package python-mode
+:hook (python-mode . lsp-deferred))
+(use-package lsp-jedi
+  :ensure t
+  :config
+  (with-eval-after-load "lsp-mode"
+    (add-to-list 'lsp-disabled-clients 'pyls)
+    (add-to-list 'lsp-enabled-clients 'jedi)))
+
+
+(use-package company
+  :after lsp-mode
+  :hook (lsp-mode . company-mode)
+  :bind (:map company-active-map
+         ("<tab>" . company-complete-selection))
+        (:map lsp-mode-map
+         ("<tab>" . company-indent-or-complete-common))
+  :custom
+  (company-minimum-prefix-length 1)
+  (company-idle-delay 0.0))
+
+(use-package company-box
+  :hook (company-mode . company-box-mode))
+
+;; (use-package rainbow-delimiters
+;;   :hook (prog-mode . rainbow-delimiters-mode))
+
+;; (setq lsp-jedi-workspace-extra-paths
+;;   (vconcat lsp-jedi-workspace-extra-paths
+;;            ["/home/cryoss/dev/e-still/lib/python3.10/site-packages"]))
+#+end_src
+
+** extra Packages
+#+begin_src emacs-lisp :exports both :tangle packages.el :comments org
+
+(package! company-jedi)
+(package! lsp-jedi)
+(package! exec-path-from-shell)
+(package! dired-open)
+(package! dired-single)
+(package! gcode-mode)
+#+end_src
+
+** doom Modules and flags
+
+#+begin_src emacs-lisp :exports both :tangle init.el :comments org
+
 (doom! :input
        ;;chinese
        ;;japanese
@@ -171,3 +354,4 @@
        :config
        ;;literate
        (default +bindings +smartparens))
+#+end_src
