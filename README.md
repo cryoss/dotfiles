@@ -1,5 +1,5 @@
 ##  from arch repos 
-    pacman -Syu trayer alacritty dmenu texlive-most fish qalculate-gtk emacs fd exa git ripgrep thunderbird cmus locate starship
+    pacman -Syu trayer alacritty dmenu texlive-most fish qalculate-gtk emacs fd exa git ripgrep thunderbird cmus locate starship pmount rsync flatpak 
 ##  from aur    
     yay -S paru
     paru -S shell-color-scripts 

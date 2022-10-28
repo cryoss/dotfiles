@@ -20,7 +20,7 @@ services:
       - "6052:6052"
       - "1080:1080"
       - "5000:5000"
-
+      - "3748:3748"
       # The Web UI (enabled by --api.insecure=true)
       - "8080:8080"
     volumes:
@@ -72,7 +72,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/Beril
+      - TZ=Europe/Berlin
       - JELLYFIN_PublishedServerUrl=jellyfin.cortex #optional
     volumes:
       - /files/jellyfin:/config
@@ -137,3 +137,30 @@ services:
       - "traefik.http.routers.rtcalc.rule=Host( `calc.cortex` )"
       - "traefik.http.routers.rtcalc.entrypoints=web"
       - "traefik.http.services.rtcalc.loadbalancer.server.port=5000"
+
+
+
+# Before you start docker-compose up, make sure that you have prepared
+# the local folders to avoid file permission issues with
+#
+# mkdir -p config Specific/db
+# chown -R 101:101 config Specific  <- Use this for Nginx
+# chown -R 33:33 config Specific    <- Use this for Apache httpd
+
+  baikal:
+    image: ckulka/baikal:nginx
+    container_name: baikal
+    restart: always
+    volumes:
+      - /files/baikal/config:/var/www/baikal/config
+      - /files/baikal/Specific:/var/www/baikal/Specific
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - PUID=1000
+      - PGID=1000
+    privileged: true
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.baikal.rule=Host( `baikal.cortex` )"
+      - "traefik.http.routers.baikal.entrypoints=web"
+      - "traefik.http.services.baikal.loadbalancer.server.port=80"
