@@ -1,0 +1,4 @@
+#+title: Fritzboxipv6dyndns
+
+
+https://<username>:<passwd>@dyndns.strato.com/nic/update?hostname=<domain>&myip=<ip6addr>
